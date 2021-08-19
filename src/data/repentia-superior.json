@@ -1,0 +1,39 @@
+{
+  "name": "Repentia Superior",
+  "keywords": ["Infantry", "Character", "Repentia Superior"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": 6,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 4,
+  "attacks": 5,
+  "leadership": 8,
+  "saves": 3,
+  "points": 40,
+
+  "wargear": [],
+
+  "weapons": ["weapons.fragGrenade", "weapons.krakGrenade", "weapons.neuralWhips"],
+
+  "abilities": ["abilities.actsOfFaith", "abilities.convictionOfFaith", "abilities.overseerOfRedemption"],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.slayersOfHeretics"],
+  "meleePreWoundChecks": [{
+    "name": "Neural Whips",
+    "rules": "If no model in the target unit (excluding VEHICLE units) has a Leadership characteristic of 8 or more, +1 to wound rolls."
+  }, "abilities.overseerOfRedemption"],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
+  "defensePreWoundChecks": [],
+  "defensePreLeadershipChecks": []
+}

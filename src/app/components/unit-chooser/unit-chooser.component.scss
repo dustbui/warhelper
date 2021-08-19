@@ -1,0 +1,29 @@
+@import '../../../shared.scss';
+
+.unit-chooser {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  font-size: 0.2in;
+  padding-top: 10px;
+
+  .select-prompt {
+    text-align: center;
+    width: 100%;
+  }
+
+  .unit {
+    width: 100%;
+    font-size: 0.4in;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .unit:hover {
+    @extend .shadow-hover;
+  }
+}

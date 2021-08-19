@@ -1,0 +1,36 @@
+{
+  "name": "Seraphim",
+  "keywords": ["Infantry", "Core", "Jump Pack", "Fly", "Seraphim Squad"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": 12,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 1,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 3,
+  "points": 14,
+
+  "wargear": [],
+
+  "weapons": ["weapons.boltPistol", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
+
+  "abilities": ["abilities.skyStrike", "abilities.actsOfFaith", "abilities.convictionOfFaith"],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.slayersOfHeretics"],
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.shieldOfFaith"],
+  "defensePreWoundChecks": [],
+  "defensePreLeadershipChecks": []
+}

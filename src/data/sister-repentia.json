@@ -1,0 +1,39 @@
+{
+  "name": "Sister Repentia",
+  "keywords": ["Infantry", "Core", "Sisters Repentia"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": 6,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 1,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 7,
+  "points": 14,
+
+  "wargear": [],
+
+  "weapons": ["weapons.penitentEviscerator"],
+
+  "abilities": ["abilities.actsOfFaith", "abilities.convictionOfFaith"],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreWoundChecks": ["abilities.sacredRitesDivineGuidance", "abilities.righteousJudgement"],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.zealot"],
+  "meleePreWoundChecks": [{
+    "name": "Overseer of Redemption",
+    "rules": "If this model is within 6\" of a REPENTIA SUPERIOR, it gets +1 to wound rolls."
+  }],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
+  "defensePreWoundChecks": ["abilities.solaceInAnguish"],
+  "defensePreLeadershipChecks": ["abilities.martyrdom"]
+}

@@ -1,0 +1,170 @@
+{
+  "name": "Wolf Guard Pack Leader",
+  "keywords": ["Infantry", "Wolf Guard", "Elites", "Core", "Fly", "Jump Pack"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 12,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 3,
+  "points": 17,
+
+  "wargear": [{
+      "name": "Jump Pack",
+      "points": 2,
+      "rules": ["When you set up this model during deployment, it can be set up high in the skies instead of being placed on the battlefield. If it is, you may deploy it to the battlefield at the end of any of your Movement phases; when it does, set it up anywhere that is more than 9\" from any enemy models."],
+      "isRelic": false,
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Storm Shield",
+      "points": 4,
+      "rules": ["The bearer has a 4+ invulnerable save. In addition, add 1 to armour saving throws made for the bearer."],
+      "isRelic": false,
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "weapons": [{
+      "name": "Lightning Claw",
+      "points": 3,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": false,
+      "attacks": 0,
+      "abilities": [{
+        "rules": "Each time the bearer fights, it makes 1 additional attack with this weapon. Each time an attack is made with this weapon, you can re-roll the wound roll."
+      }],
+      "strength": 0,
+      "armorPen": -2,
+      "damage": 1,
+      "imageUrl": "https://i.imgur.com/ThQPGqA.png"
+    },
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [{
+      "name": "Jump Pack Assault",
+      "points": 0,
+      "rules": ["If this model has a jump pack, when you set it up during deployment, it can be set up high in the skies, ready to strike, instead of being placed on the battlefield. If it is, it can make a sudden assault to arrive on the battlefield at the end of any of your Movement phases; when it does so set it up anywhere that is more than 9in. from any enemy models."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Savage Fury",
+      "points": 0,
+      "rules": ["Whilst the Assault Doctrine is active, if an unmodified hit roll of 6 is made for an attack made with a melee weapon by a unit with this ability, that attack scores 1 additional hit on the target."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Born Heroes",
+      "points": 0,
+      "rules": ["Each time this model makes a melee attack, add 1 to that attack's hit roll."],
+      "tags": ["Chapter Tactic"],
+      "description": ""
+    },
+    {
+      "name": "Whirlwind of Rage",
+      "points": 0,
+      "rules": ["Each time this model makes a melee attack, if that model's unit made a charge move, was charged, or made a Heroic Intervention this turn, an unmodified hit roll of 6 scores an additional hit."],
+      "tags": ["Chapter Tactic"],
+      "description": ""
+    },
+    {
+      "name": "Angels of Death",
+      "points": 0,
+      "rules": ["This unit has the following abilities: And They Shall Know No Fear; Bolter Discipline; Shock Assault; Combat Doctrines."],
+      "tags": ["Adeptus Astartes"],
+      "description": "Space Marines are amongst the finest warriors in the Imperium."
+    },
+    {
+      "name": "Storm Shield",
+      "points": 0,
+      "rules": ["The bearer has a 4+ invulnerable save. In addition, add 1 to armour saving throws made for the bearer."],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [{
+    "name": "Shock Assault",
+    "points": 0,
+    "rules": ["Each time this unit fights, if it made a charge move, was charged, or performed a Heroic Intervention this turn, then until that fight is resolved, add 1 to the Attacks characteristic of models in this unit."],
+    "tags": ["Adeptus Astartes"],
+    "description": "The Adeptus Astartes are elite troops who strike with the fury of a thunderbolt. Few opponents can withstand this onslaught."
+  }],
+
+  "meleePreHitChecks": [{
+      "name": "Born Heroes",
+      "points": 0,
+      "rules": ["+1 to Hit Rolls"],
+      "tags": ["Chapter Tactic", "Space Wolves"],
+      "description": "Space Marines stand unafraid before the terrors of the galaxy."
+    },
+    {
+      "name": "Whirlwind of Rage",
+      "points": 0,
+      "rules": ["Each time this model makes a melee attack, if that model's unit made a charge move, was charged, or made a Heroic Intervention this turn, an unmodified hit roll of 6 scores an additional hit."],
+      "tags": ["Chapter Tactic"],
+      "description": ""
+    }
+  ],
+
+  "meleePreWoundChecks": [{
+    "name": "Lightning Claw",
+    "points": 0,
+    "rules": ["You may re-roll wound rolls."],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [{
+    "name": "Storm Shield",
+    "points": 4,
+    "rules": [
+      "4+ Invulnerable save."
+    ],
+    "isRelic": false,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreWoundChecks": [{
+    "name": "Storm Shield",
+    "points": 4,
+    "rules": [
+      "Add 1 to armour saving throws"
+    ],
+    "isRelic": false,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreLeadershipChecks": [{
+    "name": "And They Shall Know No Fear",
+    "points": 0,
+    "rules": ["Each time a Combat Attrition test is taken for this unit, ignore any or all modifiers."],
+    "tags": [""],
+    "description": "Space Marines stand unafraid before the terrors of the galaxy."
+  }]
+}

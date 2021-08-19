@@ -1,0 +1,47 @@
+{
+  "name": "Canoness",
+  "keywords": ["Infantry", "Character", "Canoness"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": 6,
+  "weaponSkill": 2,
+  "ballisticSkill": 2,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 5,
+  "attacks": 4,
+  "leadership": 9,
+  "saves": 3,
+  "points": 50,
+
+  "traits": ["abilities.righteousJudgement"],
+  "wargear": ["wargear.rodOfOffice", "wargear.rosarius"],
+
+  "weapons": [
+    "weapons.redemption",
+    "weapons.fragGrenade",
+    "weapons.krakGrenade",
+    "weapons.powerSword"
+  ],
+
+  "shootingPreHitChecks": ["abilities.slayersOfHeretics", "abilities.leadTheRighteous"],
+  "shootingPreWoundChecks": ["abilities.sacredRitesDivineGuidance", "abilities.righteousJudgement"],
+
+  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.leadTheRighteous"],
+  "meleePreWoundChecks": ["abilities.righteousJudgement"],
+
+  "abilities": [
+    "abilities.beaconOfFaith",
+    "wargear.rodOfOffice",
+    "abilities.convictionOfFaith",
+    "abilities.actsOfFaith",
+    "abilities.leadTheRighteous",
+    "abilities.righteousJudgementMiracleAura"
+  ],
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": [
+    "wargear.rosarius",
+    "abilities.shieldOfFaith"
+  ],
+  "defensePreWoundChecks": [],
+  "defensePreLeadershipChecks": []
+}

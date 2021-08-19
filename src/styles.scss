@@ -1,0 +1,116 @@
+@import 'shared.scss';
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 210mm;
+    height: 292mm;
+  }
+
+  /* ... the rest of the rules ... */
+}
+
+@font-face {
+  font-family: CaslonAntique;
+  src: url('../src/assets/fonts/CaslonAntique.ttf');
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}
+
+html {
+  font-family: CaslonAntique;
+  scroll-behavior: smooth;
+}
+
+.center {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.01in 0.05in;
+  padding-top: 0.03in;
+  color: white;
+  background-color: black;
+  font-size: 0.11in;
+  position: relative;
+  top: -0.02in;
+  width: auto;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 0px;
+  border-radius: 6px;
+  border: 1px solid #9e9e9e;
+  padding: 7px;
+  font-size: 0.17in;
+  background-color: white !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  /* Position the tooltip */
+  position: absolute;
+  height: auto;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  min-width: 150px;
+  width: auto;
+  height: auto;
+  z-index: 100;
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  visibility: hidden;
+  padding-left: 30%;
+
+  .mobile-buttons {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+
+    .mobile-button {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin-right: 10px;
+      border-radius: 100%;
+      user-select: none;
+      width: 50px;
+      height: 50px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.24);
+      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+      @extend .shadow-hover;
+
+      .mobile-button-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+  }
+}

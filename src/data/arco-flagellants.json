@@ -1,0 +1,36 @@
+{
+  "name": "Arco-flagellants",
+  "keywords": ["Infantry", "Cult Imperialis", "Core", "Ecclesiarchy Battle Conclave", "Arco-flagellants"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum"],
+  "move": 7,
+  "weaponSkill": 4,
+  "ballisticSkill": "-",
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 2,
+  "leadership": 7,
+  "saves": 7,
+  "points": 13,
+
+  "wargear": [],
+
+  "weapons": ["weapons.arcoFlails"],
+
+  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.convictionOfFaith"],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": [],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.zealot"],
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": [],
+  "defensePreWoundChecks": ["abilities.beserkKillingMachines"],
+  "defensePreLeadershipChecks": []
+}

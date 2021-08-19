@@ -1,0 +1,453 @@
+  <div *ngIf="error" class="text-dark-red error">
+    {{error}}
+  </div>
+
+  <div *ngIf="!error" class="datasheet">
+    <div class="points">
+      <div>{{getPointValue()}}</div>
+    </div>
+    <!-- Name -->
+    <div class="name">
+      {{unit.name}}
+    </div>
+    <!-- Keywords -->
+    <div class="keywords">
+      {{unit.keywords.join(', ')}}, {{unit.factionKeywords.join(', ')}}
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <!-- Move -->
+      <div class="move stat tooltip">
+        <div class="move-value">
+          {{unit.move}}"
+        </div>
+        <div class="move-icon">
+          <img src="https://i.imgur.com/54MQ3Ui.png" />
+        </div>
+        <div class="tooltip-text">
+          The distance in inches that the unit can move.
+        </div>
+      </div>
+    </div>
+
+    <div #headerOffset id="headerOffset" class="header-offset"></div>
+    <!-- Abilities -->
+    <div class="section-header" *ngIf="unit.abilities.length">
+      A B I L I T I E S
+    </div>
+    <!-- List Mode -->
+    <!-- <div class="section abilities-section" *ngIf="unit.abilities.length">
+    <div class="ability col-6" *ngFor="let ability of unit.abilities">
+      <app-ability [ability]="ability"></app-ability>
+    </div>
+  </div> -->
+    <!-- Tile Mode -->
+    <div class="section tile-section" *ngIf="unit.abilities.length">
+      <div class="col-3" *ngFor="let ability of unit.abilities">
+        <div class="ability">
+          <div><b><i>{{ability.name}}</i></b>
+            <span *ngFor="let tag of ability.tags"><span class="tag" *ngIf="tag.length">{{tag}}</span></span></div>
+          <div [innerHtml]="formatRules(ability.rules, '<br/><br/>')"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMBAT -->
+    <!-- Column Icons -->
+    <div class="row">
+      <div class="column-icons" [ngClass]="{ 'pinned' : itemPinned }">
+        <div class="ballistic-attacks tooltip">
+          <img src="https://i.imgur.com/DEr8dyB.png" />
+          <div class="tooltip-text">
+            <b>Attacks (A)</b> The number of attack rolls per model.
+          </div>
+        </div>
+
+        <div class="ballistic-skill tooltip">
+          <img src="https://i.imgur.com/WRbCdTq.png" />
+          <div class="tooltip-text">
+            <b>Skill (BS for ranged) (WS for melee)</b> The dice value required to score a hit.
+          </div>
+        </div>
+
+        <div class="ballistic-strength tooltip">
+          <img src="https://static.thenounproject.com/png/14924-200.png" />
+          <div class="tooltip-text">
+            <b>Strength (S)</b>
+            Compare this to the <b>Toughness (T)</b> of the
+            opponent's attack:
+            <br /><br />
+            Less than Toughness: Wound on 5.
+            <br />
+            Equal to Toughness: Wound on 4.
+            <br />
+            More than Toughness: Wound on 3.
+          </div>
+        </div>
+
+        <div class="ballistic-damage tooltip">
+          <img src="https://i.imgur.com/8NlZPxF.png" />
+          <div class="tooltip-text">
+            <b>Damage (D)</b> The amount of Wounds added to the target per successful Damage roll.
+          </div>
+        </div>
+
+        <div class="ballistic-armor-pen tooltip">
+          <img src="https://static.thenounproject.com/png/1229875-200.png" />
+          <div class="tooltip-text">
+            <b>Armor Penetration (AP)</b> This value is added to opponent's Save rolls.
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+
+      </div>
+    </div>
+
+    <!-- S H O O T I N G -->
+    <div #shootingSection id="shootingSection" class="section-header shooting-header" *ngIf="hasWeaponWithRange()">
+      S H O O T I N G
+    </div>
+    <div class="shooting-section section" *ngIf="hasWeaponWithRange()">
+      <!-- Ranged Weapons -->
+      <div class="weapons">
+        <div class="weapon" [ngClass]="{ 'pinned' : weapon.isPinned, 'pinned-header-offset' : weapon.isPinned }"
+          (click)="togglePin(weapon, $event)" *ngFor="let weapon of unit.weapons | callback: filterRangedWeapons">
+          <!-- Range -->
+          <div class="weapon-range-corner"></div>
+          <div class="weapon-range-value">
+            {{weapon.range}}"
+          </div>
+          <!-- Name -->
+          <div class="weapon-name">
+            <span class="tag relic" *ngIf="weapon.isRelic">Relic</span>
+            <span class="tag weapon-type-value">{{weapon.type}}</span>
+            {{weapon.name}}
+          </div>
+          <div class="weapon-spacer"></div>
+          <!-- Attacks -->
+          <div class="weapon-attacks weapon-value">
+            <div class="center">
+              <div [ngClass]="{'dice-value' : checkForDice(weapon.attacks)}">
+                <div class="center">{{weapon.attacks}}</div>
+              </div>
+            </div>
+
+          </div>
+          <div class="weapon-skill weapon-value">
+            <div class="center">
+              <div class="center">{{unit.ballisticSkill}}+</div>
+            </div>
+          </div>
+          <!-- Strength -->
+          <div class="weapon-strength weapon-value">
+            <div class="center">{{weapon.strength}}</div>
+          </div>
+          <!-- Damage -->
+          <div class="weapon-damage weapon-value">
+            <div class="center">
+              <div [ngClass]="{'dice-value' : checkForDice(weapon.damage)}">
+                <div class="center">{{weapon.damage}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- Armor Pen -->
+          <div class="weapon-armor-pen weapon-value">
+            <div class="center">{{weapon.armorPen}}</div>
+          </div>
+
+          <!-- Abilities -->
+          <div class="weapon-abilities">
+            <div *ngFor="let ability of weapon.abilities" class="weapon-ability">
+              <app-ability [ability]="ability"></app-ability>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="weapon-image">
+            <img [src]="weapon.imageUrl" />
+          </div>
+        </div>
+      </div>
+
+      <div #shootingPhases id="shootingPhases" class="offset-anchor"></div>
+      <!-- Combat Phases -->
+      <div class="combat-phases shooting-phases"
+        *ngIf="unit.shootingPreAttackChecks.length || unit.shootingPreHitChecks.length || unit.shootingPreWoundChecks.length">
+        <!-- Pre Attack -->
+        <div class="combat-phase">
+          <div class="pre-attack-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/DEr8dyB.png" />
+            <div class="tooltip-text">
+              Pre-Attack Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.shootingPreAttackChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+        <!-- Pre Hit -->
+        <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
+          <div class="pre-hit-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/WRbCdTq.png" />
+            <div class="tooltip-text">
+              Pre-Hit Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.shootingPreHitChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+        <!-- Pre Wound -->
+        <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
+          <div class="pre-wound-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/8NlZPxF.png" />
+            <div class="tooltip-text">
+              Pre-Wound Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.shootingPreWoundChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- M E L E E -->
+    <div #meleeSection id="meleeSection" class="section-header melee-header">M E L E E</div>
+    <div class="melee-section section">
+
+      <!-- Weapons -->
+      <div class="weapons">
+        <div class="weapon" [ngClass]="{ 'pinned' : weapon.isPinned, 'pinned-header-offset' : weapon.isPinned }"
+          (click)="togglePin(weapon, $event)" *ngFor="let weapon of unit.weapons | callback: filterMeleeWeapons">
+          <!-- Name -->
+          <div class="weapon-name">
+            {{weapon.name}}
+          </div>
+          <div class="weapon-spacer"></div>
+          <!-- Attacks -->
+          <div class="weapon-attacks weapon-value">
+            <div class="center">
+              <div [ngClass]="{'dice-value' : checkForDice(weapon.attacks)}">
+                <div class="center">
+                  <span class="text-dark-red">{{unit.attacks}}</span>
+                  <span *ngIf="weapon.attacks != 0">
+                    <span *ngIf="!checkIfString(weapon.attacks)">+</span>{{weapon.attacks}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Weapon Skill -->
+          <div class="weapon-skill weapon-value">
+            <div class="center" [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
+              {{unit.weaponSkill - (weapon.hitModifier || 0)}}+</div>
+          </div>
+          <!-- Strength -->
+          <div class="weapon-strength weapon-value">
+            <div class="center">
+              <span class="text-dark-red">{{unit.strength}}</span>
+              <span *ngIf="weapon.strength != 0">+{{weapon.strength}}</span>
+              <span *ngIf="weapon.strengthMultiplier > 1">x{{weapon.strengthMultiplier}}</span>
+            </div>
+          </div>
+          <!-- Damage -->
+          <div class="weapon-damage weapon-value">
+            <div class="center">
+              <div [ngClass]="{'dice-value' : checkForDice(weapon.damage)}">
+                <div class="center">{{weapon.damage}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- Armor Pen -->
+          <div class="weapon-armor-pen weapon-value">
+            <div class="center">{{weapon.armorPen}}</div>
+          </div>
+
+          <!-- Abilities -->
+          <div class="weapon-abilities">
+            <div *ngFor="let ability of weapon.abilities" class="weapon-ability">
+              <app-ability [ability]="ability"></app-ability>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="weapon-image melee-image">
+            <img [src]="weapon.imageUrl" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Combat Phases -->
+      <div id="meleePhases" #meleePhases class="offset-anchor"></div>
+      <div class="combat-phases melee-phases"
+        *ngIf="unit.meleePreAttackChecks.length || unit.meleePreHitChecks.length || unit.meleePreWoundChecks.length">
+        <!-- Pre Attack -->
+        <div class="combat-phase">
+          <div class="pre-attack-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/EIswBqE.png" />
+            <div class="tooltip-text">
+              Pre-Attack Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.meleePreAttackChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+        <!-- Pre Hit -->
+        <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
+          <div class="pre-hit-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/WRbCdTq.png" />
+            <div class="tooltip-text">
+              Pre-Hit Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.meleePreHitChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+        <!-- Pre Wound -->
+        <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
+          <div class="pre-wound-icon phase-icon tooltip">
+            <img src="https://i.imgur.com/8NlZPxF.png" />
+            <div class="tooltip-text">
+              Pre-Wound Effects
+            </div>
+          </div>
+          <div class="ability" *ngFor="let check of unit.meleePreWoundChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- D E F E N S E -->
+    <div #defenseSection id="defenseSection" class="section-header defense-header">D E F E N S E</div>
+    <div class="section">
+      <div class="defense-section">
+        <!-- Pre Hit Checks -->
+        <div class="pre-defense-checks">
+          <!-- Toughness -->
+          <div class="toughness phase-icon tooltip">
+            <div class="toughness-icon">
+              <img src="https://i.imgur.com/GJREwtW.png" />
+            </div>
+            <div class="toughness-value">
+              {{unit.toughness}}
+            </div>
+            <div class="tooltip-text">
+              <b>Toughness (T)</b>
+              This reflects the model’s resilience against physical harm.
+              <br /><br />Compare this to the <b>Strength</b> of the
+              opponent's attack:
+              <br /><br />
+              Less than Strength: Wound on 3.
+              <br />
+              Equal to Strength: Wound on 4.
+              <br />
+              More than Strength: Wound on 5.
+            </div>
+          </div>
+          <div *ngFor="let check of unit.defensePreHitChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+
+        <!-- Pre Save Checks -->
+        <div class="pre-defense-checks" style="border-left: 1px dotted #9e9e9e;">
+          <!-- Saves -->
+          <div class="saves phase-icon tooltip">
+            <div class="saves-icon">
+              <img src="https://i.imgur.com/U1RsGNs.png" />
+            </div>
+            <div class="saves-value">
+              {{unit.saves}}+
+            </div>
+            <div class="tooltip-text">
+              <b>Save (Sv)</b> This indicates the protection a model’s armour gives. <br /> <br />
+              Roll a D6 for each wound the model would receive. On a value equal to or higher than the model's Save
+              value, ignore the wound.
+
+            </div>
+          </div>
+          <div *ngFor="let check of unit.defensePreSaveChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+
+
+        <!-- Pre Wound Checks -->
+        <div class="pre-defense-checks" style="border-left: 1px dotted #9e9e9e;">
+          <!-- Wounds -->
+          <div class="wounds phase-icon tooltip">
+            <div class="wounds-icon">
+              <img src="https://i.imgur.com/8NlZPxF.png" />
+            </div>
+            <div class="wounds-value">
+              {{unit.wounds}}
+            </div>
+            <div class="tooltip-text">
+              <b>Wounds (W)</b> Wounds show how much damage a model can sustain before it succumbs to its
+              injuries.<br /><br />
+              When a model receives damage from an attack, put that many Wounds on it. When it has as many Wounds as
+              its Wound value, destroy the model.
+            </div>
+          </div>
+          <div *ngFor="let check of unit.defensePreWoundChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+
+        <!-- Pre Leadership Checks -->
+        <div class="pre-defense-checks" style="border-left: 1px dotted #9e9e9e;">
+          <!-- Leadership -->
+          <div class="leadership phase-icon tooltip">
+            <div class="leadership-icon">
+              <img src="https://i.imgur.com/B8dM9eB.png" />
+            </div>
+            <div class="leadership-value">
+              {{unit.leadership}}
+            </div>
+            <div class="tooltip-text">
+              <b>Leadership (Ld)</b> This reveals how courageous, determined or self-controlled a model is.
+              <br /><br />
+              During the Morale phase, if a model was destroyed in a unit, that unit performs a Morale test. Roll one
+              D6 and add the # of models that were destroyed in that unit. If the result is greater than
+              the highest Leadership (Ld) characteristic in the unit, one model flees that unit, and you must then
+              take Combat Attrition tests for the remaining models in the unit: <br /><br />
+              Roll one D6 for each remaining model in that unit, subtracting 1 from the result if the unit is below
+              Half-strength; for each result of 1, one additional model flees that unit
+            </div>
+          </div>
+          <div *ngFor="let check of unit.defensePreLeadershipChecks">
+            <app-ability [ability]="check"></app-ability>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="mobile-buttons">
+      <div class="mobile-button dark-grey text-white" [routerLink]="['/unit']" title="Units"
+        (click)="openUnitChooser()">
+        <div class="mobile-button-icon" routerLinkActive="router-link-active">U</div>
+      </div>
+      <div class="mobile-button white" title="Abilities" (click)="scrollToAnchor('headerOffset')">
+        <div class="mobile-button-icon">A</div>
+      </div>
+      <div class="mobile-button light-blue" title="Shooting" (click)="scrollToAnchor('shootingSection')">
+        <div class="mobile-button-icon">S</div>
+      </div>
+      <div class="mobile-button light-red" title="Melee" (click)="scrollToAnchor('meleeSection')">
+        <div class="mobile-button-icon">M</div>
+      </div>
+      <div class="mobile-button light-green" title="Defense" (click)="scrollToAnchor('defenseSection')">
+        <div class="mobile-button-icon">D</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-unit-chooser *ngIf="unitChooserIsOpen" (selectedUnitEvent)="importUnit($event)"></app-unit-chooser> -->

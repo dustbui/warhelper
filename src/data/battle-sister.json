@@ -1,0 +1,36 @@
+{
+  "name": "Battle Sister",
+  "keywords": ["Infantry", "Core", "Battle Sisters Squad"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": 6,
+  "weaponSkill": 4,
+  "ballisticSkill": 3,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 1,
+  "attacks": 1,
+  "leadership": 7,
+  "saves": 3,
+  "points": 11,
+
+  "wargear": ["wargear.simulacrumImperialis"],
+
+  "weapons": ["weapons.boltgun", "weapons.stormBolter", "weapons.ministorumFlamer", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
+
+  "abilities": ["wargear.simulacrumImperialis", "abilities.actsOfFaith", "abilities.convictionOfFaith", "abilities.objectiveSecured"],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.slayersOfHeretics"],
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
+  "defensePreWoundChecks": [],
+  "defensePreLeadershipChecks": []
+}

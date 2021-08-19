@@ -1,0 +1,6 @@
+<div class="unit-chooser">
+  <div class="select-prompt">Select a unit...</div>
+  <div class="unit" *ngFor="let unit of units" (click)="selectUnit(unit)" [routerLink]="'/display'">
+    {{unit.name}}
+  </div>
+</div>

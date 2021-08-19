@@ -1,0 +1,16 @@
+<div class="tooltip" *ngIf="ability.name">
+  <app-ability-name [ability]="ability"></app-ability-name>
+  <span class="tooltip-text">
+    <div class="ability-name">
+      <app-ability-name [ability]="ability"></app-ability-name>
+    </div>
+    <div class="tag" *ngFor="let tag of ability.tags">
+      {{tag}}
+    </div>
+    <div [innerHtml]="formatRules(ability.rules, '<br/><br/>')"></div>
+    <br />
+    <div class="text-light-grey"><i>{{ability.description}}</i></div>
+  </span>
+</div>
+&nbsp;<span [innerHtml]="formatRules(ability.rules)">
+</span>

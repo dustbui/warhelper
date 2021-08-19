@@ -1,0 +1,67 @@
+{
+  "name": "",
+  "keywords": ["Infantry", "Character"],
+  "factionKeywords": ["Imperium"],
+  "move": 0,
+  "weaponSkill": 0,
+  "ballisticSkill": 0,
+  "strength": 0,
+  "toughness": 0,
+  "wounds": 0,
+  "attacks": 0,
+  "leadership": 0,
+  "saves": 0,
+  "points": 0,
+
+  "wargear": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "isRelic": false,
+    "tags": [""],
+    "description": "-flavor text-"
+  }],
+
+  "weapons": [{
+    "name": "",
+    "points": 0,
+    "range": 0,
+    "type": "",
+    "isRelic": false,
+    "attacks": "",
+    "abilities": [""],
+    "strength": "",
+    "armorPen": "",
+    "damage": "",
+    "imageUrl": ""
+  }],
+
+  "abilities": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": [],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": [],
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": [],
+  "defensePreWoundChecks": [],
+  "defensePreLeadershipChecks": []
+}

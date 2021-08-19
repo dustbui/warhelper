@@ -1,0 +1,697 @@
+@import '../../../shared.scss';
+
+.datasheet {
+  position: absolute;
+  // width: 100%;
+  padding: 0.1in;
+  // width: 8.5in;
+  // height: 100%;
+  // border: 1px solid grey;
+}
+
+.points {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0.5in solid darkred;
+  border-right: 0.5in solid transparent;
+  // text-align: center;
+
+  div {
+    position: absolute;
+    text-align: center;
+    top: -0.5in;
+    padding-left: 3px;
+    color: white;
+    transform: translate(6px, 6px) rotate(-45deg);
+  }
+}
+
+.name {
+  font-size: 0.5in;
+  margin-left: 0.45in;
+}
+
+.keywords {
+  margin-top: -0.05in;
+  margin-left: 0.31in;
+  margin-bottom: 0.2in;
+  font-size: 0.15in;
+  max-width: calc(100% - 1.2in);
+  color: #3d3d3d;
+}
+
+.stats {
+  position: absolute;
+  top: -0.1in;
+  right: 0.2in;
+  width: 0.75in;
+}
+
+.stat {
+  font-size: 0.35in;
+}
+
+.move {
+  margin-left: -0.1in;
+  text-align: center;
+}
+
+.move-value {
+  position: absolute;
+  top: 0.1in;
+  left: 0.36in;
+}
+
+.move-icon {
+  position: absolute;
+  top: 0.35in;
+  left: 0.15in;
+}
+
+.move-icon>img {
+  width: 0.65in;
+}
+
+.toughness {
+  position: relative;
+  display: inline-block;
+}
+
+.toughness-value {
+  font-size: 0.35in;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0in;
+  color: white;
+}
+
+.toughness-icon>img {
+  position: relative;
+  width: 0.5in;
+}
+
+.saves {
+  display: inline-block;
+  position: relative;
+}
+
+.saves-value {
+  font-size: 0.35in;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.07in;
+  color: white;
+}
+
+.saves-icon>img {
+  width: 0.6in;
+}
+
+.wounds {
+  position: relative;
+  display: inline-block;
+}
+
+.wounds-value {
+  font-size: 0.35in;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0.28in;
+  color: white;
+}
+
+.wounds-icon>img {
+  width: 0.435in;
+}
+
+.leadership {
+  position: relative;
+  display: inline-block;
+}
+
+.leadership-value {
+  font-size: 0.35in;
+  position: absolute;
+  left: 0.17in;
+  top: 0.03in;
+  color: white;
+}
+
+.leadership-icon>img {
+  width: 0.6in;
+  height: 0.75in;
+}
+
+.abilities {
+  position: relative;
+  width: calc(100% - 0.4in);
+}
+
+.weapons {
+  position: relative;
+  width: calc(100% - 0.4in);
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  margin-left: 0.3in;
+}
+
+.section-header {
+  height: 100%;
+  transform: rotate(-90deg) translate(-100%, 0%) translate(-0.1in, 0in);
+  transform-origin: top left;
+  position: absolute;
+  margin: 0;
+}
+
+.abilities-section {
+  min-height: 1.3in;
+  padding-top: 0.07in;
+  margin-bottom: 0.1in;
+  width: calc(100% - 0.2in);
+  border-bottom: 1px dotted #3e3e3e;
+
+  .ability {
+    font-size: 0.15in;
+  }
+}
+
+.shooting-section {
+  min-height: 1.3in;
+}
+
+.melee-section {
+  min-height: 0.8in;
+}
+
+.weapon {
+  cursor: pointer;
+  background-color: white;
+  padding-top: 0.05in;
+  position: relative;
+  min-height: 0.8in;
+  border-bottom: 1px dotted #3e3e3e;
+}
+
+.weapon-skill {
+  position: relative;
+  width: 0.6in;
+}
+
+.weapon-skill-icon {
+  position: absolute;
+
+  img {
+    width: 0.9in;
+  }
+}
+
+.weapon-skill-value {
+  color: white;
+  background: black;
+  border-radius: 100%;
+  margin-top: -0.05in;
+  width: 0.36in;
+  height: 0.36in;
+  font-size: 0.27in;
+
+  .center {
+    position: absolute;
+    top: 0.21in;
+  }
+}
+
+.column-icons {
+  position: relative;
+  padding-left: 0.3in;
+  height: 60px;
+  display: flex;
+
+  div {
+    width: 0.65in;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &.pinned {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+}
+
+.ballistic-skill {
+  position: relative;
+  width: 0.6in;
+}
+
+.ballistic-skill-icon {
+  img {
+    width: 0.6in;
+  }
+}
+
+.ballistic-attacks {
+  img {
+    width: 0.4in;
+  }
+}
+
+.ballistic-skill {
+  img {
+    width: 0.43in;
+    margin-top: -0.03in;
+  }
+}
+
+.ballistic-strength {
+  img {
+    width: 0.37in;
+  }
+}
+
+.ballistic-damage {
+  img {
+    width: 0.22in;
+  }
+}
+
+.ballistic-armor-pen {
+  img {
+    width: 0.47in;
+    margin-top: -0.04in;
+  }
+}
+
+.weapon-spacer {
+  display: inline-block;
+  width: 0.1in;
+}
+
+.weapon-range-corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-bottom: 0.45in solid #3e3e3e;
+  border-right: 0.45in solid transparent;
+  bottom: 0;
+}
+
+.weapon-range-value {
+  color: white;
+  font-size: 0.2in;
+  position: absolute;
+  left: 0.03in;
+  bottom: -0.04in;
+}
+
+.weapon-value {
+  width: 0.65in;
+  min-width: 0.65in;
+  height: 0.75in;
+  font-size: 0.4in;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.relic {
+  background-color: #f28705;
+}
+
+.weapon-type-value {
+  background-color: #3e3e3e;
+}
+
+.weapon-name {
+  position: absolute;
+  font-size: 0.15in;
+}
+
+.weapon-abilities {
+  vertical-align: middle;
+  display: table-cell;
+  padding-bottom: 0.1in;
+  padding-left: 0.1in;
+  position: relative;
+  // min-height: 0.75in;
+  font-size: 0.15in;
+  width: 3in;
+}
+
+.weapon-image {
+  text-align: right;
+  position: absolute;
+  width: 100%;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-top: 0.05in;
+}
+
+.right-panel {
+  float: right;
+}
+
+.melee-image {
+  right: 0in;
+}
+
+.weapon-image {
+  img {
+    height: 0.55in;
+  }
+}
+
+.dice-value {
+  width: 0.4in;
+  height: 0.4in;
+  color: white;
+  font-size: 0.25in;
+  background-color: black;
+  border-radius: 0.1in;
+
+  .center {
+    padding-top: 0.02in;
+  }
+}
+
+.defense {
+  position: relative;
+  width: 100%;
+  /* top: 1in; */
+}
+
+.defense-header {
+  position: relative;
+}
+
+.defense-section {
+  display: table;
+  position: relative;
+  min-height: 1in;
+  width: calc(100% - 0.4in);
+  border-bottom: 1px dotted #9e9e9e;
+
+  .pre-defense-checks {
+    display: table-cell;
+    vertical-align: top;
+    width: 25%;
+    min-width: 25%;
+    font-size: 0.15in;
+    padding: 0.1in;
+  }
+
+  .pre-defense-checks:first-child {
+    padding-left: 0;
+  }
+
+}
+
+.phase-icon {
+  position: relative;
+  float: right;
+  margin-left: 0.1in;
+  text-align: center;
+  width: 0.6in;
+  height: 0.6in;
+  mix-blend-mode: multiply;
+
+  img {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+.combat-phases {
+  display: table;
+  position: relative;
+  min-height: 1in;
+  width: calc(100% - 0.4in);
+  border-bottom: 1px dotted #3e3e3e;
+
+  .combat-phase {
+    display: table-cell;
+    vertical-align: top;
+    width: calc(100% / 3);
+    height: 100%;
+    padding: 0.1in;
+
+    .pre-attack-icon {
+      img {
+        width: 0.6in;
+      }
+    }
+
+    .pre-hit-icon {
+      img {
+        width: 0.6in;
+      }
+    }
+
+    .pre-wound-icon {
+      img {
+        width: 0.35in;
+      }
+    }
+  }
+
+  .combat-phase:first-child {
+    padding-left: 0;
+  }
+}
+
+.tile-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% - 0.6in);
+  border-bottom: 1px dotted #3e3e3e;
+  margin-bottom: 0.2in;
+  min-height: 1.2in;
+
+  div {
+
+    .ability {
+      margin-bottom: 0.1in;
+      padding-right: 0.2in;
+
+      .tag {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+
+.offset-anchor {
+  display: block;
+  position: relative;
+  top: -2.5in;
+  visibility: hidden;
+}
+
+.header-offset {
+  height: 0px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+
+  html,
+  body,
+  .datasheet {
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .col-3 {
+    width: 50% !important;
+  }
+
+  .weapon-image {
+    visibility: hidden !important;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+
+  .mobile-buttons {
+    visibility: visible;
+  }
+
+  .name {
+    font-size: 0.3in;
+    margin-bottom: 0.1in;
+  }
+
+  .keywords {
+    font-size: 0.13in;
+  }
+
+  .tile-section {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .col-3,
+  .col-4 {
+    width: 100% !important;
+    left: 0;
+  }
+
+  .stats {
+    margin-top: 50px;
+  }
+
+  .column-icons {
+    padding-left: 0;
+  }
+
+  .tile-section {
+    display: block !important;
+  }
+
+  .ability {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .section {
+    margin-left: 0;
+    font-size: 0.18in;
+  }
+
+  .section-header {
+    font-size: 0.2in;
+    text-align: center;
+    position: relative;
+    display: block;
+    transform: translateX(0);
+    height: 0.25in;
+  }
+
+  .combat-phases {
+    display: block !important;
+    width: calc(100% - 20px) !important;
+
+    .combat-phase {
+      width: 100% !important;
+    }
+  }
+
+  .melee-header {
+    background-color: #FFDCDC;
+  }
+
+  .melee-section {
+    .weapon {
+      background-color: #FFDCDC;
+    }
+  }
+
+  .shooting-header {
+    background-color: #D9EBFF;
+  }
+
+  .shooting-section {
+    .weapon {
+      background-color: #D9EBFF;
+    }
+  }
+
+  .weapons {
+    width: 100% !important;
+
+
+    .weapon-name {
+      padding-left: 5px;
+    }
+
+    .weapon-abilities {
+      display: block;
+      position: relative;
+      font-size: 0.18in;
+      margin-left: 10%;
+      width: 80%;
+    }
+  }
+
+  .shooting-phases {
+    .combat-phase {
+      background-color: #D9EBFF;
+    }
+  }
+
+  .melee-phases {
+    .combat-phase {
+      background-color: #FFDCDC;
+    }
+  }
+
+
+
+  .combat-phase {
+    min-height: 1.5in !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.1in !important;
+    border-bottom: 1px dashed #3e3e3e !important;
+  }
+
+
+  .defense-header {
+    background-color: #DCFFDE;
+  }
+
+  .defense-section {
+    display: block !important;
+    width: calc(100% - 21px) !important;
+
+    .pre-defense-checks {
+      background-color: #DCFFDE;
+      font-size: 0.18in !important;
+      min-height: 1.5in !important;
+      display: block !important;
+      width: 100% !important;
+      padding: 0.1in !important;
+      border-bottom: 1px dashed #3e3e3e !important;
+    }
+  }
+
+
+  .tooltip-text {
+    background-color: white !important;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pinned {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: lightgoldenrodyellow !important;
+  }
+
+  .pinned-header-offset {
+    top: 48px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19),
+      0 10px 6px rgba(0, 0, 0, 0.23);
+  }
+}
