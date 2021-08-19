@@ -11,12 +11,9 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
+import { Constants } from 'src/app/common/constants';
 
-import {
-  abilities,
-  wargear,
-  weapons
-} from '../../../environments/environment';
+
 import {
   Ability
 } from './../../models/ability';
@@ -51,9 +48,9 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
   public unitChooserIsOpen: boolean = false;
 
   public constants: any = {
-    'wargear': wargear,
-    'weapons': weapons,
-    'abilities': abilities
+    'wargear': Constants.wargear,
+    'weapons': Constants.weapons,
+    'abilities': Constants.abilities
   };
 
   ngAfterViewInit(): void {
