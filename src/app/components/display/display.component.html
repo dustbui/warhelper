@@ -337,7 +337,7 @@
             <div class="toughness-value">
               {{unit.toughness}}
             </div>
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               <b>Toughness (T)</b>
               This reflects the model’s resilience against physical harm.
               <br /><br />Compare this to the <b>Strength</b> of the
@@ -348,7 +348,7 @@
               Equal to Strength: Wound on 4.
               <br />
               More than Strength: Wound on 5.
-            </div>
+            </div> -->
           </div>
           <div *ngFor="let check of unit.defensePreHitChecks">
             <app-ability [ability]="check"></app-ability>
@@ -365,12 +365,12 @@
             <div class="saves-value">
               {{unit.saves}}+
             </div>
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               <b>Save (Sv)</b> This indicates the protection a model’s armour gives. <br /> <br />
               Roll a D6 for each wound the model would receive. On a value equal to or higher than the model's Save
               value, ignore the wound.
 
-            </div>
+            </div> -->
           </div>
           <div *ngFor="let check of unit.defensePreSaveChecks">
             <app-ability [ability]="check"></app-ability>
@@ -388,12 +388,12 @@
             <div class="wounds-value">
               {{unit.wounds}}
             </div>
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               <b>Wounds (W)</b> Wounds show how much damage a model can sustain before it succumbs to its
               injuries.<br /><br />
               When a model receives damage from an attack, put that many Wounds on it. When it has as many Wounds as
               its Wound value, destroy the model.
-            </div>
+            </div> -->
           </div>
           <div *ngFor="let check of unit.defensePreWoundChecks">
             <app-ability [ability]="check"></app-ability>
@@ -410,7 +410,7 @@
             <div class="leadership-value">
               {{unit.leadership}}
             </div>
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               <b>Leadership (Ld)</b> This reveals how courageous, determined or self-controlled a model is.
               <br /><br />
               During the Morale phase, if a model was destroyed in a unit, that unit performs a Morale test. Roll one
@@ -419,7 +419,7 @@
               take Combat Attrition tests for the remaining models in the unit: <br /><br />
               Roll one D6 for each remaining model in that unit, subtracting 1 from the result if the unit is below
               Half-strength; for each result of 1, one additional model flees that unit
-            </div>
+            </div> -->
           </div>
           <div *ngFor="let check of unit.defensePreLeadershipChecks">
             <app-ability [ability]="check"></app-ability>

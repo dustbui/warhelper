@@ -21,6 +21,11 @@
   src: url('../src/assets/fonts/CaslonAntique.ttf');
 }
 
+@font-face {
+  font-family: SpaceMarine;
+  src: url('../src//assets/fonts/SM.TTF');
+}
+
 .row {
   --bs-gutter-x: 0 !important;
 }
@@ -70,13 +75,13 @@ html {
   height: auto;
 }
 
-.tooltip:hover .tooltip-text {
-  visibility: visible;
-  min-width: 150px;
-  width: auto;
-  height: auto;
-  z-index: 100;
-}
+// .tooltip:hover .tooltip-text {
+//   visibility: visible;
+//   min-width: 150px;
+//   width: auto;
+//   height: auto;
+//   z-index: 100;
+// }
 
 .footer {
   position: fixed;

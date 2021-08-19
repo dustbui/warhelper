@@ -1,3 +1,24 @@
+$dark-red: darkred;
+$dark-blue: darkblue;
+$dark-grey: #3d3d3d;
+$light-grey: #9e9e9e;
+$glow-yellow: #e6d850;
+$glow-orange: #c67700;
+$glow-red: #d30900;
+$glow-red-lighter: #b62500;
+$glow-start: 0 0 5px $glow-yellow,
+0 0 10px $glow-orange,
+0 0 10px $glow-red-lighter,
+0 0 15px $glow-red,
+0 0 60px rgba(255, 10, 10, 0.4);
+$glow-end: 0 0 10px $glow-yellow,
+0 0 12px $glow-orange,
+0 0 15px $glow-red-lighter,
+0 0 20px $glow-red-lighter,
+0 0 60px rgba(255, 10, 10, 0.6),
+0 0 100px rgba(150, 10, 10, 0.3);
+$glow-filter: drop-shadow(0 0 0.25px $glow-yellow) drop-shadow(0 0 0.75px $glow-orange) drop-shadow(0 0 2px $glow-red-lighter) drop-shadow(0 0 4px $glow-red);
+
 .shadow {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
     0 6px 6px rgba(0, 0, 0, 0.23);
@@ -14,15 +35,15 @@
 
 
 .text-dark-red {
-  color: darkred;
+  color: $dark-red;
 }
 
 .text-dark-blue {
-  color: darkblue;
+  color: $dark-blue;
 }
 
 .text-light-grey {
-  color: #9e9e9e;
+  color: $light-grey;
 }
 
 .text-white {
@@ -34,7 +55,7 @@
 }
 
 .dark-grey {
-  background-color: #3d3d3d !important;
+  background-color: $dark-grey !important;
 }
 
 .light-red {
@@ -55,4 +76,95 @@
 
 .filter-yellow {
   filter: invert(85%) sepia(32%) saturate(6820%) hue-rotate(8deg) brightness(104%) contrast(101%);
+}
+
+.terminal-background {
+  background: radial-gradient($glow-red -400%, black);
+}
+
+@mixin glow {
+  color: $glow-yellow;
+  text-shadow: 0 0 5px $glow-yellow,
+    0 0 10px $glow-orange,
+    0 0 10px $glow-red-lighter,
+    0 0 15px $glow-red,
+    0 0 60px rgba(255, 10, 10, 0.4);
+}
+
+%glow {
+  @include glow;
+}
+
+.glow {
+  @extend %glow;
+}
+
+.glow-hover {
+  color: white;
+  animation: glow-hover 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-hover {
+  from {
+    text-shadow: 0 0 10px white,
+      0 0 15px $glow-yellow,
+      0 0 20px $glow-orange,
+      0 0 25px $glow-red,
+      0 0 65px rgba(255, 10, 10, 0.4);
+  }
+
+  to {
+    text-shadow: 0 0 13px white,
+      0 0 15px $glow-yellow,
+      0 0 18px $glow-orange,
+      0 0 25px $glow-red-lighter,
+      0 0 65px rgba(255, 10, 10, 0.6),
+      0 0 100px rgba(150, 10, 10, 0.3);
+  }
+}
+
+// TV SCREEN EFFECT
+
+.crt:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to bottom,
+      rgba(18, 16, 16, 0.05) 50%,
+      rgba(0, 0, 0, 0.1) 50%);
+  background-size: 100% 8px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scanline {
+  width: 100%;
+  height: 100px;
+  z-index: 8;
+  background: linear-gradient(0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(255, 241, 42, 0.5) 10%,
+      rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0.1;
+  position: absolute;
+  bottom: 100%;
+  animation: scanline 5s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    bottom: 100%;
+  }
+
+  50% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
 }

@@ -6,6 +6,7 @@ import seraphim from '../../../data/seraphim.json';
 import arcoFlagellants from '../../../data/arco-flagellants.json';
 import repentiaSuperior from '../../../data/repentia-superior.json';
 import sisterRepentia from '../../../data/sister-repentia.json';
+import sisterSuperior from 'src/data/sister-superior.json';
 import wolfGuard from '../../../data/wolf-guard.json';
 import { AppComponent } from 'src/app/app.component';
 import { Router } from '@angular/router';
@@ -18,7 +19,7 @@ import { Router } from '@angular/router';
 export class UnitChooserComponent implements OnInit {
   @Output() selectedUnitEvent = new EventEmitter();
   public units: any[] = [
-    arcoFlagellants, canoness, battleSister, seraphim, seraphimSuperior, sisterRepentia, repentiaSuperior, wolfGuard
+    arcoFlagellants, canoness, battleSister, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard
   ];
 
   constructor(private appComponent: AppComponent, private router: Router) { }

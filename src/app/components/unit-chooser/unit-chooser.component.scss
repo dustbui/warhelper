@@ -1,29 +1,45 @@
 @import '../../../shared.scss';
 
-.unit-chooser {
+.outer {
+  @extend .glow;
+  @extend .terminal-background;
+
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: left;
+  font-family: SpaceMarine;
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
   z-index: 100;
-  background-color: white;
-  font-size: 0.2in;
-  padding-top: 10px;
+  font-size: min(4vw, 32px);
+  line-height: min(4.5vw, 35px);
+  padding: 10px;
+}
 
-  .select-prompt {
-    text-align: center;
-    width: 100%;
-  }
+.unit-chooser {
+  padding-top: 10px;
 
   .unit {
     width: 100%;
-    font-size: 0.4in;
-    padding: 10px;
     cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   .unit:hover {
-    @extend .shadow-hover;
+    @extend .glow-hover;
+  }
+}
+
+// For bigger screens
+@media screen and (min-width: 700px) {
+  .unit-chooser {
+    padding-top: 10%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

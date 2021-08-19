@@ -388,10 +388,6 @@
   /* top: 1in; */
 }
 
-.defense-header {
-  position: relative;
-}
-
 .defense-section {
   display: table;
   position: relative;
@@ -489,19 +485,19 @@
   }
 }
 
-.offset-anchor {
-  display: block;
-  position: relative;
-  top: -2.5in;
-  visibility: hidden;
-}
+// .offset-anchor {
+//   display: block;
+//   position: relative;
+//   top: -2.5in;
+//   visibility: hidden;
+// }
 
-.header-offset {
-  height: 0px;
-  width: 100%;
-  display: block;
-  position: relative;
-}
+// .header-offset {
+//   height: 0px;
+//   width: 100%;
+//   display: block;
+//   position: relative;
+// }
 
 @media screen and (max-width: 1000px) {
 
@@ -581,6 +577,7 @@
     display: block;
     transform: translateX(0);
     height: 0.25in;
+    padding-top: 0.2in;
   }
 
   .combat-phases {
@@ -624,8 +621,7 @@
       display: block;
       position: relative;
       font-size: 0.18in;
-      margin-left: 10%;
-      width: 80%;
+      width: 100%;
     }
   }
 
@@ -682,11 +678,42 @@
 
   .pinned {
     position: fixed;
+    float: right;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 99;
-    background-color: lightgoldenrodyellow !important;
+    padding-top: 15px;
+    color: $glow-yellow;
+    text-shadow: $glow-start;
+    background-color: black !important;
+
+    .text-dark-red {
+      color: white;
+    }
+
+    .weapon-range-corner {
+      visibility: hidden;
+    }
+
+    .weapon-range-value {
+      position: absolute;
+      text-align: right;
+      left: calc(100% - 55px);
+      bottom: calc(100% - 10px);
+      font-size: 46px;
+    }
+
+    &.column-icons {
+      div {
+        filter: invert(80%) sepia(88%) saturate(345%) hue-rotate(356deg) brightness(95%) contrast(90%) drop-shadow(0 0 0.25px $glow-yellow) drop-shadow(0 0 0.75px $glow-orange) drop-shadow(0 0 2px $glow-red-lighter) drop-shadow(0 0 4px $glow-red);
+      }
+    }
+
+    .dice-value {
+      border: 1px solid $glow-yellow;
+      filter: $glow-filter;
+    }
   }
 
   .pinned-header-offset {

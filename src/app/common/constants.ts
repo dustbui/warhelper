@@ -176,7 +176,7 @@ export class Constants {
       strength: 1,
       strengthMultiplier: 1,
       armorPen: -3,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/5/53/Astartes_Power_Sword2.png',
+      imageUrl: 'https://i.imgur.com/ToVWm0b.png',
       damage: 1
     }),
     plasmaPistol: new Weapon({
@@ -210,7 +210,7 @@ export class Constants {
       strength: 4,
       armorPen: 0,
       damage: 1,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/6/6d/Mk_II_Angelus-Ves_Bolt_Pistol.jpg'
+      imageUrl: 'https://i.imgur.com/RQc5GaZ.png'
     }),
     boltgun: new Weapon({
       name: 'Boltgun',
@@ -219,7 +219,7 @@ export class Constants {
       range: 24,
       strength: 4,
       damage: 1,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/8/83/BolterAstartes_MK_Vb.jpg'
+      imageUrl: 'https://i.imgur.com/LQRPZxz.png'
     }),
     heavyBolter: new Weapon({
       name: 'Heavy Bolter',
@@ -230,7 +230,7 @@ export class Constants {
       strength: 5,
       armorPen: -1,
       damage: 2,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/8/87/Heavy_Bolter_UM_1.png'
+      imageUrl: 'https://i.imgur.com/UPqwIfI.png'
     }),
     stormBolter: new Weapon({
       name: 'Storm Bolter',
@@ -241,7 +241,7 @@ export class Constants {
       strength: 4,
       armorPen: 0,
       damage: 2,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/9/9b/Dark_Angels%27_Storm_Bolter.png'
+      imageUrl: 'https://i.imgur.com/lDVsVA0.png'
     }),
     ministorumFlamer: new Weapon({
       name: 'Ministorum Flamer',
@@ -251,7 +251,7 @@ export class Constants {
       range: 12,
       strength: 5,
       damage: 1,
-      imageUrl: 'https://static.wikia.nocookie.net/warhelper/images/6/6b/Mk_IIIa_%27Heretic%27_Pattern_Novamarines.jpg'
+      imageUrl: 'https://i.imgur.com/Ps3wjNU.png'
     }),
     chainsword: new Weapon({
       name: 'Chainsword',

@@ -1,6 +1,17 @@
-<div class="unit-chooser">
-  <div class="select-prompt">Select a unit...</div>
-  <div class="unit" *ngFor="let unit of units" (click)="selectUnit(unit)" [routerLink]="'/display'">
-    {{unit.name}}
+  <div class="outer crt">
+    <div class="scanline"></div>
+    <div class="terminal"></div>
+    <div class="unit-chooser ">
+      <div>**Warhelper**</div>
+      <br />
+      <!-- slowly moving scanline -->
+      <!-- the input and output -->
+      <div class="select-prompt">
+        &lang; Select a unit &rang;
+      </div>
+      <br /><br />
+      <div class="unit" *ngFor="let unit of units" (click)="selectUnit(unit)" [routerLink]="'/display'">
+        {{unit.name}}
+      </div>
+    </div>
   </div>
-</div>
