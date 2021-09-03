@@ -83,39 +83,79 @@ html {
 //   z-index: 100;
 // }
 
+.game-icon {
+  background-size: contain;
+  color: black;
+  width: 50px;
+  height: 50px;
+}
+
+.game-icon-bolter {
+  background: url(../src/assets/icons/bolter-gun.svg) no-repeat top left;
+}
+
+.game-icon-broadsword {
+  background: url(../src/assets/icons/broadsword.svg) no-repeat top left;
+}
+
+.game-icon-heart-shield {
+  background: url(../src/assets/icons/heart-shield.svg) no-repeat top left;
+}
+
+.game-icon-book-aura {
+  background: url(../src/assets/icons/book-aura.svg) no-repeat top left;
+}
+
+.game-icon-psychic-waves {
+  background: url(../src/assets/icons/psychic-waves.svg) no-repeat top left;
+}
+
 .footer {
   position: fixed;
   bottom: 10px;
   width: 100%;
   visibility: hidden;
-  padding-left: 30%;
+  text-align: right;
+}
 
-  .mobile-buttons {
+.mobile-buttons {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+
+  .mobile-button {
     position: relative;
-    width: 100%;
     display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 100%;
+    user-select: none;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
+      0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    @extend .shadow-hover;
 
-    .mobile-button {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      margin-right: 10px;
-      border-radius: 100%;
-      user-select: none;
-      width: 50px;
-      height: 50px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.24);
-      transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-      @extend .shadow-hover;
+    .mobile-button-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-      .mobile-button-icon {
+      .material-icons,
+      .game-icon {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-    }
 
+      .game-icon {
+        height: 35px;
+        width: 35px;
+
+      }
+    }
   }
 }

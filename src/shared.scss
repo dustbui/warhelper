@@ -1,6 +1,7 @@
 $dark-red: darkred;
 $dark-blue: darkblue;
 $dark-grey: #3d3d3d;
+$dark-purple: #260451;
 $light-grey: #9e9e9e;
 $glow-yellow: #e6d850;
 $glow-orange: #c67700;
@@ -33,6 +34,29 @@ $glow-filter: drop-shadow(0 0 0.25px $glow-yellow) drop-shadow(0 0 0.75px $glow-
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+.dark-red {
+  background-color: $dark-red;
+}
+
+.dark-blue {
+  background-color: $dark-blue;
+}
+
+.light-grey {
+  background-color: $light-grey;
+}
+
+.dark-purple {
+  background-color: $dark-purple;
+}
+
+.lavender {
+  background-color: lavender;
+}
+
+.dark-purple-border {
+  border-color: $dark-purple;
+}
 
 .text-dark-red {
   color: $dark-red;

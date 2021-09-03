@@ -1,0 +1,52 @@
+{
+  "name": "Mortifier",
+  "keywords": ["Vehicle", "Outcasts", "Engine of Redemption", "Mortifiers"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas"],
+  "move": 8,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 5,
+  "toughness": 5,
+  "wounds": 5,
+  "attacks": 5,
+  "leadership": 8,
+  "saves": 4,
+  "points": 60,
+
+  "wargear": [],
+
+  "weapons": ["weapons.heavyBolter", "weapons.heavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
+
+  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [{
+    "name": "Wrath of the Penitent",
+    "rules": "Equipping 2 of the same melee weapon sets attack characteristic to 5."
+  }],
+
+  "meleePreHitChecks": ["abilities.zealot"],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [{
+    "name": "Anchorite Sarcophagus",
+    "rules": "Bearer has a Save characteristic of 3+."
+  }],
+
+  "defensePreWoundChecks": ["abilities.berserkKillingMachines", {
+    "name": "Anguish of the Unredeemed",
+    "rules": "Each time a model in this unit is destroyed by a melee attack, if this unit has not yet been selected to fight this phase, roll one D6 before removing that model from play. On a 4+. do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making attacks. After doing so, any other rules that affect this model ‘when it is destroyed’ are triggered (if any) and then the model is removed from play."
+  }]
+}

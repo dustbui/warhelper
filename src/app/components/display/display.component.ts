@@ -9,9 +9,16 @@ import {
   OnInit,
   ViewChild
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { AppComponent } from 'src/app/app.component';
-import { Constants } from 'src/app/common/constants';
+import {
+  ActivatedRoute,
+  Router
+} from '@angular/router';
+import {
+  AppComponent
+} from 'src/app/app.component';
+import {
+  Constants
+} from 'src/app/common/constants';
 
 
 import {
@@ -30,15 +37,14 @@ import {
 @Component({
   selector: 'app-display',
   templateUrl: './display.component.html',
-  styleUrls: ['./display.component.scss']
+  styleUrls: ['./display.component.scss', './display.component.mobile.scss']
 })
 
-export class DisplayComponent implements OnInit, AfterViewInit  {
+export class DisplayComponent implements OnInit, AfterViewInit {
   @ViewChild('shootingPhases') shootingPhasesElement!: ElementRef;
   @ViewChild('meleePhases') meleePhasesElement!: ElementRef;
   @ViewChild('headerOffset') headerOffsetElement!: ElementRef;
-  constructor(private viewportScroller: ViewportScroller, private appComponent: AppComponent, private router: Router) {
-  }
+  constructor(private viewportScroller: ViewportScroller, private appComponent: AppComponent, private router: Router) {}
 
   @Input() unit: Unit = new Unit();
   @Input() input: any = this.appComponent.selectedUnit;
@@ -46,6 +52,7 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
   public error: string = '';
   public itemPinned: boolean = false;
   public unitChooserIsOpen: boolean = false;
+  public woundString: string = '';
 
   public constants: any = {
     'wargear': Constants.wargear,
@@ -63,14 +70,64 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
     }
     try {
       this.unit = this.parseJson(this.input);
+      this.addWeaponPrechecks(this.unit);
+      this.addDefaultMelee(this.unit);
     } catch (e) {
       this.error = e;
     }
   }
 
+  public selectUnit(unitName: string) {
+    this.unit.weapons.forEach(x => {
+        x.isPinned = false;
+    });
+    this.itemPinned = false;
+
+    const unit = this.appComponent.unitMap[unitName];
+    this.unit = this.parseJson(unit);
+  }
+
+  private addDefaultMelee(unit: Unit) {
+    const meleeWeapons = this.unit.weapons.filter(x => x.type === 'Melee');
+    if (!meleeWeapons.length && this.unit.strength > 0) {
+      this.unit.weapons.push(new Weapon({
+        name: 'Melee',
+        type: 'Melee',
+        damage: 1
+      }));
+    }
+  }
+
+  // Set characteristics based on wounds on model
+  private setWoundValues(unit: Unit, woundValue: number) {
+    if (!Array.isArray(unit.wounds)) { return; }
+    let arrayIndex = 0;
+    const remainingWounds = unit.wounds[0] - woundValue;
+    unit.wounds.forEach((woundAmount, index) => {
+      if (remainingWounds <= woundAmount) {
+        arrayIndex = index;
+      }
+    });
+    unit.ballisticSkill = Array.isArray(unit.ballisticSkill) ? unit.ballisticSkill[arrayIndex] : unit.ballisticSkill;
+    unit.weaponSkill = Array.isArray(unit.weaponSkill) ? unit.weaponSkill[arrayIndex] : unit.weaponSkill;
+    unit.move = unit.move[arrayIndex];
+    unit.attacks = Array.isArray(unit.attacks) ? unit.attacks[arrayIndex] : unit.attacks;
+    unit.wounds = unit.wounds[0];
+  }
+
+  public setWounds(input: string) {
+    this.woundString += input;
+  }
+
+  public submitWounds(wounds: string) {
+    const woundValue = parseInt(wounds);
+    this.unit.woundsChangeStats = false;
+    this.setWoundValues(this.unit, woundValue);
+  }
+
   public importUnit(unit: any) {
     this.unit = this.parseJson(unit);
-    this.viewportScroller.scrollToPosition([0,0]);
+    this.viewportScroller.scrollToPosition([0, 0]);
     this.unitChooserIsOpen = false;
   }
 
@@ -87,6 +144,66 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
 
   public scrollToAnchor(anchorName: string) {
     setTimeout(() => this.viewportScroller.scrollToAnchor(anchorName), 0);
+  }
+
+  private addWeaponPrechecks(unit: Unit) {
+    let dupes: any = {};
+    const isVehicleOrMonster = unit.keywords.includes('Vehicle') || unit.keywords.includes('Monster');
+    // Add Vehicle shooting in melee
+    if (isVehicleOrMonster) {
+      unit.shootingPreAttackChecks.push(new Ability({
+        name: "Vehicle/Monster",
+        rules: "Can shoot ranged weapons at enemy units this is engaged with."
+      }));
+    }
+
+    unit.weapons.forEach(x => {
+      const name = `${x.name} - ${x.type}`;
+      if (dupes[name]) {
+        return;
+      }
+      dupes[name] = true;
+
+      switch (x.type) {
+        case "Rapid Fire":
+          unit.shootingPreAttackChecks.push(new Ability({
+            name: name,
+            rules: 'Double number of attacks if within half range.'
+          }));
+          break;
+        case "Heavy":
+          if (unit.keywords.includes('Infantry')) {
+            unit.shootingPreHitChecks.push(new Ability({
+              name: name,
+              rules: '-1 to hit rolls if this unit has moved this turn.'
+            }));
+          }
+          if (isVehicleOrMonster) {
+            unit.shootingPreHitChecks.push(new Ability({
+              name: name,
+              rules: "-1 to hit rolls if engaged."
+            }));
+          }
+          break;
+        case "Assault":
+          unit.shootingPreHitChecks.push(new Ability({
+            name: name,
+            rules: 'Can shoot if advanced. -1 to hit rolls if unit advanced this turn.'
+          }));
+          break;
+        case "Pistol":
+          unit.shootingPreAttackChecks.push(new Ability({
+            name: name,
+            rules: 'Can shoot in engagement. Cannot be shot alongside any other type of weapon.'
+          }));
+          break;
+        case "Grenade":
+          unit.shootingPreAttackChecks.push(new Ability({
+            name: name,
+            rules: 'Only one model can use a Grenade when its unit shoots.'
+          }));
+      }
+    })
   }
 
   private parseJson(unit: any): Unit {
@@ -118,13 +235,14 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
 
     // Find offset height
     let element = event.target as HTMLElement;
-    while(element != null && !element.classList.contains('weapon')) {
+    while (element != null && !element.classList.contains('weapon')) {
       element = element.parentElement as HTMLElement;
     }
 
     const phaseElement = weapon.type == 'Melee' ?
-    this.meleePhasesElement?.nativeElement : this.shootingPhasesElement?.nativeElement;
+      this.meleePhasesElement ?.nativeElement : this.shootingPhasesElement?.nativeElement;
     const value = element.offsetHeight + 60;
+    console.log(value);
     const offsetElement = this.headerOffsetElement?.nativeElement;
 
     offsetElement.style.height = `${value}px`;
@@ -190,7 +308,7 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
         .map((x: {
           points: number;
         }) => {
-          return x.points;
+          return x.points || 0;
         })
         .reduce((x: any, y: any) => x + y);
     }
@@ -200,7 +318,7 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
         .map((x: {
           points: number;
         }) => {
-          return x.points;
+          return x.points || 0;
         })
         .reduce((x: any, y: any) => x + y);
     }
@@ -210,7 +328,7 @@ export class DisplayComponent implements OnInit, AfterViewInit  {
         .map((x: {
           points: number;
         }) => {
-          return x.points;
+          return x.points || 0;
         })
         .reduce((x: any, y: any) => x + y);
     }

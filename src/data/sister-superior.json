@@ -17,20 +17,27 @@
 
   "weapons": ["weapons.boltgun", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade", "weapons.chainsword"],
 
-  "abilities": ["wargear.simulacrumImperialis", "abilities.actsOfFaith", "abilities.convictionOfFaith", "abilities.objectiveSecured"],
+  "abilities": ["wargear.simulacrumImperialis", "abilities.actsOfFaith", "abilities.objectiveSecured", "abilities.judgementOfTheFaithful",
+    {
+      "name": "(2CP) Defenders of the Faith",
+      "tags": ["Stratagem"],
+      "rules": ["<b>Movement End:</b> Until the start of your next Movement phase, Rapid Fire bolt weapons get their double attack bonus regardless of range.", "Ignore unmodified wound rolls of 1-3."]
+    }, "abilities.holyRage"
+  ],
 
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreHitChecks": ["abilities.leadTheRighteousAffected"],
   "shootingPreWoundChecks": [],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.slayersOfHeretics"],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.leadTheRighteousAffected"],
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
-  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
-  "defensePreWoundChecks": [],
-  "defensePreLeadershipChecks": []
+  "defensePreSaveChecks": ["abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
+  "defensePreLeadershipChecks": [],
+  "unitLinks": ["Battle Sister"]
 }

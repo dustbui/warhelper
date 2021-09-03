@@ -11,6 +11,7 @@ import {
 
 export class AppComponent implements OnInit  {
   public selectedUnit: any = {};
+  public unitMap: any;
 
   constructor() {}
 

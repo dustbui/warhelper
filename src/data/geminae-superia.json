@@ -1,0 +1,40 @@
+{
+  "name": "Geminae Superia",
+  "keywords": ["Infantry", "Character", "Jump Pack", "Fly", "Sanctified", "Geminae Superia"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas"],
+  "move": 12,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 2,
+  "attacks": 3,
+  "leadership": 8,
+  "saves": 2,
+  "points": 0,
+
+  "wargear": [],
+
+  "weapons": ["weapons.boltPistol", "weapons.powerSword", "weapons.fragGrenade", "weapons.krakGrenade"],
+
+  "abilities": ["abilities.skyStrike", "abilities.actsOfFaith", "abilities.sufferNotTheWitch", "abilities.angelicAscent"],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+  "shootingPreHitChecks": [],
+  "shootingPreWoundChecks": [],
+
+  "meleePreAttackChecks": [],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+  "defensePreWoundChecks": [],
+  "defensePreSaveChecks": [{
+    "name": "Divine Guardians",
+    "rules": "4+ invulnerable save."
+  }, "abilities.shieldOfFaith"],
+  "defensePreLeadershipChecks": [],
+  "unitLinks": ["Celestine"]
+}

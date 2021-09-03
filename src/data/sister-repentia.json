@@ -17,23 +17,31 @@
 
   "weapons": ["weapons.penitentEviscerator"],
 
-  "abilities": ["abilities.actsOfFaith", "abilities.convictionOfFaith"],
+  "abilities": ["abilities.actsOfFaith",
+    "abilities.sufferNotTheWitch", "abilities.holyRage",
+    {
+      "name": "(2CP) Desperate for Redemption",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> Until end of the phase, each time a model is destroyed by a melee attack in this unit, if that model has not fought this phase, do not remove it from play. The destroyed model can fight after the attacking model's unit has finished making attacks. Destroy after attack."
+    }
+  ],
 
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
-  "shootingPreWoundChecks": ["abilities.sacredRitesDivineGuidance", "abilities.righteousJudgement"],
+  "shootingPreHitChecks": [],
+  "shootingPreWoundChecks": ["abilities.righteousJudgement"],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.zealot"],
+  "meleePreHitChecks": ["abilities.zealot", "abilities.sacredRitesThePassion"],
   "meleePreWoundChecks": [{
     "name": "Overseer of Redemption",
     "rules": "If this model is within 6\" of a REPENTIA SUPERIOR, it gets +1 to wound rolls."
   }],
 
   "defensePreHitChecks": [],
-  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
-  "defensePreWoundChecks": ["abilities.solaceInAnguish"],
-  "defensePreLeadershipChecks": ["abilities.martyrdom"]
+  "defensePreSaveChecks": ["abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreWoundChecks": ["abilities.solaceInAnguish", "abilities.stoicEndurancePreWound"],
+  "defensePreLeadershipChecks": ["abilities.martyrdom"],
+  "unitLinks": ["Repentia Superior"]
 }

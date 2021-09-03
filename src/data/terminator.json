@@ -1,0 +1,46 @@
+{
+  "name": "Terminator",
+  "keywords": ["Infantry", "Core", "Terminator", "Terminator Squad", "Wolf Guard"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 5,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 3,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 2,
+  "points": 38,
+
+  "wargear": [],
+
+  "weapons": [
+    "weapons.stormBolter",
+    "weapons.powerFist"
+  ],
+
+  "abilities": [
+    "abilities.angelsOfDeath",
+    "abilities.combatSquads",
+    "abilities.teleportStrike"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": ["abilities.cruxTerminatus"],
+
+  "defensePreWoundChecks": [],
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+}

@@ -1,0 +1,97 @@
+{
+  "name": "Celestine",
+  "keywords": ["Infantry", "Character", "Fly", "Living Saint", "Sanctified", "Jump Pack", "Celestine"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas"],
+  "move": 12,
+  "weaponSkill": 2,
+  "ballisticSkill": 2,
+  "strength": 3,
+  "toughness": 3,
+  "wounds": 6,
+  "attacks": 6,
+  "leadership": 9,
+  "saves": 2,
+  "points": 200,
+
+  "traits": [],
+  "wargear": [],
+
+  "weapons": [{
+      "name": "The Ardent Blade",
+      "range": 12,
+      "type": "Assault",
+      "attacks": "D6",
+      "strength": 6,
+      "armorPen": -2,
+      "damage": 1,
+      "imageUrl": "https://i.imgur.com/ToVWm0b.png",
+      "abilities": [{
+        "rules": ["Attacks automatically hit."]
+      }]
+    },
+    {
+      "name": "The Ardent Blade",
+      "type": "Melee",
+      "strength": 4,
+      "armorPen": -4,
+      "damage": 2,
+      "imageUrl": "https://i.imgur.com/ToVWm0b.png",
+      "abilities": [{
+        "rules": ["Unmodified hit rolls of 6 cause 2 mortal wounds and the attack sequence ends (additional scored hits still occur)."]
+      }]
+    }
+  ],
+
+  "abilities": [
+    "abilities.skyStrike",
+    "abilities.actsOfFaith",
+    {
+      "name": "Indomitable Belief",
+      "tags": ["Aura", "Warlord Trait", "Crusade"],
+      "rules": "While a friendly ADEPTA SORORITAS CORE INFANTRY unit is within 6\" of this WARLORD, the invulnerable save models in that unit receive from the Shield of Faith ability is improved by 1 (to a maximum of 4+)."
+    },
+    {
+      "name": "Healing Tears",
+      "tags": ["Action"],
+      "rules": "<b>Command End:</b> At the end of your shooting phase and if Celestine is on the battlefield, revive up to 1 Geminae Superia and restore all lost wounds to all models in this unit."
+    },
+    {
+      "name": "Saintly Blessings",
+      "tags": ["Aura"],
+      "rules": "Friendly IMPERIUM INFANTRY within 6\" have a 6+ invulnerable save."
+    },
+    {
+      "name": "Angelic Saviour",
+      "rules": "Can perform a Heroic Intervention if it is within 6\" horizontally and 5\" vertically of any enemy unit. Each time this unit makes a Heroic Intervention move, its models can move up to 6\". All other rules for Heroic Interventions still apply."
+    },
+    {
+      "name": "Miraculous Intervention",
+      "rules": "The first time CELESTINE is destroyed, roll one D6 at the end of the phase instead of using any rules that are triggered when a model is destroyed (e.g. Sacrifice). On a 1, this unit counts as having been destroyed for the purposes of Sacrifice; on a 2+, set CELESTINE back up on the battlefield as close as possible to where she was destroyed and not within Engagement Range of any enemy units, with all her wounds remaining."
+    },
+    "abilities.angelicAscent",
+    "abilities.sufferingAndSacrifice",
+    "abilities.sufferNotTheWitch"
+  ],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
+  "defensePreHitChecks": [],
+  "defensePreSaveChecks": [{
+      "name": "The Armour of Saint Katherine",
+      "rules": "4+ invulnerable save."
+    }, "abilities.conversionField",
+    "abilities.shieldOfFaith"
+  ],
+  "defensePreWoundChecks": [{
+      "name": "Lifewards",
+      "rules": "Wounds against this unit are allocated to available Geminae Superia instead."
+    },
+    {
+      "name": "The Armour of Saint Katherine",
+      "rules": "-1 damage (minimum: 1)."
+    }
+  ],
+  "defensePreLeadershipChecks": [{
+    "name": "Lifewards",
+    "rules": "Ignore Morale tests. Destroy remaining Geminae Superia models if Celestine is destroyed."
+  }],
+  "unitLinks": ["Geminae Superia"]
+}

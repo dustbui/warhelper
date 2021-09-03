@@ -15,20 +15,17 @@
       {{unit.keywords.join(', ')}}, {{unit.factionKeywords.join(', ')}}
     </div>
 
-    <!-- Stats -->
-    <div class="stats">
-      <!-- Move -->
-      <div class="move stat tooltip">
-        <div class="move-value">
-          {{unit.move}}"
-        </div>
-        <div class="move-icon">
-          <img src="https://i.imgur.com/54MQ3Ui.png" />
-        </div>
-        <div class="tooltip-text">
-          The distance in inches that the unit can move.
-        </div>
+    <!-- Move -->
+    <div class="move stat tooltip">
+      <div class="move-value">
+        {{unit.move}}"
       </div>
+      <div class="move-icon">
+        <img src="https://i.imgur.com/54MQ3Ui.png" />
+      </div>
+      <!-- <div class="tooltip-text">
+          The distance in inches that the unit can move.
+        </div> -->
     </div>
 
     <div #headerOffset id="headerOffset" class="header-offset"></div>
@@ -46,12 +43,52 @@
     <div class="section tile-section" *ngIf="unit.abilities.length">
       <div class="col-3" *ngFor="let ability of unit.abilities">
         <div class="ability">
-          <div><b><i>{{ability.name}}</i></b>
+          <div [ngClass]="{'text-dark-blue' : ability.tags && ability.tags.includes('Stratagem') }">
+            <b><i>{{ability.name}}</i></b>
             <span *ngFor="let tag of ability.tags"><span class="tag" *ngIf="tag.length">{{tag}}</span></span></div>
           <div [innerHtml]="formatRules(ability.rules, '<br/><br/>')"></div>
         </div>
       </div>
     </div>
+
+    <!-- P S Y C H I C -->
+    <div *ngIf="unit.psychicPowers.length" #psychicSection id="psychicSection" class="section-header psychic-header">
+      P S Y C H I C
+    </div>
+    <div *ngIf="unit.psychicPowers.length" class="psychic-section section">
+      <div class="psychic-characteristics">
+        <span class="casts">{{unit.casts}} CAST<span *ngIf="unit.casts > 1">S</span></span>
+        <span class="denies">{{unit.denies}} DEN<span *ngIf="unit.denies == 1">Y</span>
+          <span *ngIf="unit.denies > 1">IES</span>
+        </span>
+      </div>
+      <!-- Psychic Powers -->
+      <div class="weapons">
+        <div class="weapon" *ngFor="let power of unit.psychicPowers">
+          <!-- Warp Charge -->
+          <div class="warp-charge-corner"></div>
+          <div class="warp-charge-value">
+            {{power.warpCharge}}
+          </div>
+          <!-- Range -->
+          <div class="weapon-range-corner"></div>
+          <div class="weapon-range-value">
+            {{power.range}}"
+          </div>
+          <!-- Name -->
+          <div class="weapon-name" style="padding-left: 0.5in">
+            <span class="tag" style="margin-right: 5px" *ngFor="let tag of power.tags">{{tag}}</span>
+            <b><i>{{power.name}}</i></b>
+          </div>
+          <!-- Rules -->
+          <div class="psychic-rules">
+            {{power.rules}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <br />
 
     <!-- COMBAT -->
     <!-- Column Icons -->
@@ -59,21 +96,21 @@
       <div class="column-icons" [ngClass]="{ 'pinned' : itemPinned }">
         <div class="ballistic-attacks tooltip">
           <img src="https://i.imgur.com/DEr8dyB.png" />
-          <div class="tooltip-text">
+          <!-- <div class="tooltip-text">
             <b>Attacks (A)</b> The number of attack rolls per model.
-          </div>
+          </div> -->
         </div>
 
         <div class="ballistic-skill tooltip">
           <img src="https://i.imgur.com/WRbCdTq.png" />
-          <div class="tooltip-text">
+          <!-- <div class="tooltip-text">
             <b>Skill (BS for ranged) (WS for melee)</b> The dice value required to score a hit.
-          </div>
+          </div> -->
         </div>
 
         <div class="ballistic-strength tooltip">
           <img src="https://static.thenounproject.com/png/14924-200.png" />
-          <div class="tooltip-text">
+          <!-- <div class="tooltip-text">
             <b>Strength (S)</b>
             Compare this to the <b>Toughness (T)</b> of the
             opponent's attack:
@@ -83,22 +120,22 @@
             Equal to Toughness: Wound on 4.
             <br />
             More than Toughness: Wound on 3.
-          </div>
+          </div> -->
         </div>
-
-        <div class="ballistic-damage tooltip">
-          <img src="https://i.imgur.com/8NlZPxF.png" />
-          <div class="tooltip-text">
-            <b>Damage (D)</b> The amount of Wounds added to the target per successful Damage roll.
-          </div>
-        </div>
-
         <div class="ballistic-armor-pen tooltip">
           <img src="https://static.thenounproject.com/png/1229875-200.png" />
-          <div class="tooltip-text">
-            <b>Armor Penetration (AP)</b> This value is added to opponent's Save rolls.
-          </div>
+          <!-- <div class="tooltip-text">
+                  <b>Armor Penetration (AP)</b> This value is added to opponent's Save rolls.
+                </div> -->
         </div>
+        <div class="ballistic-damage tooltip">
+          <img src="https://i.imgur.com/8NlZPxF.png" />
+          <!-- <div class="tooltip-text">
+            <b>Damage (D)</b> The amount of Wounds added to the target per successful Damage roll.
+          </div> -->
+        </div>
+
+
       </div>
       <div class="col-6">
 
@@ -144,6 +181,10 @@
           <div class="weapon-strength weapon-value">
             <div class="center">{{weapon.strength}}</div>
           </div>
+          <!-- Armor Pen -->
+          <div class="weapon-armor-pen weapon-value">
+            <div class="center">{{weapon.armorPen}}</div>
+          </div>
           <!-- Damage -->
           <div class="weapon-damage weapon-value">
             <div class="center">
@@ -152,10 +193,7 @@
               </div>
             </div>
           </div>
-          <!-- Armor Pen -->
-          <div class="weapon-armor-pen weapon-value">
-            <div class="center">{{weapon.armorPen}}</div>
-          </div>
+
 
           <!-- Abilities -->
           <div class="weapon-abilities">
@@ -179,9 +217,9 @@
         <div class="combat-phase">
           <div class="pre-attack-icon phase-icon tooltip">
             <img src="https://i.imgur.com/DEr8dyB.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Attack Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.shootingPreAttackChecks">
             <app-ability [ability]="check"></app-ability>
@@ -191,9 +229,9 @@
         <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
           <div class="pre-hit-icon phase-icon tooltip">
             <img src="https://i.imgur.com/WRbCdTq.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Hit Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.shootingPreHitChecks">
             <app-ability [ability]="check"></app-ability>
@@ -203,9 +241,9 @@
         <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
           <div class="pre-wound-icon phase-icon tooltip">
             <img src="https://i.imgur.com/8NlZPxF.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Wound Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.shootingPreWoundChecks">
             <app-ability [ability]="check"></app-ability>
@@ -231,11 +269,12 @@
           <!-- Attacks -->
           <div class="weapon-attacks weapon-value">
             <div class="center">
-              <div [ngClass]="{'dice-value' : checkForDice(weapon.attacks)}">
+              <div [ngClass]="{'dice-value' : checkForDice(weapon.attacks) || checkForDice(unit.attacks)}">
                 <div class="center">
-                  <span class="text-dark-red">{{unit.attacks}}</span>
+                  <span
+                    [ngClass]="{'text-dark-red' : !checkForDice(weapon.attacks) && !checkForDice(unit.attacks)}">{{unit.attacks}}</span>
                   <span *ngIf="weapon.attacks != 0">
-                    <span *ngIf="!checkIfString(weapon.attacks)">+</span>{{weapon.attacks}}</span>
+                    <span *ngIf="!checkIfString(weapon.attacks) && weapon.attacks > 0">+</span>{{weapon.attacks}}</span>
                 </div>
               </div>
             </div>
@@ -253,6 +292,10 @@
               <span *ngIf="weapon.strengthMultiplier > 1">x{{weapon.strengthMultiplier}}</span>
             </div>
           </div>
+          <!-- Armor Pen -->
+          <div class="weapon-armor-pen weapon-value">
+            <div class="center">{{weapon.armorPen}}</div>
+          </div>
           <!-- Damage -->
           <div class="weapon-damage weapon-value">
             <div class="center">
@@ -261,10 +304,7 @@
               </div>
             </div>
           </div>
-          <!-- Armor Pen -->
-          <div class="weapon-armor-pen weapon-value">
-            <div class="center">{{weapon.armorPen}}</div>
-          </div>
+
 
           <!-- Abilities -->
           <div class="weapon-abilities">
@@ -288,9 +328,9 @@
         <div class="combat-phase">
           <div class="pre-attack-icon phase-icon tooltip">
             <img src="https://i.imgur.com/EIswBqE.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Attack Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.meleePreAttackChecks">
             <app-ability [ability]="check"></app-ability>
@@ -300,9 +340,9 @@
         <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
           <div class="pre-hit-icon phase-icon tooltip">
             <img src="https://i.imgur.com/WRbCdTq.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Hit Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.meleePreHitChecks">
             <app-ability [ability]="check"></app-ability>
@@ -312,9 +352,9 @@
         <div class="combat-phase" style="border-left: 1px dotted #9e9e9e;">
           <div class="pre-wound-icon phase-icon tooltip">
             <img src="https://i.imgur.com/8NlZPxF.png" />
-            <div class="tooltip-text">
+            <!-- <div class="tooltip-text">
               Pre-Wound Effects
-            </div>
+            </div> -->
           </div>
           <div class="ability" *ngFor="let check of unit.meleePreWoundChecks">
             <app-ability [ability]="check"></app-ability>
@@ -429,24 +469,83 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     <div class="mobile-buttons">
-      <div class="mobile-button dark-grey text-white" [routerLink]="['/unit']" title="Units"
+      <div class="mobile-button dark-grey text-white" [routerLink]="['/unit']" title="Unit Selector"
         (click)="openUnitChooser()">
-        <div class="mobile-button-icon" routerLinkActive="router-link-active">U</div>
+        <div class="mobile-button-icon" routerLinkActive="router-link-active">
+          <span class="material-icons">people</span>
+        </div>
       </div>
       <div class="mobile-button white" title="Abilities" (click)="scrollToAnchor('headerOffset')">
-        <div class="mobile-button-icon">A</div>
+        <div class="mobile-button-icon">
+          <span class="game-icon game-icon-book-aura"></span>
+        </div>
       </div>
-      <div class="mobile-button light-blue" title="Shooting" (click)="scrollToAnchor('shootingSection')">
-        <div class="mobile-button-icon">S</div>
+      <div class="mobile-button lavender" *ngIf="unit.psychicPowers.length" title="Psychic Powers"
+        (click)="scrollToAnchor('psychicSection')">
+        <div class="mobile-button-icon">
+          <span class="game-icon game-icon-psychic-waves"></span>
+        </div>
+      </div>
+      <div class="mobile-button light-blue" *ngIf="hasWeaponWithRange()" title="Shooting"
+        (click)="scrollToAnchor('shootingSection')">
+        <div class="mobile-button-icon">
+          <span class="game-icon game-icon-bolter"></span>
+        </div>
       </div>
       <div class="mobile-button light-red" title="Melee" (click)="scrollToAnchor('meleeSection')">
-        <div class="mobile-button-icon">M</div>
+        <div class="mobile-button-icon">
+          <span class="game-icon game-icon-broadsword"></span>
+        </div>
       </div>
       <div class="mobile-button light-green" title="Defense" (click)="scrollToAnchor('defenseSection')">
-        <div class="mobile-button-icon">D</div>
+        <div class="mobile-button-icon">
+          <span class="game-icon game-icon-heart-shield"></span>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Unit Links -->
+  <div class="unit-links">
+    <div class="mobile-buttons">
+      <div class="mobile-button dark-grey text-white" *ngFor="let link of unit.unitLinks" (click)="selectUnit(link)">
+        <div class="mobile-button-icon">
+          <span class="material-icons">swap_horiz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wound Setter -->
+  <div class="wound-setter" *ngIf="unit.woundsChangeStats">
+    <div class="">
+      Enter Damage:
+    </div>
+    <div class="wound-setter-value">
+      {{woundString}}
+    </div>
+    <div>
+      <div (click)="setWounds('7')">7</div>
+      <div (click)="setWounds('8')">8</div>
+      <div (click)="setWounds('9')">9</div>
+    </div>
+    <div>
+      <div (click)="setWounds('4')">4</div>
+      <div (click)="setWounds('5')">5</div>
+      <div (click)="setWounds('6')">6</div>
+    </div>
+    <div>
+      <div (click)="setWounds('1')">1</div>
+      <div (click)="setWounds('2')">2</div>
+      <div (click)="setWounds('3')">3</div>
+    </div>
+    <div>
+      <div (click)="woundString = ''"><span class="material-icons">clear</span></div>
+      <div (click)="setWounds('0')">0</div>
+      <div (click)="submitWounds(woundString)"><span class="material-icons">keyboard_return</span></div>
     </div>
   </div>
 

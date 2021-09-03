@@ -1,0 +1,59 @@
+{
+  "name": "Cyberwolf",
+  "keywords": ["Fast Attack", "Beast", "Cyberwolves"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 10,
+  "weaponSkill": 3,
+  "ballisticSkill": 0,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 3,
+  "leadership": 6,
+  "saves": 4,
+  "points": 15,
+
+  "wargear": [],
+
+  "weapons": [{
+    "name": "Teeth and Claws",
+    "points": 0,
+    "range": 0,
+    "type": "Melee",
+    "isRelic": false,
+    "attacks": 0,
+    "abilities": [],
+    "strength": 0,
+    "armorPen": -1,
+    "damage": 1,
+    "imageUrl": ""
+  }],
+
+  "abilities": ["abilities.swiftHunters"],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.savageFury",
+    "abilities.whirlwindOfRage"
+  ],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": []
+}

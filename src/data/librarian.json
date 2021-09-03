@@ -1,0 +1,140 @@
+{
+  "name": "Librarian",
+  "keywords": ["Character", "Psyker", "Librarian", "HQ", "Fly", "Jump Pack"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 12,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 4,
+  "attacks": 3,
+  "leadership": 9,
+  "saves": 2,
+  "points": 95,
+  "casts": 2,
+  "denies": 1,
+
+  "wargear": [{
+    "name": "The Armor of Russ",
+    "points": 0,
+    "rules": [
+      "The bearer has a Save characteristic of 2+ and a 4+ invulnerable save",
+      "At the start of the Fight phase, you can select one enemy unit within Engagement Range of the bearer. That unit is not eligible to fight this phase until after all eligible units from your army have done so."
+    ],
+    "isRelic": true,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "weapons": [{
+      "name": "Boltgun",
+      "points": 0,
+      "range": 24,
+      "type": "Rapid Fire",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [],
+      "strength": 4,
+      "armorPen": 0,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    {
+      "name": "Force Axe",
+      "points": 0,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": false,
+      "attacks": 0,
+      "abilities": [],
+      "strength": 2,
+      "armorPen": -2,
+      "damage": "D3",
+      "imageUrl": ""
+    },
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "psychicPowers": [{
+    "name": "Murderous Hurricane",
+    "points": 0,
+    "range": 18,
+    "warpCharge": 6,
+    "rules": [
+      "Target an enemy unit is afflicted by the following: It cannot fire Overwatch unless it is wholly within terrain and it fights last."
+    ],
+    "tags": ["Tempestas"],
+    "description": ""
+  }, {
+    "name": "(( Storm Caller ))",
+    "points": 0,
+    "range": 6,
+    "warpCharge": 6,
+    "rules": [
+      "Friendly Space Wolves units within 6\" recieve the benefits of light cover."
+    ],
+    "tags": ["Tempestas"],
+    "description": ""
+  }, {
+    "name": "Smite",
+    "points": 0,
+    "range": 18,
+    "warpCharge": 5,
+    "rules": [
+      "Target enemy unit suffers D3 mortal wounds. If the psychic roll was 10 or higher, the target suffers D6 mortal wounds instead."
+    ],
+    "tags": [],
+    "description": ""
+  }],
+
+  "abilities": [{
+      "name": "Cloaked By The Storm",
+      "points": 0,
+      "rules": ["Grants the use of the Cloaked By The Storm (2CP) strategem. (-1 to hit for opponent's ranged attacks against all friendly units within 6\" on successful cast of Tempestas ability)"],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Psychic Hood",
+      "points": 0,
+      "rules": ["+1 to Deny if target is within 12\""],
+      "tags": [""],
+      "description": ""
+    },
+    "abilities.deathFromAbove",
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": ["abilities.bolterDiscipline"],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.savageFury",
+    "abilities.whirlwindOfRage"
+  ],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [{
+    "name": "The Armor of Russ",
+    "points": 4,
+    "rules": [
+      "4+ Invulnerable save."
+    ],
+    "isRelic": true,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreWoundChecks": [],
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+}

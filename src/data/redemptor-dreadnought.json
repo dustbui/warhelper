@@ -1,0 +1,123 @@
+{
+  "name": "Redemptor Dreadnought",
+  "keywords": ["Vehicle", "Core", "Elites", "Dreadnought", "Redemptor Dreadnought"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes"],
+  "move": [8, 6, 4],
+  "woundsChangeStats": true,
+  "weaponSkill": [3, 4, 5],
+  "ballisticSkill": [3, 4, 5],
+  "strength": 7,
+  "toughness": 7,
+  "wounds": [13, 6, 3],
+  "attacks": 4,
+  "leadership": 8,
+  "saves": 3,
+  "points": 175,
+
+  "wargear": [],
+
+  "weapons": [{
+      "name": "Icarus Rocket Pod",
+      "points": 5,
+      "range": 24,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": "D3",
+      "abilities": [{
+        "rules": "Blast. Attacks with this weapon against Aircraft get +1 to hit."
+      }],
+      "strength": 7,
+      "armorPen": -1,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    {
+      "name": "Macro Plasma Incinerator",
+      "points": 0,
+      "range": 36,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": "D6",
+      "abilities": [{
+        "rules": "Blast."
+      }],
+      "strength": 8,
+      "armorPen": -4,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    {
+      "name": "Macro Plasma Incinerator (Supercharge)",
+      "points": 0,
+      "range": 36,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": "D6",
+      "abilities": [{
+        "rules": "Blast. Unmodified hit rolls of 1 cause user to suffer one mortal wound."
+      }],
+      "strength": 9,
+      "armorPen": -4,
+      "damage": 3,
+      "imageUrl": ""
+    },
+    {
+      "name": "Onslaught Gattling Cannon",
+      "points": 5,
+      "range": 24,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": 8,
+      "abilities": [],
+      "strength": 8,
+      "armorPen": -4,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    "weapons.stormBolter",
+    {
+      "name": "Redemptor Fist",
+      "points": 0,
+      "type": "Melee",
+      "attacks": 0,
+      "abilities": [],
+      "strength": 14,
+      "armorPen": -3,
+      "damage": "D3+3",
+      "imageUrl": ""
+    }
+  ],
+
+  "abilities": [
+    "abilities.angelsOfDeath",
+    "abilities.explodes"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.savageFury",
+    "abilities.whirlwindOfRage"
+  ],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": [{
+    "name": "Duty Eternal",
+    "points": 0,
+    "rules": [
+      "Incoming attacks get -1 damage (to a minimum of 1)"
+    ],
+    "tags": [""],
+    "description": ""
+  }]
+}

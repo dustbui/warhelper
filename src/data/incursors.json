@@ -1,0 +1,97 @@
+{
+  "name": "Incursor Squad",
+  "keywords": ["Infantry", "Phobos", "Smokescreen", "Incursor Squad", "Core", "Primaris", "Troops"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes"],
+  "move": 6,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 2,
+  "leadership": 7,
+  "saves": 3,
+  "points": 21,
+
+  "wargear": [],
+
+  "weapons": [{
+      "name": "Occulus Bolt Carbine",
+      "points": 0,
+      "range": 24,
+      "type": "Rapid Fire",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [{
+        "rules": "Targets do not recieve the benefit of cover."
+      }],
+      "strength": 4,
+      "armorPen": 0,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    "weapons.boltPistol",
+    {
+      "name": "Paired Combat Blades",
+      "points": 0,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": false,
+      "attacks": 0,
+      "abilities": [],
+      "strength": 0,
+      "armorPen": -1,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [{
+      "name": "Concealed Positions",
+      "points": 0,
+      "rules": ["During Deployment, this unit may be deployed anywhere on the battlefield that is more than 9\" away from the enemy deployment zone and enemy models."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Smokescreen",
+      "points": 0,
+      "rules": ["Grants the use of the Smokescreen (1CP) strategem for this unit (-1 to hit for opponent's shooting)"],
+      "tags": [""],
+      "description": ""
+    },
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [{
+      "name": "Multi-Spectrum Array",
+      "points": 0,
+      "rules": ["When a model in this unit makes a ranged attack, ignore any or all hit roll or Ballistic Skill modifiers."],
+      "tags": [""],
+      "description": ""
+    },
+    "abilities.bolterDiscipline"
+  ],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.savageFury",
+    "abilities.whirlwindOfRage"
+  ],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": [],
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+}

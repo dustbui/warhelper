@@ -1,0 +1,292 @@
+@import '../../../shared.scss';
+
+@media screen and (max-width: 1000px) {
+
+  html,
+  body,
+  .datasheet {
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .col-3 {
+    width: 50% !important;
+  }
+
+  .weapon-image {
+    visibility: hidden !important;
+  }
+}
+
+@media screen and (max-width: 800px) {
+
+  .mobile-buttons {
+    visibility: visible;
+  }
+
+  .name {
+    font-size: 0.3in;
+    margin-bottom: 0.1in;
+  }
+
+  .keywords {
+    font-size: 0.13in;
+  }
+
+  .tile-section {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .col-3,
+  .col-4 {
+    width: 100% !important;
+    left: 0;
+  }
+
+  .column-icons {
+    padding-left: 0;
+  }
+
+  .tile-section {
+    display: block !important;
+    width: calc(100% - 25px) !important;
+  }
+
+  .ability {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .section {
+    margin-left: 0;
+    font-size: 0.18in;
+  }
+
+  .section-header {
+    font-size: 0.2in;
+    text-align: center;
+    position: relative;
+    display: block;
+    transform: translateX(0);
+    height: 0.25in;
+    padding-top: 0.2in;
+  }
+
+  .combat-phases {
+    display: block !important;
+    width: calc(100% - 20px) !important;
+
+    .combat-phase {
+      width: 100% !important;
+    }
+  }
+
+  .melee-header {
+    background-color: #FFDCDC;
+  }
+
+  .melee-section {
+    .weapon {
+      background-color: #FFDCDC;
+    }
+  }
+
+  .shooting-header {
+    background-color: #D9EBFF;
+  }
+
+  .shooting-section {
+    .weapon {
+      background-color: #D9EBFF;
+    }
+  }
+
+  .psychic-header {
+    background-color: lavender;
+  }
+
+  .psychic-section {
+    background-color: lavender;
+
+    .weapon {
+      background-color: lavender;
+    }
+  }
+
+  .psychic-characteristics {
+    padding-top: 10px;
+
+    .casts,
+    .denies {
+      display: inline-block;
+      padding: 3px 6px;
+      width: calc(50% - 12px); // idk why
+    }
+
+  }
+
+  .weapons {
+    width: 100% !important;
+
+
+    .weapon-name {
+      padding-left: 5px;
+    }
+
+    .weapon-abilities {
+      display: block;
+      position: relative;
+      font-size: 0.18in;
+      padding-left: 30px;
+      width: calc(100% - 30px);
+    }
+  }
+
+  .shooting-phases {
+    .combat-phase {
+      background-color: #D9EBFF;
+    }
+  }
+
+  .melee-phases {
+    .combat-phase {
+      background-color: #FFDCDC;
+    }
+  }
+
+
+
+  .combat-phase {
+    min-height: 1.5in !important;
+    display: block !important;
+    width: 100% !important;
+    padding: 0.1in !important;
+    border-bottom: 1px dashed #3e3e3e !important;
+  }
+
+
+  .defense-header {
+    background-color: #DCFFDE;
+  }
+
+  .defense-section {
+    display: block !important;
+    width: calc(100% - 21px) !important;
+
+    .pre-defense-checks {
+      background-color: #DCFFDE;
+      font-size: 0.18in !important;
+      min-height: 1.5in !important;
+      display: block !important;
+      width: 100% !important;
+      padding: 0.1in !important;
+      border-bottom: 1px dashed #3e3e3e !important;
+    }
+  }
+
+
+  .tooltip-text {
+    background-color: white !important;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .pinned {
+    position: fixed;
+    float: right;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    padding-top: 15px;
+    color: $glow-yellow;
+    text-shadow: $glow-start;
+    background-color: black !important;
+
+    .weapon-abilities {
+      padding-left: 10px;
+      width: 90%;
+    }
+
+    .text-dark-red,
+    .text-dark-blue {
+      color: white !important;
+    }
+
+    .weapon-range-corner {
+      visibility: hidden;
+    }
+
+    .weapon-range-value {
+      position: absolute;
+      text-align: right;
+      left: calc(100% - 55px);
+      bottom: calc(100% - 10px);
+      font-size: 46px;
+    }
+
+    &.column-icons {
+      div {
+        filter: invert(80%) sepia(88%) saturate(345%) hue-rotate(356deg) brightness(95%) contrast(90%) drop-shadow(0 0 0.25px $glow-yellow) drop-shadow(0 0 0.75px $glow-orange) drop-shadow(0 0 2px $glow-red-lighter) drop-shadow(0 0 4px $glow-red);
+      }
+    }
+
+    .dice-value {
+      border: 1px solid $glow-yellow;
+      filter: $glow-filter;
+    }
+  }
+
+  .pinned-header-offset {
+    top: 48px;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.19),
+      0 10px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  .wound-setter {
+    // display: flex;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    padding-top: 30px;
+    background-color: black;
+    color: $glow-yellow;
+    text-shadow: $glow-start;
+    font-size: 25px;
+    font-family: SpaceMarine;
+    visibility: visible;
+    width: 100%;
+    bottom: 0% !important;
+    left: 0% !important;
+    transform: none !important;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: 30%;
+
+      div {
+        height: 0.75in;
+        flex: 1 1 30%;
+        cursor: pointer;
+        user-select: none;
+      }
+    }
+  }
+
+  .unit-links {
+    width: 100%;
+    height: 50px;
+    bottom: 70px;
+    text-align: right;
+    position: fixed;
+    visibility: visible;
+  }
+}

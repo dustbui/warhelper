@@ -1,0 +1,44 @@
+{
+  "name": "Penitent Engine",
+  "keywords": ["Vehicle", "Cult Imperialis", "Engine of Redemption", "Penitent Engines"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum"],
+  "move": 8,
+  "weaponSkill": 4,
+  "ballisticSkill": 4,
+  "strength": 5,
+  "toughness": 5,
+  "wounds": 5,
+  "attacks": 5,
+  "leadership": 8,
+  "saves": 4,
+  "points": 55,
+
+  "wargear": [],
+
+  "weapons": ["weapons.ministorumHeavyFlamer", "weapons.ministorumHeavyFlamer", "weapons.penitentBuzzBlade", "weapons.penitentBuzzBlade"],
+
+  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.endlessSuffering", "abilities.cleansedByFire", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [{
+    "name": "Wrath of the Penitent",
+    "rules": "Equipping 2 of the same melee weapon sets attack characteristic to 5."
+  }],
+
+  "meleePreHitChecks": ["abilities.zealot"],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreWoundChecks": ["abilities.berserkKillingMachines"]
+}

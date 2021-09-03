@@ -8,29 +8,31 @@
   "strength": 3,
   "toughness": 3,
   "wounds": 1,
-  "attacks": 2,
+  "attacks": 3,
   "leadership": 9,
   "saves": 3,
   "points": 14,
 
   "wargear": [],
 
-  "weapons": ["weapons.plasmaPistol", "weapons.plasmaPistolSupercharge", "weapons.powerSword", "weapons.fragGrenade", "weapons.krakGrenade"],
+  "weapons": ["weapons.redemption", "weapons.plasmaPistolSupercharge", "weapons.powerSword", "weapons.fragGrenade", "weapons.krakGrenade"],
 
-  "abilities": ["abilities.skyStrike", "abilities.actsOfFaith", "abilities.convictionOfFaith"],
+  "abilities": ["abilities.skyStrike", "abilities.actsOfFaith", "abilities.aSacredBurdenRedemption", "abilities.angelicAscent", "abilities.judgementOfTheFaithful", "abilities.holyRage", "abilities.sufferNotTheWitch"],
 
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": ["abilities.slayersOfHeretics"],
+  "shootingPreHitChecks": ["abilities.leadTheRighteousAffected"],
   "shootingPreWoundChecks": [],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.slayersOfHeretics"],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.leadTheRighteousAffected"],
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
-  "defensePreWoundChecks": [],
-  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.shieldOfFaith"],
-  "defensePreLeadershipChecks": []
+  "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
+  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreLeadershipChecks": [],
+
+  "unitLinks": ["Seraphim"]
 }

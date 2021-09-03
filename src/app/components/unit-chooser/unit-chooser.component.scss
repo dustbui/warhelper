@@ -4,7 +4,6 @@
   @extend .glow;
   @extend .terminal-background;
 
-  position: relative;
   height: 100%;
   width: 100%;
   text-align: left;
@@ -13,20 +12,27 @@
   top: 0;
   left: 0;
   height: 100%;
-  z-index: 100;
+  // z-index: 100;
   font-size: min(4vw, 32px);
-  line-height: min(4.5vw, 35px);
+  // line-height: min(4.5vw, 35px);
   padding: 10px;
 }
 
 .unit-chooser {
   padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
+  overflow: auto;
+  height: calc(100% - 20px);
+  width: 100%;
+  text-align: center;
 
   .unit {
+    height: auto;
     width: 100%;
     cursor: pointer;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 
   .unit:hover {
@@ -34,11 +40,17 @@
   }
 }
 
+.footer {
+  margin-left: -20px;
+  visibility: visible;
+}
+
 // For bigger screens
 @media screen and (min-width: 700px) {
   .unit-chooser {
-    padding-top: 10%;
+    padding-top: 10px;
     position: absolute;
+    height: calc(100% - 50px);
     left: 50%;
     transform: translateX(-50%);
   }

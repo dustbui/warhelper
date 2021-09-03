@@ -1,0 +1,144 @@
+{
+  "name": "Wolf Lord on Thunderwolf",
+  "keywords": ["Character", "Warlord", "Captain", "Cavalry", "Chapter Master", "Wolf Lord", "HQ"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 10,
+  "weaponSkill": 2,
+  "ballisticSkill": 2,
+  "strength": 4,
+  "toughness": 5,
+  "wounds": 7,
+  "attacks": 4,
+  "leadership": 9,
+  "saves": 3,
+  "points": 17,
+
+  "wargear": [{
+      "name": "Belt of Russ",
+      "points": 0,
+      "rules": ["The bearer has a 4+ invulnerable save."],
+      "isRelic": false,
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Frost Weapon",
+      "points": 0,
+      "rules": ["Add 1 to the Strength and Damage of this model's weapon(s)"],
+      "isRelic": true,
+      "tags": ["Space Wolves Relic"],
+      "description": ""
+    }
+  ],
+
+  "weapons": [{
+      "name": "Crushing Teeth and Claws",
+      "points": 0,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": false,
+      "attacks": 0,
+      "abilities": [{
+        "rules": "Each time the bearer fights, it makes 3 additional attack with this weapon. No more than 3 attacks can be made with this weapon."
+      }],
+      "strength": 1,
+      "armorPen": -2,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    "weapons.frostClaw",
+    "weapons.frostClaw",
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [{
+      "name": "Chapter Master",
+      "points": 40,
+      "rules": ["In your Command phase, select one friendly SPACE WOLVES CORE or SPACE CHARACTER within 6\" of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, you may re-roll the hit roll."],
+      "tags": ["Command"],
+      "description": ""
+    },
+
+    {
+      "name": "Hunter",
+      "points": 0,
+      "rules": [
+        "+1 to Advance and Charge rolls for this unit.",
+        "This unit is eligible to charge in a turn in which it Advanced or Fell Back"
+      ],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    {
+      "name": "The Imperium's Sword",
+      "points": 0,
+      "rules": [
+        "You may re-roll charge rolls for this unit.",
+        "Each time this unit fights, if it made a charge move or performed a Heroic Intervention this turn, then until that fight phase is resolved, add 1 to its Strength and Attacks characteristics."
+      ],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    {
+      "name": "((Rites of Battle))",
+      "points": 0,
+      "rules": ["While a friendly Space Wolves Core unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1."],
+      "tags": ["Aura"],
+      "description": ""
+    },
+    "abilities.swiftHunters",
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [{
+    "name": "",
+    "points": 0,
+    "rules": [""],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [{
+      "name": "The Imperium's Sword",
+      "points": 0,
+      "rules": ["If this model's unit made a charge move or a Heroic Intervention this turn, models in this unit get +1 Strength and +1 Attacks until that fight is resolved."],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    "abilities.shockAssault"
+  ],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.savageFury",
+    "abilities.whirlwindOfRage"
+  ],
+
+  "meleePreWoundChecks": [{
+    "name": "Lightning Claw (Frost)",
+    "points": 0,
+    "rules": ["You may re-roll wound rolls."],
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [{
+    "name": "Belt of Russ",
+    "points": 4,
+    "rules": [
+      "4+ Invulnerable save."
+    ],
+    "isRelic": false,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreWoundChecks": [],
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+}

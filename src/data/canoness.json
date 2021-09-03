@@ -23,25 +23,28 @@
     "weapons.powerSword"
   ],
 
-  "shootingPreHitChecks": ["abilities.slayersOfHeretics", "abilities.leadTheRighteous"],
+  "shootingPreHitChecks": [],
   "shootingPreWoundChecks": ["abilities.sacredRitesDivineGuidance", "abilities.righteousJudgement"],
 
-  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.leadTheRighteous"],
+  "meleePreHitChecks": ["abilities.leadTheRighteous"],
   "meleePreWoundChecks": ["abilities.righteousJudgement"],
 
   "abilities": [
-    "abilities.beaconOfFaith",
     "wargear.rodOfOffice",
-    "abilities.convictionOfFaith",
     "abilities.actsOfFaith",
     "abilities.leadTheRighteous",
-    "abilities.righteousJudgementMiracleAura"
+    "abilities.wordOfTheEmperor",
+    "abilities.wordOfTheEmperorMiracle",
+    "abilities.sufferNotTheWitch",
+    "abilities.sufferingAndSacrifice",
+    "abilities.divineIntervention"
   ],
   "defensePreHitChecks": [],
   "defensePreSaveChecks": [
     "wargear.rosarius",
-    "abilities.shieldOfFaith"
+    "abilities.shieldOfFaith",
+    "abilities.stoicEndurancePreSave"
   ],
-  "defensePreWoundChecks": [],
+  "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
   "defensePreLeadershipChecks": []
 }

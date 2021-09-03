@@ -1,0 +1,41 @@
+{
+  "name": "Sororitas Rhino",
+  "keywords": ["Vehicle", "Transport", "Hallowed", "Smokescreen", "Sororitas Rhino"],
+  "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
+  "move": [12, 6, 3],
+  "woundsChangeStats": true,
+  "weaponSkill": 6,
+  "ballisticSkill": [3, 4, 5],
+  "strength": 6,
+  "toughness": 7,
+  "wounds": [10, 5, 2],
+  "attacks": [3, "D3", 1],
+  "leadership": 8,
+  "saves": 3,
+  "points": 80,
+
+  "wargear": [],
+
+  "weapons": ["weapons.hunterKillerMissile", "weapons.stormBolter"],
+
+  "abilities": ["abilities.actsOfFaith", "abilities.sufferNotTheWitch", "abilities.holySmokescreen", "abilities.explodes", {
+    "name": "Transport",
+    "rules": "This model has a transport capacity of 10 <ORDER> INFANTRY, CULT IMPERIALIS INFANTRY or SANCTIFIED INFANTRY models. It cannot transport JUMP PACK models."
+  }],
+
+  "traits": ["abilities.shieldOfFaith"],
+
+  "shootingPreAttackChecks": [],
+
+  "meleePreAttackChecks": [],
+
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": ["abilities.shieldOfFaith"],
+
+  "defensePreWoundChecks": []
+}

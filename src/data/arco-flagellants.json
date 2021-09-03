@@ -17,7 +17,13 @@
 
   "weapons": ["weapons.arcoFlails"],
 
-  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.convictionOfFaith"],
+  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch",
+    {
+      "name": "(1CP) Extremis Trigger Word",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> Arco-flail weapons get 3 hit rolls instead of 1. At end of phase, roll one D6 for each model in this unit: for each 1, one model is destroyed."
+    }
+  ],
 
   "traits": [],
 
@@ -26,11 +32,11 @@
   "shootingPreWoundChecks": [],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.slayersOfHeretics", "abilities.zealot"],
+  "meleePreHitChecks": ["abilities.zealot"],
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
   "defensePreSaveChecks": [],
-  "defensePreWoundChecks": ["abilities.beserkKillingMachines"],
+  "defensePreWoundChecks": ["abilities.berserkKillingMachines"],
   "defensePreLeadershipChecks": []
 }
