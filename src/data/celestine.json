@@ -37,7 +37,9 @@
       "damage": 2,
       "imageUrl": "https://i.imgur.com/ToVWm0b.png",
       "abilities": [{
-        "rules": ["Unmodified hit rolls of 6 cause 2 mortal wounds and the attack sequence ends (additional scored hits still occur)."]
+        "name": "Heirloom"
+      }, {
+        "rules": "Unmodified hit rolls of 6 cause 2 mortal wounds and the attack sequence ends (additional scored hits still occur)."
       }]
     }
   ],
@@ -72,7 +74,10 @@
     "abilities.sufferingAndSacrifice",
     "abilities.sufferNotTheWitch"
   ],
-  "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion", {
+    "name": "Heirloom",
+    "rules": "Unmodified hit rolls of 6 score +1 hit."
+  }],
   "defensePreHitChecks": [],
   "defensePreSaveChecks": [{
       "name": "The Armour of Saint Katherine",

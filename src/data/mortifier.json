@@ -15,7 +15,7 @@
 
   "wargear": [],
 
-  "weapons": ["weapons.heavyBolter", "weapons.heavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
+  "weapons": ["weapons.dustinCrusadeHeavyBolter", "weapons.dustinCrusadeHeavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
 
   "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
 

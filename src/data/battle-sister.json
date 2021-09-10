@@ -15,7 +15,7 @@
 
   "wargear": ["wargear.simulacrumImperialis"],
 
-  "weapons": ["weapons.boltgun", "weapons.artificerCraftedStormBolter", "weapons.ministorumFlamer", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
+  "weapons": ["weapons.dustinCrusadeBoltgun", "weapons.artificerCraftedStormBolter", "weapons.ministorumFlamer", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
 
   "abilities": ["wargear.simulacrumImperialis", "abilities.actsOfFaith", "abilities.objectiveSecured", "abilities.blessedBolts", "abilities.judgementOfTheFaithful", "abilities.cleansedByFire",
     {
@@ -28,8 +28,14 @@
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": ["abilities.leadTheRighteousAffected"],
-  "shootingPreWoundChecks": [],
+  "shootingPreHitChecks": [{
+    "name": "Boltgun - Improved Sights",
+    "rules": "+1 to hit rolls."
+  }, "abilities.leadTheRighteousAffected"],
+  "shootingPreWoundChecks": [{
+    "name": "Boltgun - Masterworked",
+    "rules": "+1 damage."
+  }],
 
   "meleePreAttackChecks": [],
   "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.leadTheRighteousAffected"],

@@ -19,6 +19,7 @@ export class Weapon {
   strengthMultiplier: number = 1;
   armorPen: number | string = 0;
   damage: number | string = 0;
+  damageModifier: number = 0;
   imageUrl: string = '';
 
   // Web UI interaction

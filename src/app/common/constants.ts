@@ -585,6 +585,18 @@ export class Constants {
       damage: 1,
       imageUrl: 'https://i.imgur.com/LQRPZxz.png'
     }),
+    dustinCrusadeBoltgun: new Weapon({
+      name: 'Boltgun',
+      type: 'Rapid Fire',
+      attacks: 1,
+      range: 24,
+      strength: 4,
+      damage: 1,
+      damageModifier: 1,
+      hitModifier: 1,
+      abilities: [new Ability({name: "Improved Sights"}), new Ability({name: "Masterworked"})],
+      imageUrl: 'https://i.imgur.com/LQRPZxz.png'
+    }),
     heavyBolter: new Weapon({
       name: 'Heavy Bolter',
       type: 'Heavy',
@@ -593,6 +605,18 @@ export class Constants {
       range: 36,
       strength: 5,
       armorPen: -1,
+      damage: 2,
+      imageUrl: 'https://i.imgur.com/UPqwIfI.png'
+    }),
+    dustinCrusadeHeavyBolter: new Weapon({
+      name: 'Heavy Bolter',
+      type: 'Heavy',
+      points: 10,
+      attacks: 3,
+      range: 36,
+      strength: 5,
+      armorPen: -1,
+      abilities: [new Ability({name: "Auto-Loader", rules: "Unmodified hit rolls of 6 score +1 hit."})],
       damage: 2,
       imageUrl: 'https://i.imgur.com/UPqwIfI.png'
     }),

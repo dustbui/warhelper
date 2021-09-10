@@ -173,9 +173,8 @@
 
           </div>
           <div class="weapon-skill weapon-value">
-            <div class="center">
-              <div class="center">{{unit.ballisticSkill}}+</div>
-            </div>
+            <div class="center" [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
+              {{unit.ballisticSkill - (weapon.hitModifier || 0)}}+</div>
           </div>
           <!-- Strength -->
           <div class="weapon-strength weapon-value">
@@ -188,8 +187,9 @@
           <!-- Damage -->
           <div class="weapon-damage weapon-value">
             <div class="center">
-              <div [ngClass]="{'dice-value' : checkForDice(weapon.damage)}">
-                <div class="center">{{weapon.damage}}</div>
+              <div
+                [ngClass]="{'dice-value' : checkForDice(weapon.damage), 'text-dark-blue': weapon.damageModifier && weapon.damageModifier != 0}">
+                <div class="center">{{weapon.damage + (weapon.damageModifier ||0)}}</div>
               </div>
             </div>
           </div>
@@ -299,8 +299,9 @@
           <!-- Damage -->
           <div class="weapon-damage weapon-value">
             <div class="center">
-              <div [ngClass]="{'dice-value' : checkForDice(weapon.damage)}">
-                <div class="center">{{weapon.damage}}</div>
+              <div
+                [ngClass]="{'dice-value' : checkForDice(weapon.damage), 'text-dark-blue' : weapon.damageModifier && weapon.damageModifier != 0}">
+                <div class="center">{{weapon.damage + (weapon.damageModifier || 0)}}</div>
               </div>
             </div>
           </div>
