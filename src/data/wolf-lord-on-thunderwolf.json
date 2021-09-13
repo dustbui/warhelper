@@ -55,20 +55,16 @@
   "abilities": [{
       "name": "Chapter Master",
       "points": 40,
-      "rules": ["In your Command phase, select one friendly SPACE WOLVES CORE or SPACE CHARACTER within 6\" of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, you may re-roll the hit roll."],
+      "rules": ["In your Command phase, select one friendly CORE or CHARACTER within 6\" of this model. Until the start of your next Command phase, each time a model in that unit makes an attack, you may re-roll the hit roll."],
       "tags": ["Command"],
       "description": ""
     },
-
     {
-      "name": "Hunter",
+      "name": "((Rites of Battle))",
       "points": 0,
-      "rules": [
-        "+1 to Advance and Charge rolls for this unit.",
-        "This unit is eligible to charge in a turn in which it Advanced or Fell Back"
-      ],
-      "tags": ["Warlord Trait"],
-      "description": ""
+      "rules": ["While a friendly CORE unit is within 6\" of this model, it may re-roll a hit rolls of 1."],
+      "tags": ["Aura"],
+      "description": "Captain"
     },
     {
       "name": "The Imperium's Sword",
@@ -81,13 +77,26 @@
       "description": ""
     },
     {
-      "name": "((Rites of Battle))",
+      "name": "Hunter",
       "points": 0,
-      "rules": ["While a friendly Space Wolves Core unit is within 6\" of this model, each time a model in that unit makes an attack, re-roll a hit roll of 1."],
-      "tags": ["Aura"],
+      "rules": [
+        "+1 to Advance and Charge rolls for this unit.",
+        "This unit is eligible to charge in a turn in which it Advanced or Fell Back"
+      ],
+      "tags": ["Warlord Trait"],
       "description": ""
     },
     "abilities.swiftHunters",
+    {
+      "name": "(2CP) Only In Death Does Duty End",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> If this unit has not fought this phase, upon death, it may fight after its attacker has finished making attacks."
+    },
+    {
+      "name": "(0CP) Counter Charge",
+      "tags": ["Stratagem"],
+      "rules": "<b>Enemy Charge:</b> +3\" to Heroic Intervention."
+    },
     "abilities.angelsOfDeath"
   ],
 
@@ -117,13 +126,22 @@
     "abilities.whirlwindOfRage"
   ],
 
-  "meleePreWoundChecks": [{
-    "name": "Lightning Claw (Frost)",
-    "points": 0,
-    "rules": ["You may re-roll wound rolls."],
-    "tags": [""],
-    "description": ""
-  }],
+  "meleePreWoundChecks": [
+    {
+      "name": "Lightning Claw (Frost)",
+      "points": 0,
+      "rules": ["You may re-roll wound rolls."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
