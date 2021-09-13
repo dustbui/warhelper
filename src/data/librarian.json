@@ -89,12 +89,11 @@
     "description": ""
   }],
 
-  "abilities": [{
-      "name": "Cloaked By The Storm",
-      "points": 0,
-      "rules": ["Grants the use of the Cloaked By The Storm (2CP) strategem. (-1 to hit for opponent's ranged attacks against all friendly units within 6\" on successful cast of Tempestas ability)"],
-      "tags": [""],
-      "description": ""
+  "abilities": [
+    {
+      "name": "(2CP) Cloaked By The Storm",
+      "tags": ["Stratagem"],
+      "rules": "<b>Psychic:</b> If you have successfully resolved a Tempestas ability this phase, until your next psychic phase, enemies get -1 to hit for ranged attacks made to a friendly unit within 6\" of this model."
     },
     {
       "name": "Psychic Hood",
@@ -115,11 +114,19 @@
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
