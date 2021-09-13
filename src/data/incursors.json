@@ -9,13 +9,14 @@
   "toughness": 4,
   "wounds": 2,
   "attacks": 2,
-  "leadership": 7,
+  "leadership": 8,
   "saves": 3,
   "points": 21,
 
   "wargear": [],
 
-  "weapons": [{
+  "weapons": [
+    {
       "name": "Occulus Bolt Carbine",
       "points": 0,
       "range": 24,
@@ -48,7 +49,8 @@
     "weapons.krakGrenade"
   ],
 
-  "abilities": [{
+  "abilities": [
+    {
       "name": "Concealed Positions",
       "points": 0,
       "rules": ["During Deployment, this unit may be deployed anywhere on the battlefield that is more than 9\" away from the enemy deployment zone and enemy models."],
@@ -56,18 +58,22 @@
       "description": ""
     },
     {
-      "name": "Smokescreen",
-      "points": 0,
-      "rules": ["Grants the use of the Smokescreen (1CP) strategem for this unit (-1 to hit for opponent's shooting)"],
-      "tags": [""],
-      "description": ""
+      "name": "(1CP) Smokescreen",
+      "tags": ["Stratagem"],
+      "rules": "<b>Enemy Shooting:</b> -1 to hit."
+    },
+    {
+      "name": "(1CP) Transhuman Physiology",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4"
     },
     "abilities.angelsOfDeath"
   ],
 
   "traits": [],
 
-  "shootingPreAttackChecks": [{
+  "shootingPreAttackChecks": [
+    {
       "name": "Multi-Spectrum Array",
       "points": 0,
       "rules": ["When a model in this unit makes a ranged attack, ignore any or all hit roll or Ballistic Skill modifiers."],
@@ -77,12 +83,24 @@
     "abilities.bolterDiscipline"
   ],
 
+  "shootingPreHitChecks": [],
+
+  "shootingPreWoundChecks": [
+    {
+      "name": "Tactical Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Tactical Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    }
+  ],
+
   "meleePreAttackChecks": ["abilities.shockAssault"],
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
   "meleePreWoundChecks": [],
@@ -92,6 +110,6 @@
   "defensePreSaveChecks": [],
 
   "defensePreWoundChecks": [],
-
-  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+  
+  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
 }
