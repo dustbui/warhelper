@@ -24,7 +24,7 @@
       "isRelic": false,
       "attacks": "D3",
       "abilities": [{
-        "rules": "Blast. Attacks with this weapon against Aircraft get +1 to hit."
+        "rules": "Blast. Attacks with this weapon against AIRCRAFT get +1 to hit."
       }],
       "strength": 7,
       "armorPen": -1,
@@ -89,6 +89,11 @@
   ],
 
   "abilities": [
+    {
+      "name": "(1CP) Armour of Contempt",
+      "tags": ["Stratagem"],
+      "rules": "<b>Taking Damage:</b> Until the end of phase, each time this unit would receive a mortal wound, roll one D6. On a 5+ that wound is not lost."
+    },
     "abilities.angelsOfDeath",
     "abilities.explodes"
   ],
