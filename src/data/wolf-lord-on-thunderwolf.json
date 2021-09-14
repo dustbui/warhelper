@@ -100,20 +100,14 @@
     "abilities.angelsOfDeath"
   ],
 
-  "traits": [{
-    "name": "",
-    "points": 0,
-    "rules": [""],
-    "tags": [""],
-    "description": ""
-  }],
+  "traits": [],
 
   "shootingPreAttackChecks": [],
 
   "meleePreAttackChecks": [{
       "name": "The Imperium's Sword",
       "points": 0,
-      "rules": ["If this model's unit made a charge move or a Heroic Intervention this turn, models in this unit get +1 Strength and +1 Attacks until that fight is resolved."],
+      "rules": ["+1 Strength and +1 Attacks until fight is resolved if this unit charged or made a Heroic Intervention."],
       "tags": ["Warlord Trait"],
       "description": ""
     },
@@ -122,8 +116,8 @@
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
   "meleePreWoundChecks": [
