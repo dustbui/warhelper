@@ -109,6 +109,13 @@
 
   "shootingPreWoundChecks": [
     {
+      "name": "Bolt Sniper Rifle - Mortis Round",
+      "points": 0,
+      "rules": ["Unmodified wound rolls of 6 inflict 1 mortal wound in addition to other damage."],
+      "tags": [""],
+      "description": ""
+    },
+    {
       "name": "Devestator Doctrine",
       "points": 0,
       "rules": ["-1 AP in Devestator Doctrine"],
