@@ -1,6 +1,6 @@
 {
   "name": "Librarian",
-  "keywords": ["Character", "Psyker", "Librarian", "HQ", "Fly", "Jump Pack"],
+  "keywords": ["Character", "Psyker", "HQ", "Fly", "Jump Pack"],
   "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": 12,
   "weaponSkill": 3,
