@@ -1,6 +1,6 @@
 {
   "name": "Librarian",
-  "keywords": ["Character", "Psyker", "HQ", "Fly", "Jump Pack"],
+  "keywords": ["Character", "Psyker", "Librarian", "HQ", "Fly", "Jump Pack"],
   "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": 12,
   "weaponSkill": 3,
@@ -83,7 +83,7 @@
     "range": 18,
     "warpCharge": 5,
     "rules": [
-      "Target enemy unit suffers D3 mortal wounds. If the psychic roll was 10 or higher, the target suffers D6 mortal wounds instead."
+      "The closest visible enemy unit suffers D3 mortal wounds. If the psychic roll was 11+, the target suffers D6 mortal wounds instead."
     ],
     "tags": [],
     "description": ""
