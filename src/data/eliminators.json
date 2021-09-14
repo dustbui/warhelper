@@ -1,7 +1,7 @@
 {
   "name": "Eliminator Squad",
-  "keywords": ["Infantry", "Phobos", "Smokescreen", "Eliminator Squad", "Core", "Primaris", "Heavy Support"],
-  "factionKeywords": ["Imperium", "Adeptus Astartes"],
+  "keywords": ["Infantry", "Core", "Phobos", "Smokescreen", "Primaris", "Heavy Support"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": 6,
   "weaponSkill": 3,
   "ballisticSkill": 2,
@@ -90,7 +90,22 @@
 
   "shootingPreAttackChecks": [],
 
-  "shootingPreHitChecks": [],
+  "shootingPreHitChecks": [
+    {
+      "name": "Bolt Sniper Rifle - Executioner Round",
+      "points": 0,
+      "rules": ["+1 Hit. Targets do not recieve the benefit of cover."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Heavy",
+      "points": 0,
+      "rules": ["-1 Hit if this unit moved this turn."],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "shootingPreWoundChecks": [
     {
@@ -110,7 +125,15 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
