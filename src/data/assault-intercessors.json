@@ -1,6 +1,6 @@
 {
   "name": "Assault Intercessor Squad",
-  "keywords": ["Infantry", "Troops" "Core", "Assault Intercessor Squad"],
+  "keywords": ["Infantry", "Troops", "Core"],
   "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": 6,
   "weaponSkill": 3,
@@ -48,13 +48,7 @@
     "abilities.angelsOfDeath"
   ],
 
-  "traits": [{
-    "name": "",
-    "points": 0,
-    "rules": [""],
-    "tags": [""],
-    "description": ""
-  }],
+  "traits": [],
 
   "shootingPreAttackChecks": [],
 
@@ -76,13 +70,7 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
-
-  "defensePreHitChecks": [],
-
-  "defensePreSaveChecks": [],
-
-  "defensePreWoundChecks": [
+  "meleePreWoundChecks": [
     {
       "name": "Assault Doctrine",
       "points": 0,
@@ -91,6 +79,12 @@
       "description": ""
     }
   ],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": [],
   
   "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
 }
