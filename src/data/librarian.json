@@ -93,7 +93,17 @@
     {
       "name": "(2CP) Cloaked By The Storm",
       "tags": ["Stratagem"],
-      "rules": "<b>Psychic:</b> If you have successfully resolved a Tempestas ability this phase, until your next psychic phase, enemies get -1 to hit for ranged attacks made to a friendly unit within 6\" of this model."
+      "rules": "<b>Psychic:</b> If you have successfully resolved a Tempestas ability this phase, until your next psychic phase, enemies get -1 to hit for ranged attacks made to friendly units within 6\" of this model."
+    },
+    {
+      "name": "(2CP) Only In Death Does Duty End",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> If this unit has not fought this phase, upon death, it may fight after its attacker has finished making attacks."
+    },
+    {
+      "name": "(0CP) Counter Charge",
+      "tags": ["Stratagem"],
+      "rules": "<b>Enemy Charge:</b> +3\" to Heroic Intervention."
     },
     {
       "name": "Psychic Hood",
