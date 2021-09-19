@@ -1,0 +1,160 @@
+{
+  "name": "Eliminator Squad",
+  "keywords": ["Infantry", "Core", "Phobos", "Smokescreen", "Primaris", "Heavy Support"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 6,
+  "weaponSkill": 3,
+  "ballisticSkill": 2,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 3,
+  "points": 25,
+
+  "wargear": [],
+
+  "weapons": [
+    {
+      "name": "Bolt Sniper Rifle - Executioner Round",
+      "points": 0,
+      "range": 36,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [{
+        "rules": "You may ignore Look Out, Sir. +1 Hit. Targets do not recieve the benefit of cover."
+      }],
+      "strength": 5,
+      "armorPen": -1,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    {
+      "name": "Bolt Sniper Rifle - Hyperfrag Round",
+      "points": 0,
+      "range": 36,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": "D3",
+      "abilities": [{
+        "rules": "Blast."
+      }],
+      "strength": 5,
+      "armorPen": 0,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    {
+      "name": "Bolt Sniper Rifle - Mortis Round",
+      "points": 0,
+      "range": 36,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [{
+        "rules": "You may ignore Look Out, Sir. Unmodified wound rolls of 6 inflict 1 mortal wound in addition to other damage."
+      }],
+      "strength": 5,
+      "armorPen": -2,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [
+    {
+      "name": "Concealed Positions",
+      "points": 0,
+      "rules": ["During Deployment, this unit may be deployed anywhere on the battlefield that is more than 9\" away from the enemy deployment zone and enemy models."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "(1CP) Transhuman Physiology",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
+    },
+    {
+      "name": "(1CP) Keen Senses",
+      "tags": ["Stratagem"],
+      "rules": "<b>Shooting/Charging:</b> Ignore any or all Hit, WS, BS, or Charge roll modifiers."
+    },
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [],
+
+  "shootingPreHitChecks": [
+    {
+      "name": "Bolt Sniper Rifle - Executioner Round",
+      "points": 0,
+      "rules": ["+1 Hit. Targets do not recieve the benefit of cover."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Heavy",
+      "points": 0,
+      "rules": ["-1 Hit if this unit moved this turn."],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "shootingPreWoundChecks": [
+    {
+      "name": "Bolt Sniper Rifle - Mortis Round",
+      "points": 0,
+      "rules": ["Unmodified wound rolls of 6 inflict 1 mortal wound in addition to other damage."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Devestator Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Devestator Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    }
+  ],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
+  ],
+
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [
+    {
+      "name": "Camo Cloak",
+      "points": 0,
+      "rules": ["+1 to armor saving throw against ranged attacks if receiving the benefits of cover."],
+      "tags": [""],
+      "description": ""
+    },
+  ],
+
+  "defensePreWoundChecks": [],
+  
+  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+}
