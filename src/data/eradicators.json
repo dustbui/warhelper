@@ -1,6 +1,6 @@
 {
   "name": "Eradicator Squad",
-  "keywords": ["Infantry", "Core", "MK X Gravis", , "Primaris", "Heavy Support"],
+  "keywords": ["Infantry", "Core", "MK X Gravis", "Primaris", "Heavy Support"],
   "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": 5,
   "weaponSkill": 3,
@@ -15,8 +15,7 @@
 
   "wargear": [],
 
-  "weapons": [
-    {
+  "weapons": [{
       "name": "Melta Rifle",
       "points": 0,
       "range": 24,
@@ -49,8 +48,7 @@
     "weapons.boltPistol"
   ],
 
-  "abilities": [
-    {
+  "abilities": [{
       "name": "Total Obliteration",
       "points": 0,
       "rules": ["This unit may shoot twice targeting one unit in the shooting phase if it chooses the same target again. Cannot use if this unit made an Advance move this turn."],
@@ -81,8 +79,7 @@
 
   "shootingPreHitChecks": [],
 
-  "shootingPreWoundChecks": [
-    {
+  "shootingPreWoundChecks": [{
       "name": "Devestator Doctrine",
       "points": 0,
       "rules": ["-1 AP for Multi-Melta in Devestator Doctrine"],
@@ -113,6 +110,6 @@
   "defensePreSaveChecks": [],
 
   "defensePreWoundChecks": [],
-  
-  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
 }

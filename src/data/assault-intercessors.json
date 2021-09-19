@@ -15,8 +15,7 @@
 
   "wargear": [],
 
-  "weapons": [
-    {
+  "weapons": [{
       "name": "Heavy Bolt Pistol",
       "points": 0,
       "range": 18,
@@ -34,8 +33,7 @@
     "weapons.krakGrenade"
   ],
 
-  "abilities": [
-    {
+  "abilities": [{
       "name": "(1CP) Transhuman Physiology",
       "tags": ["Stratagem"],
       "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
@@ -52,15 +50,13 @@
 
   "shootingPreAttackChecks": [],
 
-  "shootingPreWoundChecks": [
-    {
-      "name": "Assault Doctrine",
-      "points": 0,
-      "rules": ["-1 AP in Assault Doctrine"],
-      "tags": [""],
-      "description": ""
-    }
-  ],
+  "shootingPreWoundChecks": [{
+    "name": "Assault Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Assault Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "meleePreAttackChecks": ["abilities.shockAssault"],
 
@@ -70,21 +66,19 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [
-    {
-      "name": "Assault Doctrine",
-      "points": 0,
-      "rules": ["-1 AP in Assault Doctrine"],
-      "tags": [""],
-      "description": ""
-    }
-  ],
+  "meleePreWoundChecks": [{
+    "name": "Assault Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Assault Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "defensePreHitChecks": [],
 
   "defensePreSaveChecks": [],
 
   "defensePreWoundChecks": [],
-  
-  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
 }

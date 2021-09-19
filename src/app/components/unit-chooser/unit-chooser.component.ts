@@ -15,7 +15,9 @@ import celestine from 'src/data/celestine.json';
 import penitentEngine from 'src/data/penitent-engine.json';
 import geminaeSuperia from 'src/data/geminae-superia.json';
 import sororitasRhino from 'src/data/sororitas-rhino.json';
-import assaultTerminator from 'src/data/assault-terminator.json';
+import assaultIntercessors from 'src/data/assault-intercessors.json';
+import eliminators from 'src/data/eliminators.json';
+import eradicators from 'src/data/eradicators.json';
 import terminator from 'src/data/terminator.json';
 import librarian from 'src/data/librarian.json';
 import redemptorDreadnought from 'src/data/redemptor-dreadnought.json';
@@ -33,7 +35,7 @@ export class UnitChooserComponent implements OnInit {
   @Output() selectedUnitEvent = new EventEmitter();
   public units: any[] = [
     arcoFlagellants, battleSister, canoness, celestine, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard, wolfLordOnThunderwolf, cyberwolf, bloowClaws, penitentEngine, geminaeSuperia, sororitasRhino, librarian,
-    redemptorDreadnought, incursors, mortifier
+    redemptorDreadnought, incursors, mortifier, assaultIntercessors, eliminators, eradicators
   ];
   private originalUnits = this.units;
 

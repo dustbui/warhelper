@@ -15,8 +15,7 @@
 
   "wargear": [],
 
-  "weapons": [
-    {
+  "weapons": [{
       "name": "Bolt Sniper Rifle - Executioner Round",
       "points": 0,
       "range": 36,
@@ -65,8 +64,7 @@
     "weapons.krakGrenade"
   ],
 
-  "abilities": [
-    {
+  "abilities": [{
       "name": "Concealed Positions",
       "points": 0,
       "rules": ["During Deployment, this unit may be deployed anywhere on the battlefield that is more than 9\" away from the enemy deployment zone and enemy models."],
@@ -90,8 +88,7 @@
 
   "shootingPreAttackChecks": [],
 
-  "shootingPreHitChecks": [
-    {
+  "shootingPreHitChecks": [{
       "name": "Bolt Sniper Rifle - Executioner Round",
       "points": 0,
       "rules": ["+1 Hit. Targets do not recieve the benefit of cover."],
@@ -107,8 +104,7 @@
     }
   ],
 
-  "shootingPreWoundChecks": [
-    {
+  "shootingPreWoundChecks": [{
       "name": "Bolt Sniper Rifle - Mortis Round",
       "points": 0,
       "rules": ["Unmodified wound rolls of 6 inflict 1 mortal wound in addition to other damage."],
@@ -132,29 +128,25 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [
-    {
-      "name": "Assault Doctrine",
-      "points": 0,
-      "rules": ["-1 AP in Assault Doctrine"],
-      "tags": [""],
-      "description": ""
-    }
-  ],
+  "meleePreWoundChecks": [{
+    "name": "Assault Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Assault Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "defensePreHitChecks": [],
 
-  "defensePreSaveChecks": [
-    {
-      "name": "Camo Cloak",
-      "points": 0,
-      "rules": ["+1 to armor saving throw against ranged attacks if receiving the benefits of cover."],
-      "tags": [""],
-      "description": ""
-    },
-  ],
+  "defensePreSaveChecks": [{
+    "name": "Camo Cloak",
+    "points": 0,
+    "rules": ["+1 to armor saving throw against ranged attacks if receiving the benefits of cover."],
+    "tags": [""],
+    "description": ""
+  }],
 
   "defensePreWoundChecks": [],
-  
-  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
 }

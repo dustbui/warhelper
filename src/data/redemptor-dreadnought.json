@@ -16,8 +16,7 @@
 
   "wargear": [],
 
-  "weapons": [
-    {
+  "weapons": [{
       "name": "Icarus Rocket Pod",
       "points": 5,
       "range": 24,
@@ -108,29 +107,25 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [
-    {
-      "name": "Assault Doctrine",
-      "points": 0,
-      "rules": ["-1 AP in Assault Doctrine"],
-      "tags": [""],
-      "description": ""
-    }
-  ],
+  "meleePreWoundChecks": [{
+    "name": "Assault Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Assault Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "defensePreHitChecks": [],
 
   "defensePreSaveChecks": [],
 
-  "defensePreWoundChecks": [
-    {
-      "name": "Duty Eternal",
-      "points": 0,
-      "rules": [
-        "Incoming attacks get -1 damage (to a minimum of 1)",
-      ],
-      "tags": [""],
-      "description": ""
-    }
-  ]
+  "defensePreWoundChecks": [{
+    "name": "Duty Eternal",
+    "points": 0,
+    "rules": [
+      "Incoming attacks get -1 damage (to a minimum of 1)"
+    ],
+    "tags": [""],
+    "description": ""
+  }]
 }
