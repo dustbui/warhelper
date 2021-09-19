@@ -1,7 +1,7 @@
 {
   "name": "Redemptor Dreadnought",
-  "keywords": ["Vehicle", "Core", "Elites", "Dreadnought", "Redemptor Dreadnought"],
-  "factionKeywords": ["Imperium", "Adeptus Astartes"],
+  "keywords": ["Vehicle", "Core", "Elites"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
   "move": [8, 6, 4],
   "woundsChangeStats": true,
   "weaponSkill": [3, 4, 5],
@@ -16,7 +16,8 @@
 
   "wargear": [],
 
-  "weapons": [{
+  "weapons": [
+    {
       "name": "Icarus Rocket Pod",
       "points": 5,
       "range": 24,
@@ -78,7 +79,9 @@
     {
       "name": "Redemptor Fist",
       "points": 0,
+      "range": 0,
       "type": "Melee",
+      "isRelic": false,
       "attacks": 0,
       "abilities": [],
       "strength": 14,
@@ -101,23 +104,33 @@
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
   "defensePreSaveChecks": [],
 
-  "defensePreWoundChecks": [{
-    "name": "Duty Eternal",
-    "points": 0,
-    "rules": [
-      "Incoming attacks get -1 damage (to a minimum of 1)"
-    ],
-    "tags": [""],
-    "description": ""
-  }]
+  "defensePreWoundChecks": [
+    {
+      "name": "Duty Eternal",
+      "points": 0,
+      "rules": [
+        "Incoming attacks get -1 damage (to a minimum of 1)",
+      ],
+      "tags": [""],
+      "description": ""
+    }
+  ]
 }
