@@ -1,0 +1,118 @@
+{
+  "name": "Eradicator Squad",
+  "keywords": ["Infantry", "Core", "MK X Gravis", , "Primaris", "Heavy Support"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 5,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 5,
+  "wounds": 3,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 3,
+  "points": 45,
+
+  "wargear": [],
+
+  "weapons": [
+    {
+      "name": "Melta Rifle",
+      "points": 0,
+      "range": 24,
+      "type": "Assault",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [{
+        "rules": "Targets in half range take D6+2 damage instead."
+      }],
+      "strength": 8,
+      "armorPen": -4,
+      "damage": "D6",
+      "imageUrl": ""
+    },
+    {
+      "name": "Melta Rifle",
+      "points": 10,
+      "range": 24,
+      "type": "Heavy",
+      "isRelic": false,
+      "attacks": 2,
+      "abilities": [{
+        "rules": "Targets in half range take D6+2 damage instead."
+      }],
+      "strength": 8,
+      "armorPen": -4,
+      "damage": "D6",
+      "imageUrl": ""
+    },
+    "weapons.boltPistol"
+  ],
+
+  "abilities": [
+    {
+      "name": "Total Obliteration",
+      "points": 0,
+      "rules": ["This unit may shoot twice targeting one unit in the shooting phase if it chooses the same target again. Cannot use if this unit made an Advance move this turn."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "(1CP) Keen Senses",
+      "tags": ["Stratagem"],
+      "rules": "<b>Shooting/Charging:</b> Ignore any or all Hit, WS, BS, or Charge roll modifiers."
+    },
+    {
+      "name": "(1CP) Transhuman Physiology",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
+    },
+    {
+      "name": "(1CP) Unyielding In The Face Of The Foe",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Until the end of phase, +1 to saving throws against any attack of damage 1."
+    },
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [],
+
+  "shootingPreHitChecks": [],
+
+  "shootingPreWoundChecks": [
+    {
+      "name": "Devestator Doctrine",
+      "points": 0,
+      "rules": ["-1 AP for Multi-Melta in Devestator Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    },
+    {
+      "name": "Tactical Doctrine",
+      "points": 0,
+      "rules": ["-1 AP for Melta Rifle in Tactical Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    }
+  ],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
+  ],
+
+  "meleePreWoundChecks": [],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": [],
+  
+  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+}
