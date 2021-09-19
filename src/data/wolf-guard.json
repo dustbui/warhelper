@@ -10,7 +10,7 @@
   "wounds": 2,
   "attacks": 2,
   "leadership": 8,
-  "saves": 3,
+  "saves": 2,
   "points": 17,
 
   "wargear": [{
@@ -47,17 +47,26 @@
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [{
-    "name": "Lightning Claw",
-    "points": 0,
-    "rules": ["You may re-roll wound rolls."],
-    "tags": [""],
-    "description": ""
-  }],
+  "meleePreWoundChecks": [
+    {
+      "name": "Lightning Claw",
+      "points": 0,
+      "rules": ["You may re-roll wound rolls."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
@@ -72,16 +81,7 @@
     "description": ""
   }],
 
-  "defensePreWoundChecks": [{
-    "name": "Storm Shield",
-    "points": 4,
-    "rules": [
-      "Add 1 to armour saving throws"
-    ],
-    "isRelic": false,
-    "tags": [""],
-    "description": ""
-  }],
+  "defensePreWoundChecks": [],
 
   "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
 }
