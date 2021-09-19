@@ -103,7 +103,13 @@
     "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
+  "meleePreWoundChecks": [{
+    "name": "Assault Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Assault Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "defensePreHitChecks": [],
 
