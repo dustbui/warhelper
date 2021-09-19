@@ -91,6 +91,11 @@
   ],
 
   "abilities": [
+    {
+      "name": "(1CP) Armour of Contempt",
+      "tags": ["Stratagem"],
+      "rules": "<b>Taking damage:</b> Until the end of the phase, each time this unit would suffer a mortal wound, roll a D6. On a 5+, that wound is not lost."
+    },
     "abilities.angelsOfDeath",
     "abilities.explodes"
   ],
