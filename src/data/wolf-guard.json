@@ -44,13 +44,12 @@
   "shootingPreAttackChecks": [],
   
   "shootingPreWoundChecks": [{
-      "name": "Devestator Doctrine",
-      "points": 0,
-      "rules": ["-1 AP in Devestator Doctrine"],
-      "tags": ["Adeptus Astartes"],
-      "description": ""
-    }
-  ],
+    "name": "Devestator Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Devestator Doctrine"],
+    "tags": ["Adeptus Astartes"],
+    "description": ""
+  }],
 
   "meleePreAttackChecks": ["abilities.shockAssault"],
 
