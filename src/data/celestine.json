@@ -16,32 +16,8 @@
   "traits": [],
   "wargear": [],
 
-  "weapons": [{
-      "name": "The Ardent Blade",
-      "range": 12,
-      "type": "Assault",
-      "attacks": "D6",
-      "strength": 6,
-      "armorPen": -2,
-      "damage": 1,
-      "imageUrl": "https://i.imgur.com/ToVWm0b.png",
-      "abilities": [{
-        "rules": ["Attacks automatically hit."]
-      }]
-    },
-    {
-      "name": "The Ardent Blade",
-      "type": "Melee",
-      "strength": 4,
-      "armorPen": -4,
-      "damage": 2,
-      "imageUrl": "https://i.imgur.com/ToVWm0b.png",
-      "abilities": [{
-        "name": "Heirloom"
-      }, {
-        "rules": "Unmodified hit rolls of 6 cause 2 mortal wounds and the attack sequence ends (additional scored hits still occur)."
-      }]
-    }
+  "weapons": ["weapons.dustinCrusadeTheArdentBladeShooting",
+    "weapons.dustinCrusadeTheArdentBladeMelee"
   ],
 
   "abilities": [
@@ -74,10 +50,10 @@
     "abilities.sufferingAndSacrifice",
     "abilities.sufferNotTheWitch"
   ],
-  "meleePreHitChecks": ["abilities.sacredRitesThePassion", {
-    "name": "Heirloom",
-    "rules": "Unmodified hit rolls of 6 score +1 hit."
-  }],
+  "shootingPreHitChecks": [],
+  "shootingPreWoundChecks": ["abilities.fleshbane"],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
+  "meleePreWoundChecks": ["abilities.fleshbane"],
   "defensePreHitChecks": [],
   "defensePreSaveChecks": [{
       "name": "The Armour of Saint Katherine",

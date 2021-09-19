@@ -15,7 +15,7 @@
 
   "wargear": ["wargear.simulacrumImperialis"],
 
-  "weapons": ["weapons.dustinCrusadeBoltgun", "weapons.artificerCraftedStormBolter", "weapons.ministorumFlamer", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
+  "weapons": ["weapons.boltgun", "weapons.artificerCraftedStormBolter", "weapons.ministorumFlamer", "weapons.boltPistol", "weapons.fragGrenade", "weapons.krakGrenade"],
 
   "abilities": ["wargear.simulacrumImperialis", "abilities.actsOfFaith", "abilities.objectiveSecured", "abilities.blessedBolts", "abilities.judgementOfTheFaithful", "abilities.cleansedByFire",
     {

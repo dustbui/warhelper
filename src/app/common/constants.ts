@@ -315,7 +315,7 @@ export class Constants {
       tags: ["Artificer Relic", "INFANTRY"],
       rules: ["4+ invulnerable save.", "Unmodified saving rolls of 6 deal 1 mortal wound to the closest enemy unit within 1\"."]
     }),
-     jumpPackAssault: new Ability({
+    jumpPackAssault: new Ability({
       name: "Jump Pack Assault",
       points: 2,
       rules: ["During deployment, this unit can deployed into the skies above the battlefield. If it is, you may deploy it at the end of any of your Movement phases anywhere that is more than 9\" from enemy models."],
@@ -333,6 +333,26 @@ export class Constants {
       points: 25,
       rules: ["During deployment, this unit can deployed into the skies above the battlefield. If it is, you may deploy it at the end of any of your Movement phases anywhere that is more than 9\" from enemy models."],
       description: ""
+    }),
+    improvedSights: new Ability({
+      name: "Improved Sights",
+      tags: ["Weapon Enhancement"],
+      rules: ["+1 to hit rolls."]
+    }),
+    accelerator: new Ability({
+      name: "Accelerator",
+      tags: ["Weapon Enhancement"],
+      rules: ["+6\" to weapon range."]
+    }),
+    heirloom: new Ability({
+      name: "Heirloom",
+      tags: ["Weapon Enhancement"],
+      rules: "Unmodified hit rolls of 6 score +1 hit."
+    }),
+    fleshbane: new Ability({
+      name: "Fleshbane",
+      tags: ["Weapon Enhancement"],
+      rules: "+1 weapon damage."
     })
   };
 
@@ -358,13 +378,12 @@ export class Constants {
       name: "Iron Surplice of Saint Istaela",
       rules: '+1 Wound Characteristic.'
     }),
-    stormShield: new Wargear( {
+    stormShield: new Wargear({
       name: "Storm Shield",
       points: 4,
       rules: "The bearer has a 4+ invulnerable save. In addition, add 1 to armour saving throws made for the bearer.",
     }),
-    jumpPack: new Wargear(
-      {
+    jumpPack: new Wargear({
       name: "Jump Pack",
       points: 0,
       rules: "If this model has a jump pack, when you set it up during deployment, it can be set up high in the skies, ready to strike, instead of being placed on the battlefield. If it is, it can make a sudden assault to arrive on the battlefield at the end of any of your Movement phases; when it does so set it up anywhere that is more than 9\". from any enemy models.",
@@ -385,6 +404,52 @@ export class Constants {
       armorPen: -1,
       damage: 1,
       imageUrl: "https://3dprint.com/wp-content/uploads/2016/03/3dp_Chainsword_imperial.jpg"
+    }),
+    theArdentBladeShooting: new Weapon({
+      name: "The Ardent Blade",
+      range: 12,
+      type: "Assault",
+      attacks: "D6",
+      strength: 6,
+      armorPen: -2,
+      damage: 1,
+      imageUrl: "https://i.imgur.com/ToVWm0b.png",
+      abilities: [new Ability({
+        rules: ["Attacks automatically hit."]
+      })]
+    }),
+    dustinCrusadeTheArdentBladeShooting: new Weapon({
+      name: "The Ardent Blade",
+      range: 12,
+      type: "Assault",
+      attacks: "D6",
+      strength: 6,
+      armorPen: -2,
+      damage: 1,
+      damageModifier: 1,
+      imageUrl: "https://i.imgur.com/ToVWm0b.png",
+      abilities: [Constants.abilities.fleshbane, new Ability({
+        rules: ["Attacks automatically hit."]
+      })]
+    }),
+    theArdentBladeMelee: new Weapon(  {
+      name: "The Ardent Blade",
+      type: "Melee",
+      strength: 4,
+      armorPen: -4,
+      damage: 2,
+      imageUrl: "https://i.imgur.com/ToVWm0b.png",
+      abilities: []
+    }),
+    dustinCrusadeTheArdentBladeMelee: new Weapon(  {
+      name: "The Ardent Blade",
+      type: "Melee",
+      strength: 4,
+      armorPen: -4,
+      damage: 2,
+      damageModifier: 1,
+      imageUrl: "https://i.imgur.com/ToVWm0b.png",
+      abilities: [Constants.abilities.fleshbane]
     }),
     lightningClaw: new Weapon({
       name: "Lightning Claw",
@@ -433,6 +498,27 @@ export class Constants {
         })
       ]
     }),
+    dustinCrusadeRedemption: new Weapon({
+      name: 'Redemption',
+      type: 'Pistol',
+      points: 5,
+      isRelic: true,
+      range: 12,
+      rangeModifier: 6,
+      attacks: 1,
+      hitModifier: 1,
+      strength: 8,
+      armorPen: -3,
+      damage: 2,
+      imageUrl: 'https://i.imgur.com/DyVQDMm.png',
+      abilities: [
+        Constants.abilities.improvedSights,
+        Constants.abilities.accelerator,
+        new Ability({
+          rules: 'On hit, draw a straight line between the closest part of this model’s base and that of the closest model in the target unit. Make one wound roll against the target unit, and each other unit this line passes over.'
+        })
+      ]
+    }),
     ministorumHeavyFlamer: new Weapon({
       name: 'Ministorum Heavy Flamer',
       type: "Heavy",
@@ -474,7 +560,9 @@ export class Constants {
       armorPen: -3,
       damage: 2,
       hitModifier: -1,
-      abilities: [new Ability({rules: "-1 to hit rolls."})]
+      abilities: [new Ability({
+        rules: "-1 to hit rolls."
+      })]
     }),
     thunderHammer: new Weapon({
       name: 'Thunder Hammer',
@@ -483,7 +571,9 @@ export class Constants {
       armorPen: -2,
       damage: 3,
       hitModifier: -1,
-      abilities: [new Ability({rules: "-1 to hit rolls."})]
+      abilities: [new Ability({
+        rules: "-1 to hit rolls."
+      })]
     }),
     chainfist: new Weapon({
       name: 'Chainfist',
@@ -491,7 +581,9 @@ export class Constants {
       strengthMultiplier: 2,
       armorPen: -4,
       damage: 'D3',
-      abilities: [new Ability({rules: "-1 to hit rolls. Damage to VEHICLE models is automatically set to 3."})]
+      abilities: [new Ability({
+        rules: "-1 to hit rolls. Damage to VEHICLE models is automatically set to 3."
+      })]
     }),
     penitentBuzzBlade: new Weapon({
       name: "Penitent Buzz-blade",
@@ -594,7 +686,11 @@ export class Constants {
       damage: 1,
       damageModifier: 1,
       hitModifier: 1,
-      abilities: [new Ability({name: "Improved Sights"}), new Ability({name: "Masterworked"})],
+      abilities: [new Ability({
+        name: "Improved Sights"
+      }), new Ability({
+        name: "Masterworked"
+      })],
       imageUrl: 'https://i.imgur.com/LQRPZxz.png'
     }),
     heavyBolter: new Weapon({
@@ -616,7 +712,10 @@ export class Constants {
       range: 36,
       strength: 5,
       armorPen: -1,
-      abilities: [new Ability({name: "Auto-Loader", rules: "Unmodified hit rolls of 6 score +1 hit."})],
+      abilities: [new Ability({
+        name: "Auto-Loader",
+        rules: "Unmodified hit rolls of 6 score +1 hit."
+      })],
       damage: 2,
       imageUrl: 'https://i.imgur.com/UPqwIfI.png'
     }),

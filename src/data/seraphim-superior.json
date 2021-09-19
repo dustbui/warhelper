@@ -15,7 +15,7 @@
 
   "wargear": [],
 
-  "weapons": ["weapons.redemption", "weapons.plasmaPistolSupercharge", "weapons.powerSword", "weapons.fragGrenade", "weapons.krakGrenade"],
+  "weapons": ["weapons.dustinCrusadeRedemption", "weapons.powerSword", "weapons.fragGrenade", "weapons.krakGrenade"],
 
   "abilities": ["abilities.skyStrike", "abilities.actsOfFaith", "abilities.aSacredBurdenRedemption", "abilities.angelicAscent", "abilities.judgementOfTheFaithful", "abilities.holyRage", "abilities.sufferNotTheWitch"],
 

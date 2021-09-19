@@ -1,3 +1,4 @@
 <span *ngIf="checkAura()" class="text-light-grey">(( </span>
-<b><i>{{abilityName}}</i></b>
+<b><i
+    [ngClass]="{'text-dark-blue' : ability.tags && ability.tags.includes('Weapon Enhancement')}">{{abilityName}}</i></b>
 <span *ngIf="checkAura()" class="text-light-grey"> ))</span>

@@ -13,6 +13,7 @@ export class Weapon {
   type: string = '';
   isRelic: boolean = false;
   attacks: number | string = 0;
+  rangeModifier: number = 0;
   hitModifier: number = 0;
   abilities: Ability[] = [];
   strength: number | string = 0;

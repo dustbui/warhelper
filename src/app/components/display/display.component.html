@@ -152,9 +152,11 @@
         <div class="weapon" [ngClass]="{ 'pinned' : weapon.isPinned, 'pinned-header-offset' : weapon.isPinned }"
           (click)="togglePin(weapon, $event)" *ngFor="let weapon of unit.weapons | callback: filterRangedWeapons">
           <!-- Range -->
-          <div class="weapon-range-corner"></div>
+          <div class="weapon-range-corner"
+            [ngClass]="{'dark-blue-corner': weapon.rangeModifier && weapon.rangeModifier != 0}">
+          </div>
           <div class="weapon-range-value">
-            {{weapon.range}}"
+            {{weapon.range + (weapon.rangeModifier || 0)}}"
           </div>
           <!-- Name -->
           <div class="weapon-name">
@@ -189,7 +191,9 @@
             <div class="center">
               <div
                 [ngClass]="{'dice-value' : checkForDice(weapon.damage), 'text-dark-blue': weapon.damageModifier && weapon.damageModifier != 0}">
-                <div class="center">{{weapon.damage + (weapon.damageModifier ||0)}}</div>
+                <div class="center" *ngIf="checkForDice(weapon.damage)">{{weapon.damage}}</div>
+                <div class="center" *ngIf="!checkForDice(weapon.damage)">{{weapon.damage + (weapon.damageModifier ||0)}}
+                </div>
               </div>
             </div>
           </div>
@@ -301,7 +305,9 @@
             <div class="center">
               <div
                 [ngClass]="{'dice-value' : checkForDice(weapon.damage), 'text-dark-blue' : weapon.damageModifier && weapon.damageModifier != 0}">
-                <div class="center">{{weapon.damage + (weapon.damageModifier || 0)}}</div>
+                <div class="center" *ngIf="checkForDice(weapon.damage)">{{weapon.damage}}</div>
+                <div class="center" *ngIf="!checkForDice(weapon.damage)">{{weapon.damage + (weapon.damageModifier ||0)}}
+                </div>
               </div>
             </div>
           </div>
