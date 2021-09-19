@@ -111,5 +111,5 @@
 
   "defensePreWoundChecks": [],
   
-  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
 }
