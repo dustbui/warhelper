@@ -83,18 +83,27 @@
     "range": 18,
     "warpCharge": 5,
     "rules": [
-      "Target enemy unit suffers D3 mortal wounds. If the psychic roll was 10 or higher, the target suffers D6 mortal wounds instead."
+      "The closest visible enemy unit suffers D3 mortal wounds. If the psychic roll was 11+, the target suffers D6 mortal wounds instead."
     ],
     "tags": [],
     "description": ""
   }],
 
-  "abilities": [{
-      "name": "Cloaked By The Storm",
-      "points": 0,
-      "rules": ["Grants the use of the Cloaked By The Storm (2CP) strategem. (-1 to hit for opponent's ranged attacks against all friendly units within 6\" on successful cast of Tempestas ability)"],
-      "tags": [""],
-      "description": ""
+  "abilities": [
+    {
+      "name": "(2CP) Cloaked By The Storm",
+      "tags": ["Stratagem"],
+      "rules": "<b>Psychic:</b> If you have successfully resolved a Tempestas ability this phase, until your next psychic phase, enemies get -1 to hit for ranged attacks made to friendly units within 6\" of this model."
+    },
+    {
+      "name": "(2CP) Only In Death Does Duty End",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> If this unit has not fought this phase, upon death, it may fight after its attacker has finished making attacks."
+    },
+    {
+      "name": "(0CP) Counter Charge",
+      "tags": ["Stratagem"],
+      "rules": "<b>Enemy Charge:</b> +3\" to Heroic Intervention."
     },
     {
       "name": "Psychic Hood",
@@ -115,11 +124,19 @@
 
   "meleePreHitChecks": [
     "abilities.bornHeroes",
-    "abilities.savageFury",
-    "abilities.whirlwindOfRage"
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
   ],
 
-  "meleePreWoundChecks": [],
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "defensePreHitChecks": [],
 
