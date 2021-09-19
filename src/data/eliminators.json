@@ -94,13 +94,6 @@
       "rules": ["+1 Hit. Targets do not recieve the benefit of cover."],
       "tags": [""],
       "description": ""
-    },
-    {
-      "name": "Heavy",
-      "points": 0,
-      "rules": ["-1 Hit if this unit moved this turn."],
-      "tags": [""],
-      "description": ""
     }
   ],
 
