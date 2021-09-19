@@ -1,0 +1,90 @@
+{
+  "name": "Assault Intercessor Squad",
+  "keywords": ["Infantry", "Troops", "Core"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 6,
+  "weaponSkill": 3,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 4,
+  "wounds": 2,
+  "attacks": 2,
+  "leadership": 8,
+  "saves": 3,
+  "points": 19,
+
+  "wargear": [],
+
+  "weapons": [
+    {
+      "name": "Heavy Bolt Pistol",
+      "points": 0,
+      "range": 18,
+      "type": "Pistol",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [],
+      "strength": 4,
+      "armorPen": -1,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    "weapons.astartesChainsword",
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [
+    {
+      "name": "(1CP) Transhuman Physiology",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
+    },
+    {
+      "name": "(2CP) Honour The Chapter",
+      "tags": ["Stratagem"],
+      "rules": "<b>Fight:</b> At the end of the Fight Phase, this unit may fight again."
+    },
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": [],
+
+  "shootingPreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "meleePreAttackChecks": ["abilities.shockAssault"],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
+  ],
+
+  "meleePreWoundChecks": [
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [],
+
+  "defensePreWoundChecks": [],
+  
+  "defensePreLeadershipChecks": ["abilities.andTheyShallNoKnowFear"]
+}
