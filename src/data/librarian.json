@@ -63,17 +63,17 @@
     "range": 18,
     "warpCharge": 6,
     "rules": [
-      "Target an enemy unit is afflicted by the following: It cannot fire Overwatch unless it is wholly within terrain and it fights last."
+      "Target enemy unit cannot fire Overwatch unless it is wholly within terrain and it fights last."
     ],
     "tags": ["Tempestas"],
     "description": ""
   }, {
-    "name": "(( Storm Caller ))",
+    "name": "Storm Caller",
     "points": 0,
     "range": 6,
     "warpCharge": 6,
     "rules": [
-      "Friendly Space Wolves units within 6\" recieve the benefits of light cover."
+      "Until your next psychic phase, friendly units within 6\" recieve the benefits of light cover."
     ],
     "tags": ["Tempestas"],
     "description": ""
