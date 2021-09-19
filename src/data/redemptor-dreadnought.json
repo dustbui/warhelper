@@ -103,6 +103,23 @@
   "traits": [],
 
   "shootingPreAttackChecks": [],
+  
+  "shootingPreWoundChecks": [
+    {
+      "name": "Devestator Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Devestator Doctrine"],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Tactical Doctrine",
+      "points": 0,
+      "rules": ["-1 AP for Storm Bolter in Tactical Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
 
   "meleePreAttackChecks": [],
 
