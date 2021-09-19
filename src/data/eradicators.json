@@ -51,7 +51,7 @@
   "abilities": [{
       "name": "Total Obliteration",
       "points": 0,
-      "rules": ["This unit may shoot twice targeting one unit in the shooting phase if it chooses the same target again. Cannot use if this unit made an Advance move this turn."],
+      "rules": ["This unit may shoot twice during the shooting phase if it chooses the same single target again. Cannot use if this unit made an Advance move this turn."],
       "tags": [""],
       "description": ""
     },
