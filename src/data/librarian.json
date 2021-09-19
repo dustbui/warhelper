@@ -119,6 +119,14 @@
   "traits": [],
 
   "shootingPreAttackChecks": ["abilities.bolterDiscipline"],
+  
+  "shootingPreWoundChecks": [{
+    "name": "Tactical Doctrine",
+    "points": 0,
+    "rules": ["-1 AP in Tactical Doctrine"],
+    "tags": [""],
+    "description": ""
+  }],
 
   "meleePreAttackChecks": ["abilities.shockAssault"],
 
