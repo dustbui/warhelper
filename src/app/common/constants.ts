@@ -27,7 +27,7 @@ export class Constants {
     }),
     actsOfFaith: new Ability({
       name: 'Acts of Faith',
-      rules: 'Once per phase, replace regular dice rolls with Miracle dice.'
+      rules: 'Once per phase and before rolling, replace any number of regular dice rolls with Miracle dice.'
     }),
     leadTheRighteous: new Ability({
       name: 'Lead the Righteous',
@@ -208,6 +208,16 @@ export class Constants {
       rules: "Performing an Act of Faith restores 1 wound.",
       tags: ["Warlord Trait", "Order of the Valorous Heart"],
       description: "Following the example of Saint Lucia, this leader will endure any suffering, fighting on long past the limits of mortal endurance."
+    }),
+    headhuntersHit: new Ability({
+      name: 'Headhunters',
+      rules: '+1 to hit rolls against CHARACTER units.',
+      tags: ['Battle Trait', 'Crusade']
+    }),
+    headhuntersWound: new Ability({
+      name: 'Headhunters',
+      rules: '+1 to wound rolls against CHARACTER units.',
+      tags: ['Battle Trait', 'Crusade']
     }),
     imperviousToPainPreWound: new Ability({
       name: "Impervious to Pain",

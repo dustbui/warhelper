@@ -28,18 +28,16 @@
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": [{
-    "name": "Boltgun - Improved Sights",
-    "rules": "+1 to hit rolls."
-  }, "abilities.leadTheRighteousAffected"],
-  "shootingPreWoundChecks": [{
-    "name": "Boltgun - Masterworked",
-    "rules": "+1 damage."
-  }],
+  "shootingPreHitChecks": ["abilities.headhuntersHit",
+    "abilities.leadTheRighteousAffected"
+  ],
+  "shootingPreWoundChecks": ["abilities.headhuntersWound"],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.leadTheRighteousAffected"],
-  "meleePreWoundChecks": [],
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.headhuntersHit",
+    "abilities.leadTheRighteousAffected"
+  ],
+  "meleePreWoundChecks": ["abilities.headhuntersWound"],
 
   "defensePreHitChecks": [],
   "defensePreSaveChecks": ["abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
