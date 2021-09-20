@@ -15,7 +15,7 @@
 
   "wargear": [],
 
-  "weapons": ["weapons.fragGrenade", "weapons.krakGrenade", "weapons.neuralWhips"],
+  "weapons": ["weapons.fragGrenade", "weapons.krakGrenade", "weapons.dustinCrusadeNeuralWhips"],
 
   "abilities": ["abilities.actsOfFaith", "abilities.overseerOfRedemption", "abilities.imperviousToPain", "abilities.openTheReliquaries", "abilities.divineIntervention", "abilities.sufferingAndSacrifice", "abilities.sufferNotTheWitch"],
 

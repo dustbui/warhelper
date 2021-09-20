@@ -17,7 +17,8 @@
   "wargear": ["wargear.rodOfOffice", "wargear.rosarius"],
 
   "weapons": [
-    "weapons.redemption",
+    "weapons.plasmaPistol",
+    "weapons.plasmaPistolSupercharge",
     "weapons.fragGrenade",
     "weapons.krakGrenade",
     "weapons.powerSword"

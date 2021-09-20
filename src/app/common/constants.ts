@@ -137,6 +137,10 @@ export class Constants {
       points: 0,
       rules: ["While the Assault Doctrine is active, unmodified hit rolls of 6 score an additional hit."],
     }),
+    eliteCrew: new Ability({
+      name: 'Elite Crew',
+      rules: ['Re-roll hit rolls of 1.']
+    }),
     whirlwindOfRage: new Ability({
       name: "Whirlwind of Rage",
       points: 0,
@@ -593,6 +597,16 @@ export class Constants {
       damage: 2,
       imageUrl: "https://i.imgur.com/HOXBxMd.png"
     }),
+    dustinCrusadePenitentBuzzBlade: new Weapon({
+      name: "Penitent Buzz-blade",
+      type: 'Melee',
+      strength: 3,
+      armorPen: -4,
+      hitModifier: 1,
+      abilities: [new Ability({name: "Finely Balanced"})],
+      damage: 2,
+      imageUrl: "https://i.imgur.com/HOXBxMd.png"
+    }),
     penitentFlail: new Weapon({
       name: "Penitent Flail",
       type: 'Melee',
@@ -775,6 +789,21 @@ export class Constants {
       armorPen: -2,
       damage: 1,
       abilities: [
+        new Ability({
+          rules: 'If no model in the target unit (excluding VEHICLE units) has a Leadership characteristic of 8 or more, +1 to wound rolls.'
+        })
+      ],
+      imageUrl: 'https://i.imgur.com/ZNYGcME.png'
+    }),
+    dustinCrusadeNeuralWhips: new Weapon({
+      name: 'Neural Whips',
+      type: 'Melee',
+      strength: 0,
+      armorPen: -2,
+      damage: 1,
+      damageModifier: 1,
+      abilities: [
+        new Ability({name: "Fleshbane"}),
         new Ability({
           rules: 'If no model in the target unit (excluding VEHICLE units) has a Leadership characteristic of 8 or more, +1 to wound rolls.'
         })

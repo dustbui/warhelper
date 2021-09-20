@@ -15,7 +15,7 @@
 
   "wargear": [],
 
-  "weapons": ["weapons.dustinCrusadeHeavyBolter", "weapons.dustinCrusadeHeavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
+  "weapons": ["weapons.heavyBolter", "weapons.heavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
 
   "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
 
@@ -34,7 +34,8 @@
     "rules": "Equipping 2 of the same melee weapon sets attack characteristic to 5."
   }],
 
-  "meleePreHitChecks": ["abilities.zealot"],
+  "meleePreHitChecks": ["abilities.zealot", "abilities.eliteCrew"],
+  "shootingPreHitChecks": ["abilities.eliteCrew"],
 
   "meleePreWoundChecks": [],
 
