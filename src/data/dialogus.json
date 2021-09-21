@@ -25,7 +25,7 @@
     }
   ],
 
-  "abilities": ["abilities.actsOfFaith", "abilities.warHymn", "abilities.catechismOfRepugnance", {
+  "abilities": ["abilities.actsOfFaith", "abilities.warHymn", "abilities.catechismOfRepugnance", "abilities.refrainOfBlazingPiety", {
       "name": "Laud Hailer",
       "tags": ["Aura"],
       "rules": "+1 to Leadership characteristic of ADEPTA SORORITAS CORE and ADEPTA SORORITAS CHARACTER units within 6\"."

@@ -171,6 +171,11 @@ export class Constants {
       tags: ["Hymns of Battle"],
       rules: "<b>D6 (3+) Command: </b> Select one friendly ADEPTUS MINISTORUM CORE, ADEPTUS MINISTORUM CHARACTER, or ENGINE OF REDEPMTION unit within 6\". Until the start of your next Command phase, +1 to Attacks characteristic of models in target unit."
     }),
+    refrainOfBlazingPiety: new Ability({
+      name: "Refrain of Blazing Piety",
+      tags: ["Hymns of Battle"],
+      rules: "<b>D6 (3+) Command: </b> Select one enemy unit that is within 12\" of and visible to this model. That unit suffers D3 mortal wounds (if that unit has the CHAOS keyword, it instead suffers 3 mortal wounds)."
+    }),
     catechismOfRepugnance: new Ability({
       name: "Catechism of Repugnance",
       tags: ["Hymns of Battle"],
@@ -253,7 +258,7 @@ export class Constants {
     fieryOratory: new Ability({
       name: "(1CP) Fiery Oratory",
       tags: ["Stratagem"],
-      rules: "<b>Non-Command phase Start: </b> Select 1 ADEPTUS MINISTORUM PRIEST that has not intoned a hymn this turn. That model can intone one hymn that it knows that has not already been intoned by a friendly model this turn. That hymn is automatically inspiring and takes effect until the start of your next Command phase."
+      rules: "<b>Non-Command phase start: </b> Select 1 ADEPTUS MINISTORUM PRIEST that has not intoned a hymn this turn. That model can intone one hymn that it knows that has not already been intoned by a friendly model this turn. That hymn is automatically inspiring and takes effect until the start of your next Command phase."
     }),
     angelicAscent: new Ability({
       name: "(1CP) Angelic Ascent",
