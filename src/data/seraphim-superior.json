@@ -31,7 +31,7 @@
 
   "defensePreHitChecks": [],
   "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
-  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.indomitableBeliefAffected", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
   "defensePreLeadershipChecks": [],
 
   "unitLinks": ["Seraphim"]

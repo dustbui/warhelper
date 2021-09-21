@@ -49,7 +49,7 @@ export class DisplayComponent implements OnInit, AfterViewInit {
   @Input() unit: Unit = new Unit();
   @Input() input: any = this.appComponent.selectedUnit;
 
-  public error: string = '';
+  public error: any = '';
   public itemPinned: boolean = false;
   public unitChooserIsOpen: boolean = false;
   public woundString: string = '';
@@ -85,6 +85,7 @@ export class DisplayComponent implements OnInit, AfterViewInit {
 
     const unit = this.appComponent.unitMap[unitName];
     this.unit = this.parseJson(unit);
+    this.scrollToAnchor('name');
   }
 
   private addDefaultMelee(unit: Unit) {

@@ -19,6 +19,7 @@ import assaultIntercessors from 'src/data/assault-intercessors.json';
 import eliminators from 'src/data/eliminators.json';
 import eradicators from 'src/data/eradicators.json';
 import terminator from 'src/data/terminator.json';
+import dialogus from 'src/data/dialogus.json';
 import librarian from 'src/data/librarian.json';
 import redemptorDreadnought from 'src/data/redemptor-dreadnought.json';
 import incursors from 'src/data/incursors.json';
@@ -34,7 +35,7 @@ import { Router } from '@angular/router';
 export class UnitChooserComponent implements OnInit {
   @Output() selectedUnitEvent = new EventEmitter();
   public units: any[] = [
-    arcoFlagellants, battleSister, canoness, celestine, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard, wolfLordOnThunderwolf, cyberwolf, bloowClaws, penitentEngine, geminaeSuperia, sororitasRhino, librarian,
+    arcoFlagellants, battleSister, canoness, celestine, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard, wolfLordOnThunderwolf, cyberwolf, bloowClaws, penitentEngine, geminaeSuperia, sororitasRhino, librarian, dialogus,
     redemptorDreadnought, incursors, mortifier, assaultIntercessors, eliminators, eradicators
   ];
   private originalUnits = this.units;

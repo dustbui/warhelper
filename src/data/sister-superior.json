@@ -36,7 +36,7 @@
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
-  "defensePreSaveChecks": ["abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreSaveChecks": ["abilities.indomitableBeliefAffected", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
   "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
   "defensePreLeadershipChecks": [],
   "unitLinks": ["Battle Sister"]

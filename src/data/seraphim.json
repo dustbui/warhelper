@@ -30,7 +30,7 @@
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
-  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
+  "defensePreSaveChecks": ["abilities.angelicVisage", "abilities.indomitableBeliefAffected", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],
   "defensePreWoundChecks": ["abilities.stoicEndurancePreWound"],
   "defensePreLeadershipChecks": [],
 

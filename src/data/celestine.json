@@ -5,7 +5,7 @@
   "move": 12,
   "weaponSkill": 2,
   "ballisticSkill": 2,
-  "strength": 3,
+  "strength": 4,
   "toughness": 3,
   "wounds": 6,
   "attacks": 6,
@@ -23,6 +23,7 @@
   "abilities": [
     "abilities.skyStrike",
     "abilities.actsOfFaith",
+    "abilities.artisanBionics",
     {
       "name": "Indomitable Belief",
       "tags": ["Aura", "Warlord Trait", "Crusade"],
@@ -58,13 +59,14 @@
   "defensePreSaveChecks": [{
       "name": "The Armour of Saint Katherine",
       "rules": "4+ invulnerable save."
-    }, "abilities.conversionField",
+    },
     "abilities.shieldOfFaith"
   ],
   "defensePreWoundChecks": [{
       "name": "Lifewards",
       "rules": "Wounds against this unit are allocated to available Geminae Superia instead."
     },
+    "abilities.artisanBionicsPreWound",
     {
       "name": "The Armour of Saint Katherine",
       "rules": "-1 damage (minimum: 1)."

@@ -27,7 +27,7 @@ export class Constants {
     }),
     actsOfFaith: new Ability({
       name: 'Acts of Faith',
-      rules: 'Once per phase and before rolling, replace any number of regular dice rolls with Miracle dice.'
+      rules: 'Once per phase and before rolling, replace any number of regular dice rolls with Miracle dice. If within 6\" of a friendly Dialogus model, you can modify the value of 1 Miracle Dice by 1.'
     }),
     leadTheRighteous: new Ability({
       name: 'Lead the Righteous',
@@ -137,6 +137,11 @@ export class Constants {
       points: 0,
       rules: ["While the Assault Doctrine is active, unmodified hit rolls of 6 score an additional hit."],
     }),
+    indomitableBeliefAffected: new Ability({
+      name: "Indomnitable Belief",
+      tags: ["Aura"],
+      rules: ["If within 6\" of Celestine, +1 to Shield of Faith invulnerable save."]
+    }),
     eliteCrew: new Ability({
       name: 'Elite Crew',
       rules: ['Re-roll hit rolls of 1.']
@@ -160,6 +165,16 @@ export class Constants {
       rules: ["Each time a Combat Attrition test is taken for this unit, ignore any or all modifiers."],
       "tags": ["Adeptus Astartes"],
       "description": "Space Marines stand unafraid before the terrors of the galaxy."
+    }),
+    warHymn: new Ability({
+      name: "War Hymn",
+      tags: ["Hymns of Battle"],
+      rules: "<b>D6 (3+) Command: </b> Select one friendly ADEPTUS MINISTORUM CORE, ADEPTUS MINISTORUM CHARACTER, or ENGINE OF REDEPMTION unit within 6\". Until the start of your next Command phase, +1 to Attacks characteristic of models in target unit."
+    }),
+    catechismOfRepugnance: new Ability({
+      name: "Catechism of Repugnance",
+      tags: ["Hymns of Battle"],
+      rules: ["<b>D6 (3+) Command: </b> Select one friendly ADEPTUS SORORITAS CORE or ADEPTUS SORORITAS CHARACTER unit within 6\". Each time a model in that unit makes a ranged attack with a bolt weapon:<br/> -Unmodified hit rolls of 6 automatically wound. <br/>-If attacks are within half range, Armour Penetration characteristic improved by 1."]
     }),
     shockAssault: new Ability({
       name: "Shock Assault",
@@ -235,15 +250,20 @@ export class Constants {
       tags: ["Stratagem"],
       rules: "<b>Movement:</b> Can shoot if fell back."
     }),
+    fieryOratory: new Ability({
+      name: "(1CP) Fiery Oratory",
+      tags: ["Stratagem"],
+      rules: "<b>Non-Command phase Start: </b> Select 1 ADEPTUS MINISTORUM PRIEST that has not intoned a hymn this turn. That model can intone one hymn that it knows that has not already been intoned by a friendly model this turn. That hymn is automatically inspiring and takes effect until the start of your next Command phase."
+    }),
     angelicAscent: new Ability({
       name: "(1CP) Angelic Ascent",
       tags: ["Stratagem"],
       rules: "<b>Movement Start:</b> Remove unit from battlefield. Re-deploy in your next Reinforcements step."
     }),
     holyRage: new Ability({
-      name: "(2CP) Holy Rage",
+      name: "(2CP / 1CP) Holy Rage",
       tags: ["Stratagem"],
-      rules: "<b>Charge Start:</b> Unit gains Zealot (re-roll hit rolls if charged, was charged, or performed Heroic Intervention) or Fanatic (can charge if fell back)."
+      rules: "<b>Charge Start:</b> Unit gains Zealot (re-roll hit rolls if charged, was charged, or performed Heroic Intervention) or Fanatic (can charge if fell back). -1 CP cost if within 6\" of an ADEPTUS MINISTORUM PRIEST."
     }),
     sufferingAndSacrifice: new Ability({
       name: "(1CP) Suffering and Sacrifice",
@@ -328,6 +348,16 @@ export class Constants {
       name: "Conversion Field",
       tags: ["Artificer Relic", "INFANTRY"],
       rules: ["4+ invulnerable save.", "Unmodified saving rolls of 6 deal 1 mortal wound to the closest enemy unit within 1\"."]
+    }),
+    artisanBionics: new Ability({
+      name: "Artisan Bionics",
+      tags: ["Artificer Relic"],
+      rules: ["+1 to Strength characteristic."]
+    }),
+    artisanBionicsPreWound: new Ability({
+      name: "Artisan Bionics",
+      tags: ["Artificer Relic", "INFANTRY", "CAVALRY", "BIKER"],
+      rules: ["5+ ignore wound."]
     }),
     jumpPackAssault: new Ability({
       name: "Jump Pack Assault",
