@@ -1,0 +1,221 @@
+{
+  "name": "Primaris Chaplain on Bike",
+  "keywords": ["Character", "Chaplain", "Biker", "Wolf Priest", "Priest", "Primaris", "Master of Sanctity", "HQ"],
+  "factionKeywords": ["Imperium", "Adeptus Astartes", "Space Wolves"],
+  "move": 14,
+  "weaponSkill": 2,
+  "ballisticSkill": 3,
+  "strength": 4,
+  "toughness": 5,
+  "wounds": 7,
+  "attacks": 4,
+  "leadership": 9,
+  "saves": 3,
+  "points": 115,
+
+  "wargear": [{
+    "name": "Rosarius",
+    "points": 0,
+    "rules": ["The bearer has a 4+ invulnerable save."],
+    "isRelic": false,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "weapons": [
+    {
+      "name": "Benediction of Fury",
+      "points": 0,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": true,
+      "attacks": 0,
+      "abilities": [{
+        "rules": "Unmodified wound rolls of 6 inflict one mortal wound in addition to other damage."
+      }],
+      "strength": 2,
+      "armorPen": -2,
+      "damage": 3,
+      "imageUrl": ""
+    },
+    {
+      "name": "Twin Bolt Rifle",
+      "points": 0,
+      "range": 30,
+      "type": "Rapid Fire",
+      "isRelic": false,
+      "attacks": 2,
+      "abilities": [],
+      "strength": 4,
+      "armorPen": -1,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    {
+      "name": "Absolver Bolt Pistol",
+      "points": 0,
+      "range": 18,
+      "type": "Pistol",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [],
+      "strength": 5,
+      "armorPen": -1,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    "weapons.fragGrenade",
+    "weapons.krakGrenade"
+  ],
+
+  "abilities": [{
+      "name": "Master of Sanctity",
+      "points": 25,
+      "rules": [
+        "This model knows one additional Litany.",
+        "This model can recite one additional Litany that has not been recited this turn."
+      ],
+      "tags": ["Command"],
+      "description": ""
+    },
+    {
+      "name": "Litany of Hate",
+      "points": 0,
+      "rules": ["Friendly CORE or CHARACTER units within 6\" can reroll hits."],
+      "tags": ["Litany", "Aura"],
+      "description": ""
+    },
+    {
+      "name": "Canticle of Hate",
+      "points": 0,
+      "rules": ["Friendly CORE or CHARACTER units within 6\" gain +2 to charge rolls (not cumulative with other effects) and have 6\" pile-in and consolidate."],
+      "tags": ["Litany", "Aura"],
+      "description": ""
+    },
+    {
+      "name": "Mantra of Strength",
+      "points": 0,
+      "rules": ["+1 Strength, +1 Attacks, +1 Damage for melee weapons."],
+      "tags": ["Litany"],
+      "description": ""
+    },
+    {
+      "name": "Wise Orator",
+      "points": 0,
+      "rules": [
+        "+1 to Litany rolls",
+        "Commanding Oratory stratagem cost reduced from 2CP -> 1CP."
+      ],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    {
+      "name": "Turbo-boost",
+      "points": 0,
+      "rules": ["Advance rolls are always 6\"."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Spiritual Leaders",
+      "points": 0,
+      "rules": ["Friendly models within 6\" can use this model's Leadership instead of their own."],
+      "tags": ["Aura"],
+      "description": ""
+    },
+    {
+      "name": "(1CP) Commanding Oratory",
+      "tags": ["Stratagem"],
+      "rules": "<b>Start of Phase: Use at the start of any phase except Command Phase. If this model has not recited a litany this turn, it recites one and it is automatically inspiring.</b> "
+    },
+    {
+      "name": "(1CP) Transhuman Physiology",
+      "tags": ["Stratagem"],
+      "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
+    },
+    {
+      "name": "(0CP) Counter Charge",
+      "tags": ["Stratagem"],
+      "rules": "<b>Enemy Charge:</b> +3\" to Heroic Intervention."
+    },
+    "abilities.angelsOfDeath"
+  ],
+
+  "traits": [],
+
+  "shootingPreAttackChecks": ["abilities.bolterDiscipline"],
+
+  "shootingPreWoundChecks": [
+    {
+      "name": "Tactical Doctrine",
+      "points": 0,
+      "rules": ["-1 AP for Twin Bolt Rifle in Tactical Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    },
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP for Absolver Bolt Pistol in Assault Doctrine"],
+      "tags": ["Adeptus Astartes"],
+      "description": ""
+    }
+  ],
+
+  "meleePreAttackChecks": [{
+      "name": "Mantra of Strength",
+      "points": 0,
+      "rules": ["+1 Attacks"],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    "abilities.shockAssault"
+  ],
+
+  "meleePreHitChecks": [
+    "abilities.bornHeroes",
+    "abilities.whirlwindOfRage",
+    "abilities.savageFury"
+  ],
+
+  "meleePreWoundChecks": [
+    {
+      "name": "Benediction of Fury",
+      "points": 0,
+      "rules": ["Unmodified wound rolls inflict 1 mortal wound in addition to other damage."],
+      "tags": [""],
+      "description": ""
+    },
+    {
+      "name": "Mantra of Strength",
+      "points": 0,
+      "rules": ["+1 Strength, +1 Damage"],
+      "tags": ["Warlord Trait"],
+      "description": ""
+    },
+    {
+      "name": "Assault Doctrine",
+      "points": 0,
+      "rules": ["-1 AP in Assault Doctrine"],
+      "tags": [""],
+      "description": ""
+    }
+  ],
+
+  "defensePreHitChecks": [],
+
+  "defensePreSaveChecks": [{
+    "name": "Rosarius",
+    "points": 4,
+    "rules": [
+      "4+ Invulnerable save."
+    ],
+    "isRelic": false,
+    "tags": [""],
+    "description": ""
+  }],
+
+  "defensePreWoundChecks": [],
+
+  "defensePreLeadershipChecks": ["abilities.andTheyShallKnowNoFear"]
+}
