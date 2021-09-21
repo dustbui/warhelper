@@ -15,7 +15,8 @@
 
   "wargear": [],
 
-  "weapons": [{
+  "weapons": [
+    {
       "name": "Heavy Bolt Pistol",
       "points": 0,
       "range": 18,
@@ -28,12 +29,52 @@
       "damage": 1,
       "imageUrl": ""
     },
+    {
+      "name": "Plasma Pistol",
+      "points": 0,
+      "range": 12,
+      "type": "Pistol",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": [],
+      "strength": 7,
+      "armorPen": -3,
+      "damage": 1,
+      "imageUrl": ""
+    },
+    {
+      "name": "Plasma Pistol (supercharge)",
+      "points": 0,
+      "range": 12,
+      "type": "Pistol",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": ["Any unmodified hit rolls of 1 destroy the bearer after shooting."],
+      "strength": 8,
+      "armorPen": -3,
+      "damage": 2,
+      "imageUrl": ""
+    },
+    {
+      "name": "Thunder Hammer",
+      "points": 0,
+      "range": 0,
+      "type": "Melee",
+      "isRelic": false,
+      "attacks": 1,
+      "abilities": ["-1 Hit with this weapon."],
+      "strength": 8,
+      "armorPen": -2,
+      "damage": 3,
+      "imageUrl": ""
+    },
     "weapons.astartesChainsword",
     "weapons.fragGrenade",
     "weapons.krakGrenade"
   ],
 
-  "abilities": [{
+  "abilities": [
+    {
       "name": "(1CP) Transhuman Physiology",
       "tags": ["Stratagem"],
       "rules": "<b>Targeted:</b> Ignore all unmodified wound rolls <4."
@@ -61,6 +102,13 @@
   "meleePreAttackChecks": ["abilities.shockAssault"],
 
   "meleePreHitChecks": [
+    {
+      "name": "Thunder Hammer",
+      "points": 0,
+      "rules": ["-1 to hit rolls"],
+      "tags": [""],
+      "description": ""
+    },
     "abilities.bornHeroes",
     "abilities.whirlwindOfRage",
     "abilities.savageFury"
