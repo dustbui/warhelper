@@ -1,0 +1,22 @@
+@import '../../../shared.scss';
+
+.unit {
+  height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .remove-unit {
+    cursor: pointer;
+    margin-right: 15px;
+    color: $dark-grey;
+  }
+
+  .remove-unit:hover {
+    color: $dark-red;
+  }
+
+
+  span {
+    vertical-align: middle;
+  }
+}

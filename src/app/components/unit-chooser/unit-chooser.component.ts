@@ -27,6 +27,7 @@ import incursors from 'src/data/incursors.json';
 import mortifier from 'src/data/mortifier.json';
 import { AppComponent } from 'src/app/app.component';
 import { Router } from '@angular/router';
+import { DataManagerComponent } from '../data-manager/data-manager.component';
 
 @Component({
   selector: 'app-unit-chooser',
@@ -35,15 +36,17 @@ import { Router } from '@angular/router';
 })
 export class UnitChooserComponent implements OnInit {
   @Output() selectedUnitEvent = new EventEmitter();
-  public units: any[] = [
-    arcoFlagellants, battleSister, canoness, celestine, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard, wolfLordOnThunderwolf, cyberwolf, bloowClaws, penitentEngine, geminaeSuperia, sororitasRhino, librarian, dialogus, wolfPriest,
-    redemptorDreadnought, incursors, mortifier, assaultIntercessors, eliminators, eradicators
-  ];
+  // public units: any[] = [
+  //   arcoFlagellants, battleSister, canoness, celestine, seraphim, seraphimSuperior, sisterRepentia, sisterSuperior, repentiaSuperior, wolfGuard, wolfLordOnThunderwolf, cyberwolf, bloowClaws, penitentEngine, geminaeSuperia, sororitasRhino, librarian, dialogus, wolfPriest,
+  //   redemptorDreadnought, incursors, mortifier, assaultIntercessors, eliminators, eradicators
+  // ];
+  public units: any[] = [];
   private originalUnits = this.units;
 
   constructor(private appComponent: AppComponent, private router: Router) { }
 
   ngOnInit() {
+    this.units = this.appComponent.units;
     // Sort alphabetically
     this.units.sort((x: any, y: any): number => {
       if (x.name < y.name) return -1;

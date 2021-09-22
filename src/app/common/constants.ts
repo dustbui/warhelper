@@ -176,6 +176,16 @@ export class Constants {
       tags: ["Hymns of Battle"],
       rules: "<b>D6 (3+) Command: </b> Select one enemy unit that is within 12\" of and visible to this model. That unit suffers D3 mortal wounds (if that unit has the CHAOS keyword, it instead suffers 3 mortal wounds)."
     }),
+    enhancedEngines: new Ability({
+      name: "Enhanced Engines",
+      tags: ["Battle Trait"],
+      rules: "Increased Move characteristic by 2\" (This is reflected on character sheet). +1 Charge and Advance rolls."
+    }),
+    veteranWarriors: new Ability({
+      name: "Veteran Warriors",
+      tags: ["Battle Trait"],
+      rules: "Re-roll hit rolls of 1."
+    }),
     catechismOfRepugnance: new Ability({
       name: "Catechism of Repugnance",
       tags: ["Hymns of Battle"],
@@ -233,6 +243,16 @@ export class Constants {
       name: 'Headhunters',
       rules: '+1 to hit rolls against CHARACTER units.',
       tags: ['Battle Trait', 'Crusade']
+    }),
+    voxCommsDestroyed: new Ability({
+      name: 'Vox Comms Destroyed',
+      rules: 'Unaffected by auras.',
+      tags: ['Battle Scar']
+    }),
+    resilient: new Ability({
+      name: "Resilient",
+      tags: ['Battle Trait'],
+      rules: '6+ ignore wound.'
     }),
     headhuntersWound: new Ability({
       name: 'Headhunters',

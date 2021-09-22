@@ -103,7 +103,7 @@ export class DisplayComponent implements OnInit, AfterViewInit {
   private setWoundValues(unit: Unit, woundValue: number) {
     if (!Array.isArray(unit.wounds)) { return; }
     let arrayIndex = 0;
-    const remainingWounds = unit.wounds[0] - woundValue;
+    const remainingWounds = woundValue;
     unit.wounds.forEach((woundAmount, index) => {
       if (remainingWounds <= woundAmount) {
         arrayIndex = index;

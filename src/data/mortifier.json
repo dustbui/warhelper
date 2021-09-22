@@ -2,7 +2,7 @@
   "name": "Mortifier",
   "keywords": ["Vehicle", "Outcasts", "Engine of Redemption", "Mortifiers"],
   "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas"],
-  "move": 8,
+  "move": 10,
   "weaponSkill": 3,
   "ballisticSkill": 3,
   "strength": 5,
@@ -17,7 +17,7 @@
 
   "weapons": ["weapons.heavyBolter", "weapons.heavyBolter", "weapons.penitentFlail", "weapons.penitentFlail"],
 
-  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
+  "abilities": ["abilities.enhancedEngines", "abilities.instrumentOfPainAndPenance", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
 
   "traits": [{
     "name": "",

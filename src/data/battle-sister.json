@@ -28,16 +28,16 @@
   "traits": ["abilities.shieldOfFaith"],
 
   "shootingPreAttackChecks": [],
-  "shootingPreHitChecks": ["abilities.headhuntersHit",
+  "shootingPreHitChecks": ["abilities.veteranWarriors",
     "abilities.leadTheRighteousAffected"
   ],
   "shootingPreWoundChecks": ["abilities.headhuntersWound"],
 
   "meleePreAttackChecks": [],
-  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.headhuntersHit",
+  "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.veteranWarriors",
     "abilities.leadTheRighteousAffected"
   ],
-  "meleePreWoundChecks": ["abilities.headhuntersWound"],
+  "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
   "defensePreSaveChecks": ["abilities.indomitableBeliefAffected", "abilities.shieldOfFaith", "abilities.stoicEndurancePreSave"],

@@ -18,15 +18,20 @@
 
   <div class="footer">
     <div class="mobile-buttons">
-      <div class="mobile-button dark-grey text-white">
+      <div class="mobile-button dark-grey text-white" [routerLink]="['/data-manager']" title="Data Manager">
+        <div class="mobile-button-icon" routerLinkActive="router-link-active">
+          <span class="material-icons">storage</span>
+        </div>
+      </div>
+      <!-- <div class="mobile-button dark-grey text-white">
         <div class="mobile-button-icon" (click)="filterByKeyword(['Adepta Sororitas', 'Cult Imperialis'])">
           Dustin
         </div>
-      </div>
-      <div class="mobile-button dark-grey text-white" (click)="filterByKeyword(['Space Wolves', 'Adeptus Astartes'])">
+      </div> -->
+      <!-- <div class="mobile-button dark-grey text-white" (click)="filterByKeyword(['Space Wolves', 'Adeptus Astartes'])">
         <div class="mobile-button-icon">
           Matt
         </div>
-      </div>
+      </div> -->
     </div>
   </div>

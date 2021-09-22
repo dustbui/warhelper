@@ -1,0 +1,12 @@
+<div class="upload">
+  <h3>Upload Unit JSON files</h3>
+  <input multiple type="file" name="files" (change)="uploadFile($event)" />
+</div>
+
+<div class="units">
+  <h3>Stored Units</h3>
+  <div *ngFor="let unit of units; index as index" class="unit">
+    <span class="remove-unit material-icons" (click)="removeUnit(unit, index)">close</span>
+    <span>{{unit.name}}</span>
+  </div>
+</div>

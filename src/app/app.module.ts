@@ -20,11 +20,15 @@ import {
 import { CallbackPipe } from './pipes/filter.pipe';
 import { UnitChooserComponent } from './components/unit-chooser/unit-chooser.component';
 import { DisplayComponent } from './components/display/display.component';
+import { DataManagerComponent } from './components/data-manager/data-manager.component';
+import { LocalStorageService } from './common/local-storage-service';
+import { MyCookieService } from './common/cookie-service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CallbackPipe,
+    DataManagerComponent,
     DisplayComponent,
     AbilityComponent,
     AbilityNameComponent,
@@ -34,7 +38,10 @@ import { DisplayComponent } from './components/display/display.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    MyCookieService,
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

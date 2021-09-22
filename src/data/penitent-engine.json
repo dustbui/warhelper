@@ -15,9 +15,9 @@
 
   "wargear": [],
 
-  "weapons": ["weapons.ministorumHeavyFlamer", "weapons.ministorumHeavyFlamer", "weapons.dustinCrusadePenitentBuzzBlade", "weapons.dustinCrusadePenitentBuzzBlade"],
+  "weapons": ["weapons.ministorumHeavyFlamer", "weapons.ministorumHeavyFlamer", "weapons.dustinCrusadePenitentBuzzBlade", "weapons.penitentBuzzBlade"],
 
-  "abilities": ["abilities.instrumentOfPainAndPenance", "abilities.endlessSuffering", "abilities.cleansedByFire", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
+  "abilities": ["abilities.voxCommsDestroyed", "abilities.instrumentOfPainAndPenance", "abilities.endlessSuffering", "abilities.cleansedByFire", "abilities.sufferNotTheWitch", "abilities.finalRedemption", "abilities.righteousImpact"],
 
   "traits": [{
     "name": "",

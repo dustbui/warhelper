@@ -30,7 +30,7 @@
   "meleePreWoundChecks": [],
 
   "defensePreHitChecks": [],
-  "defensePreWoundChecks": [],
+  "defensePreWoundChecks": ["abilities.resilient"],
   "defensePreSaveChecks": [{
     "name": "Divine Guardians",
     "rules": "4+ invulnerable save."
