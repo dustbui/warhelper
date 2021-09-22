@@ -31,7 +31,7 @@
   "shootingPreHitChecks": ["abilities.veteranWarriors",
     "abilities.leadTheRighteousAffected"
   ],
-  "shootingPreWoundChecks": ["abilities.headhuntersWound"],
+  "shootingPreWoundChecks": [],
 
   "meleePreAttackChecks": [],
   "meleePreHitChecks": ["abilities.sacredRitesThePassion", "abilities.veteranWarriors",

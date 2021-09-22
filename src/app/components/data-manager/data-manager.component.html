@@ -6,7 +6,15 @@
 <div class="units">
   <h3>Stored Units</h3>
   <div *ngFor="let unit of units; index as index" class="unit">
-    <span class="remove-unit material-icons" (click)="removeUnit(unit, index)">close</span>
+    <span class="remove-unit material-icons" title="Remove Unit" (click)="removeUnit(unit, index)">close</span>
+    <span class="edit-unit material-icons" title="Edit Unit" (click)="editUnit(unit)">edit</span>
     <span>{{unit.name}}</span>
   </div>
+</div>
+
+<div class="edit-modal" *ngIf="editing">
+  <json-editor style="height: 500px" [options]="editorOptions" [data]="editData" (change)="jsonEditorOnChange($event)">
+  </json-editor>
+  <button class="cancel-button" (click)="cancelEdits()">Cancel</button>
+  <button class="save-button" (click)="saveEdits(editData)">Save Changes</button>
 </div>

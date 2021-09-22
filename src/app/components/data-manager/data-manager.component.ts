@@ -1,7 +1,9 @@
 import {
   Component,
-  OnInit
+  OnInit,
+  ViewChild
 } from '@angular/core';
+import { JsonEditorComponent, JsonEditorOptions } from 'ang-jsoneditor';
 import { AppComponent } from 'src/app/app.component';
 import {
   LocalStorageService
@@ -14,10 +16,17 @@ import {
 })
 export class DataManagerComponent implements OnInit {
   public units: any[] = [];
+  public editData: any;
+  public tempEditData: any = {};
+  public editing: boolean = false;
+  public editorOptions: JsonEditorOptions = new JsonEditorOptions();
+  @ViewChild(JsonEditorComponent, { static: false })
+  editor!: JsonEditorComponent;
 
   constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
+    this.editorOptions.modes = ['code', 'text', 'tree', 'view'];
     this.getStoredUnits();
   }
 
@@ -25,12 +34,39 @@ export class DataManagerComponent implements OnInit {
     console.log(`Retrieving units from localStorage`);
     Object.entries(localStorage);
     this.units = this.localStorageService.getAllUnits();
+    this.units = this.units.sort((x: any, y: any): number => {
+      if (x.name < y.name) return -1;
+      else if (x.name > y.name) return 1;
+      return 0;
+    })
   }
 
   public removeUnit(unit: any, index: number) {
+    const response = confirm(`Are you sure you want to remove ${unit.name}?`);
+    if (!response) { return; }
     this.localStorageService.remove(`unit:${unit.name}`);
     this.units.splice(index, 1);
     console.log(`Removed unit: ${unit.name}`);
+  }
+
+  public editUnit(unit: any) {
+    this.editing = true;
+    this.editData = unit;
+  }
+
+  public jsonEditorOnChange(event: any) {
+    this.tempEditData = event;
+  }
+
+  public saveEdits(unit: any) {
+    this.editing = false;
+    this.localStorageService.set(`unit:${unit.name}`, this.tempEditData);
+    this.getStoredUnits();
+  }
+
+  public cancelEdits() {
+    this.editData = {};
+    this.editing = false;
   }
 
   public uploadFile(event: any) {

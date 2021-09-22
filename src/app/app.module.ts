@@ -23,6 +23,7 @@ import { DisplayComponent } from './components/display/display.component';
 import { DataManagerComponent } from './components/data-manager/data-manager.component';
 import { LocalStorageService } from './common/local-storage-service';
 import { MyCookieService } from './common/cookie-service';
+import { NgJsonEditorModule } from 'ang-jsoneditor';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MyCookieService } from './common/cookie-service';
    ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgJsonEditorModule
   ],
   providers: [
     MyCookieService,

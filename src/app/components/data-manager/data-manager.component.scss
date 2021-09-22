@@ -1,22 +1,59 @@
 @import '../../../shared.scss';
 
 .unit {
-  height: 20px;
+  height: 40px;
+  font-size: 26px;
   padding-top: 10px;
   padding-bottom: 10px;
 
   .remove-unit {
     cursor: pointer;
-    margin-right: 15px;
     color: $dark-grey;
+    margin-right: 7.5px;
   }
 
   .remove-unit:hover {
     color: $dark-red;
   }
 
+  .edit-unit {
+    cursor: pointer;
+    color: $dark-grey;
+    margin-right: 15px;
+  }
+
+  .edit-unit:hover {
+    color: $dark-blue;
+  }
 
   span {
     vertical-align: middle;
+  }
+}
+
+.edit-modal {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: calc(100% - 20px);
+  width: 100%;
+  overflow: auto;
+
+  button {
+    cursor: pointer;
+    width: 50%;
+    height: 40px;
+  }
+
+  .save-button {
+    background-color: #3883fa;
+    color: white;
+  }
+
+  .cancel-button {}
+
+  button:hover {
+    background-color: $dark-grey;
   }
 }
