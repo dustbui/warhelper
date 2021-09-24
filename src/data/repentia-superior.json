@@ -2,7 +2,7 @@
   "name": "Repentia Superior",
   "keywords": ["Infantry", "Character", "Repentia Superior"],
   "factionKeywords": ["Imperium", "Adeptus Ministorum", "Adepta Sororitas", "<Order>"],
-  "move": 6,
+  "move": 7,
   "weaponSkill": 3,
   "ballisticSkill": 3,
   "strength": 3,
@@ -17,20 +17,20 @@
 
   "weapons": ["weapons.fragGrenade", "weapons.krakGrenade", "weapons.dustinCrusadeNeuralWhips"],
 
-  "abilities": ["abilities.actsOfFaith", "abilities.overseerOfRedemption", "abilities.imperviousToPain", "abilities.openTheReliquaries", "abilities.divineIntervention", "abilities.sufferingAndSacrifice", "abilities.sufferNotTheWitch"],
+  "abilities": ["abilities.swiftAndAgile", "abilities.actsOfFaith", "abilities.overseerOfRedemption", "abilities.openTheReliquaries", "abilities.divineIntervention", "abilities.sufferingAndSacrifice", "abilities.sufferNotTheWitch", "abilities.blindFaith"],
 
   "traits": ["abilities.shieldOfFaith"],
 
+  "shootingPreWoundChecks": ["abilities.executionerOfHeretics"],
   "meleePreAttackChecks": [],
   "meleePreHitChecks": ["abilities.sacredRitesThePassion"],
-  "meleePreWoundChecks": [
-    "abilities.executionerOfHeretics",
-    {
+  "meleePreWoundChecks": ["abilities.executionerOfHeretics", {
       "name": "Neural Whips",
-      "rules": "If no model in the target unit (excluding VEHICLE units) has a Leadership characteristic of 8 or more, +1 to wound rolls."
+      "rules": "If no model in the target unit (excluding VEHICLE units) has a Leadership characteristic of 8 or more (affected by Executioner of Heretics aura), +1 to wound rolls."
     },
     "abilities.overseerOfRedemption"
   ],
+  "meleePreSaveChecks": ["abilities.executionerOfHeretics"],
 
   "defensePreHitChecks": [],
   "defensePreSaveChecks": ["abilities.shieldOfFaith", {
@@ -40,7 +40,7 @@
   "defensePreWoundChecks": [{
     "name": "Iron Surplice of Saint Istaela",
     "rules": "Unmodified wound rolls of 1-3 fail."
-  }, "abilities.imperviousToPainPreWound", "abilities.stoicEndurancePreWound"],
+  }, "abilities.stoicEndurancePreWound"],
   "defensePreLeadershipChecks": [],
   "unitLinks": ["Sister Repentia"]
 }

@@ -17,13 +17,14 @@ import {
 export class DataManagerComponent implements OnInit {
   public units: any[] = [];
   public editData: any;
+  public error: string = '';
   public tempEditData: any = {};
   public editing: boolean = false;
   public editorOptions: JsonEditorOptions = new JsonEditorOptions();
   @ViewChild(JsonEditorComponent, { static: false })
   editor!: JsonEditorComponent;
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private appComponent: AppComponent, private localStorageService: LocalStorageService) {}
 
   ngOnInit() {
     this.editorOptions.modes = ['code', 'text', 'tree', 'view'];
@@ -38,7 +39,8 @@ export class DataManagerComponent implements OnInit {
       if (x.name < y.name) return -1;
       else if (x.name > y.name) return 1;
       return 0;
-    })
+    });
+    this.appComponent.createUnitMap(this.units);
   }
 
   public removeUnit(unit: any, index: number) {
@@ -78,7 +80,7 @@ export class DataManagerComponent implements OnInit {
 
     // Store promises in array
     for (let i = 0; i < files.length; i++) {
-      readers.push(this.readFileAsText(files[i]));
+        readers.push(this.readFileAsText(files[i], this.error));
     }
 
     // Trigger Promises
@@ -91,14 +93,19 @@ export class DataManagerComponent implements OnInit {
     });
   }
 
-  public readFileAsText(file: File) {
+  public readFileAsText(file: File, error: string) {
     return new Promise(function (resolve, reject) {
       let fr = new FileReader();
 
       fr.onload = function () {
-        const parsedFile = JSON.parse(fr.result!.toString());
-        console.log(`Stored JSON file: ${file.name}`);
-        resolve(parsedFile);
+        try {
+          const parsedFile = JSON.parse(fr.result!.toString());
+          console.log(`Stored JSON file: ${file.name}`);
+          resolve(parsedFile);
+        } catch (e: any) {
+          alert(`${file.name} ERROR: ${e}`);
+          throw e;
+        }
       };
 
       fr.onerror = function () {

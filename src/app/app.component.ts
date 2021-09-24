@@ -28,4 +28,13 @@ export class AppComponent implements OnInit  {
     Object.entries(localStorage);
     this.units = this.localStorageService.getAllUnits();
   }
+
+  public createUnitMap(units: any[]) {
+    const map: any = {};
+    units.forEach(x => {
+      map[x.name] = x;
+    });
+    this.unitMap = map;
+    return map;
+  }
 }

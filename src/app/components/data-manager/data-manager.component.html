@@ -1,6 +1,7 @@
 <div class="upload">
   <h3>Upload Unit JSON files</h3>
   <input multiple type="file" name="files" (change)="uploadFile($event)" />
+  <div class="text-dark-red">{{error}}</div>
 </div>
 
 <div class="units">

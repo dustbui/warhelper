@@ -54,7 +54,7 @@ export class UnitChooserComponent implements OnInit {
       return 0;
     });
 
-    this.appComponent.unitMap = this.createUnitMap(this.units);
+    this.appComponent.createUnitMap(this.units);
   }
 
   public filterByKeyword(keywords: string[]) {
@@ -68,14 +68,6 @@ export class UnitChooserComponent implements OnInit {
       }
     );
     this.units = result;
-  }
-
-  private createUnitMap(units: any[]) {
-    const map: any = {};
-    units.forEach(x => {
-      map[x.name] = x;
-    });
-    return map;
   }
 
   public selectUnit(unit: any) {

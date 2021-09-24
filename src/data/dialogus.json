@@ -25,7 +25,8 @@
     }
   ],
 
-  "abilities": ["abilities.actsOfFaith", "abilities.warHymn", "abilities.catechismOfRepugnance", "abilities.refrainOfBlazingPiety", {
+  "abilities": ["abilities.imperviousToPain", "abilities.actsOfFaith", "abilities.warHymn", "abilities.catechismOfRepugnance", "abilities.verseOfHolyPiety", "abilities.refrainOfBlazingPiety ",
+    {
       "name": "Laud Hailer",
       "tags": ["Aura"],
       "rules": "+1 to Leadership characteristic of ADEPTA SORORITAS CORE and ADEPTA SORORITAS CHARACTER units within 6\"."
@@ -34,7 +35,10 @@
       "name": "Stirring Rhetoric",
       "tags": ["Aura"],
       "rules": "Each time an ADEPTA SORORITAS unit within 6\" performs an Act of Faith, you can modify the value of 1 Miracle (or Cherub) dice by 1. This is not cumulative with any other modifying abilities."
-    }, "abilities.fieryOratory", "abilities.sufferNotTheWitch", "abilities.divineIntervention"
+    },
+    "abilities.fieryOratory",
+    "abilities.sufferNotTheWitch",
+    "abilities.divineIntervention"
   ],
 
   "traits": [],
@@ -53,7 +57,7 @@
 
   "defensePreSaveChecks": ["abilities.shieldOfFaith"],
 
-  "defensePreWoundChecks": [],
+  "defensePreWoundChecks": ["abilities.imperviousToPainPreWound"],
 
   "defensePreLeadershipChecks": []
 }

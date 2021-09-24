@@ -39,6 +39,21 @@ export class Constants {
       tags: ['Aura'],
       rules: 'If within 6" of Canoness, can re-roll hit rolls of 1.'
     }),
+    blindFaith: new Ability({
+      name: '(1CP) Blind Faith',
+      tags: ['Valorous Heart', 'Stratagem'],
+      rules: '<b>Shoot / Fight: </b> When an <ORDER> unit is selected to shoot or fight, until the end of the phase, each time a model in the selected unit makes an attack, you can ignore any or all hit roll, Ballistic Skill and Weapon Skill modifiers.'
+    }),
+    tactialExperience: new Ability({
+      name: 'Tactical Experience',
+      tags: ['Battle Trait'],
+      rules: 'While a CHARACTER model from this unit is on the battlefield, roll one D6 each time you spend a CP to use a Stratagem; on a 6, you immediately regain 1 CP.'
+    }),
+    verseOfHolyPiety: new Ability({
+      name: 'Verse of Holy Piety',
+      tags: ['Hymn of Battle'],
+      rules: 'If this hymn is inspiring, select one friendly ADEPTA SORORITAS CORE or ADEPTA SORORITAS CHARACTER unit within 6" of this PRIEST model. Select one Sacred Rite that is not active for your army. That sacred rite is active for that unit in addition to any others that are active for your army.'
+    }),
     sacredRitesDivineGuidance: new Ability({
       name: 'Divine Guidance',
       rules: 'Ranged attacks gain -1 Armor Penetration on unmodified Wound rolls of 6.',
@@ -185,6 +200,21 @@ export class Constants {
       name: "Veteran Warriors",
       tags: ["Battle Trait"],
       rules: "Re-roll hit rolls of 1."
+    }),
+    fleetOfFoot: new Ability({
+      name: 'Fleet of Foot',
+      tags: ["Battle Trait"],
+      rules: 'Add 1" to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.'
+    }),
+    swiftAndAgile: new Ability({
+      name: 'Swift and Agile',
+      tags: ["Battle Trait"],
+      rules: 'Add 1" to this unit’s Move characteristic. In addition, add 1 to Advance and charge rolls made for this unit.'
+    }),
+    zealousDevotion: new Ability({
+      name: 'Zealous Devotion',
+      tags: ["Battle Trait"],
+      rules: 'This unit gains the Zealot ability. If this unit already has this ability, improve the Weapon Skill characteristic of models in this unit by 1 instead (already reflected on character sheet).'
     }),
     catechismOfRepugnance: new Ability({
       name: "Catechism of Repugnance",
@@ -508,7 +538,9 @@ export class Constants {
       armorPen: -4,
       damage: 2,
       imageUrl: "https://i.imgur.com/ToVWm0b.png",
-      abilities: []
+      abilities: [new Ability({
+        rules: "Unmodified hit rolls of 6 deal 2 mortal wounds and the attack sequence ends."
+      })]
     }),
     dustinCrusadeTheArdentBladeMelee: new Weapon(  {
       name: "The Ardent Blade",
@@ -518,7 +550,9 @@ export class Constants {
       damage: 2,
       damageModifier: 1,
       imageUrl: "https://i.imgur.com/ToVWm0b.png",
-      abilities: [Constants.abilities.fleshbane]
+      abilities: [Constants.abilities.fleshbane, new Ability({
+        rules: "Unmodified hit rolls of 6 deal 2 mortal wounds and the attack sequence ends."
+      })]
     }),
     lightningClaw: new Weapon({
       name: "Lightning Claw",
