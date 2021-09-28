@@ -49,10 +49,31 @@ export class Constants {
       tags: ['Battle Trait'],
       rules: 'While a CHARACTER model from this unit is on the battlefield, roll one D6 each time you spend a CP to use a Stratagem; on a 6, you immediately regain 1 CP.'
     }),
+    butchersNails: new Ability({
+      name: "Butcher's Nails",
+      tags: ['Legion Trait'],
+      rules: '+1 Attack if this unit charged.'
+    }),
     verseOfHolyPiety: new Ability({
       name: 'Verse of Holy Piety',
       tags: ['Hymn of Battle'],
       rules: 'If this hymn is inspiring, select one friendly ADEPTA SORORITAS CORE or ADEPTA SORORITAS CHARACTER unit within 6" of this PRIEST model. Select one Sacred Rite that is not active for your army. That sacred rite is active for that unit in addition to any others that are active for your army.'
+    }),
+    deathToTheFalseEmperor: new Ability({
+      name: 'Death to the False Emperor',
+      rules: '6+ hit rolls against IMPERIUM units grant an extra attack.'
+    }),
+    hatefulAssault: new Ability({
+      name: 'Hateful Assault',
+      rules: '+1 Attack if this unit charged, was charged, or performed a Heroic Intervention.'
+    }),
+    maliciousVolleysInfantry: new Ability({
+      name: 'Malicious Volleys',
+      rules: "Rapid fire bolt weapons have double attacks if this unit remained stationary.",
+    }),
+    maliciousVolleysNonInfantry: new Ability({
+      name: 'Malicious Volleys',
+      rules: "Rapid Fire bolt weapons have double attacks.",
     }),
     sacredRitesDivineGuidance: new Ability({
       name: 'Divine Guidance',
@@ -141,6 +162,12 @@ export class Constants {
       name: 'Instrument of Pain and Penance',
       rules: 'This unit cannot perform any actions.'
     }),
+    autoHit: new Ability({
+      rules: "Attacks automatically hit."
+    }),
+    combi: new Ability({
+      rules: "-1 to hit rolls if both profiles of this weapon are chosen."
+    }),
     bornHeroes: new Ability({
       name: "Born Heroes",
       points: 0,
@@ -174,12 +201,72 @@ export class Constants {
       tags: ["Adeptus Astartes"],
       description: "Space Marines are amongst the finest warriors in the Imperium."
     }),
+    crazed: new Ability({
+      name: 'Crazed',
+      rules: 'At the end of any phase in which this model suffers damage, 6+ can shoot if not engaged or fight if engaged.'
+    }),
     andTheyShallKnowNoFear: new Ability({
-      "name": "And They Shall Know No Fear",
-      "points": 0,
+      name: "And They Shall Know No Fear",
+      points: 0,
       rules: ["Each time a Combat Attrition test is taken for this unit, ignore any or all modifiers."],
-      "tags": ["Adeptus Astartes"],
-      "description": "Space Marines stand unafraid before the terrors of the galaxy."
+      tags: ["Adeptus Astartes"],
+      description: "Space Marines stand unafraid before the terrors of the galaxy."
+    }),
+    scornOfSorcery: new Ability({
+      name: "(1CP) Scorn of Sorcery",
+      tags: ['Stratagem'],
+      rules: '<b>Psychic: </b>4+ deny a psychic power up to 24\" from a WORLD EATERS unit.'
+    }),
+    apoplecticFrenzy: new Ability({
+      name: "(1CP) Apoplectic Frenzy",
+      tags: ['Stratagem'],
+      rules: '<b>Deployment: </b> At the start of the first battle round but before the first turn begins, you can move a unit up to 9\". It cannot end this move within 9\" of any enemy models. If both players have units that can move before the first turn begins, the player who is taking the first turn moves their units first.'
+    }),
+    daemonShell: new Ability({ name: "(1CP) Daemon Shell",
+      tags: ['Stratagem'],
+      rules: '<b>Shooting: </b> When this unit attacks with a bolt weapon this phase, make only a single hit roll which you cannot re-roll. If the shot hits, the target suffers D3 mortal wounds; if the shot misses, this unit suffers D3 mortal wounds.'}),
+    skullsForTheSkullThorne: new Ability({
+      name: "(1CP) Skulls for the Skull Throne!",
+      tags: ['Stratagem'],
+      rules: '<b>Fight: </b>When an enemy CHARACTER model is destroyed as a result of an attack made with a melee weapon by a WORLD EATERS CHARACTER model from your army, gain D3 Command points (The limit of gaining or refunding 1 CP per battle round does not apply to any Command points gained via this Stratagem).'
+    }),
+    fireFrenzy: new Ability({
+      name: "(1CP) Fire Frenzy",
+      tags: ['Stratagem'],
+      rules: '<b>Shooting: </b>If target Helbrute did not move this turn, it can fire all of its weapons twice at the nearest visible enemy unit.'
+    }),
+    giftsOfChaos: new Ability({
+      name: "(1CP/3CP) Gifts of Chaos",
+      tags: ['Stratagem'],
+      rules: 'This unit has been given an Artefaact of Chaos: '
+    }),
+    killMaimBurn: new Ability({
+      name: "(1CP) Kill! Maim! Burn!",
+      tags: ['Stratagem'],
+      rules: '<b>Fight: </b> Each model in target unit can move up to 6" when they consolidate, instead of 3".'
+    }),
+    wildFury: new Ability({
+      name: "(1CP) Wild Fury",
+      tags: ['Stratagem'],
+      rules: '<b>Fight: </b> Until the end of phase, improve the Armour Penetration characteristic of melee weapons models in a unit by 1.'
+    }),
+    stokeTheNails: new Ability({
+      name: "(1CP) Stoke the Nails",
+      tags: ['Stratagem'],
+      rules: '<b>Fight: </b> When a WORLD EATERS INFANTRY or WORLD EATERS BIKER unit from your army that is not a CHAOS CULTIST is chosen to fight with. Until the end of that phase: <br/>That unit’s Death to the False Emperor ability takes effect when targeting any enemy units, not just IMPERIUM units.</br>When targeting IMPERIUM units, the ability takes effect on hit rolls of 5+.'
+    }),
+    bloodForTheBloodGodStratagem: new Ability({
+      name: "(2CP) Blood for the Blood God",
+      tags: ['Stratagem'],
+      rules: '<b>Fight: </b> After an enemy unit is destroyed as a result of an attack made by a WORLD EATERS model from your army, until the start of your next turn, when a Morale test is taken for a friendly WORLD EATERS unit, do not roll the dice; it is automatically passed.'
+    }),
+    despoilersOfTheGalaxy: new Ability({
+      name: 'Despoilers of the Galaxy',
+      rules: 'Controls objective markers even if there are more enemy models within range of it. If an enemy unit within range of the objective marker has a similar ability, then it is controlled by the player who has the most models within range as normal.'
+    }),
+    archSlaughterer: new Ability({
+      name: "Arch Slaughterer",
+      rules: "If there are more enemy models within 3\" of this unit than friendly models, add D3 to this unit's Attacks characteristic uuntil the end of the Fight phase."
     }),
     warHymn: new Ability({
       name: "War Hymn",
@@ -289,6 +376,15 @@ export class Constants {
       rules: '+1 to wound rolls against CHARACTER units.',
       tags: ['Battle Trait', 'Crusade']
     }),
+    blindingRadiance: new Ability({
+      name: 'Blinding Radiance',
+      rules: '-1 to enemy ranged wound rolls.'
+    }),
+    blindingRadianceMiracle: new Ability({
+      name: 'Blinding Radiance',
+      tags: ['Miraculous', 'Blessing of the Faithful'],
+      rules: 'While a friendly <ORDER> CORE or <ORDER> CHARACTER unit is within Miracle range of this model, each time a ranged attack is made against that unit, subtract 1 from that attack’s hit roll.'
+    }),
     imperviousToPainPreWound: new Ability({
       name: "Impervious to Pain",
       rules: "5+ ignore wound.",
@@ -391,6 +487,15 @@ export class Constants {
       name: "Crux Terminatus",
       rules: "5+ invulnerable save."
     }),
+    terminatorArmour: new Ability({
+      name: 'Terminator Armour',
+      rules: '5+ invulnerable save.'
+    }),
+    bloodForTheBloodGod: new Ability({
+      name: 'Blood for the Blood God',
+      tags: ['Requisition Stratagem','World Eaters'],
+      rules: 'Can attack twice per Fight phase.'
+    }),
     stormShield: new Ability({
       name: "Storm Shield",
       rules: ["4+ invulnerable save.", "+1 to armour save rolls."]
@@ -452,6 +557,24 @@ export class Constants {
       name: "Fleshbane",
       tags: ["Weapon Enhancement"],
       rules: "+1 weapon damage."
+    }),
+    selfRepair: new Ability({
+      name: "Self-repair",
+      rules: "<b>Turn Start: </b> 6+ restores 1 wound."
+    }),
+    smokeLaunchers: new Ability({
+      name: "Smoke Launchers",
+      rules: "Once per game, instead of shooting any weapons, -1 to all ranged hit rolls against this unit until your next Shooting phase."
+    }),
+    lordOfChaosAffected: new Ability({
+      name: "Lord of Chaos",
+      tags: ["Aura"],
+      rules: "Re-roll hit rolls of 1 if within 6\" of Lord of Chaos."
+    }),
+    killMaimBurnAffected: new Ability({
+      name: "Kill! Maim! Burn!",
+      tags: ["Aura"],
+      rules: "Re-roll failed hit rolls if within 1\" of Khârne the Betrayer."
     })
   };
 
@@ -459,6 +582,11 @@ export class Constants {
     rosarius: new Wargear({
       name: 'Rosarius',
       rules: '4+ invulnerable save.'
+    }),
+    bloodHunger: new Wargear({
+      name: 'Bloodhunger',
+      isRelic: true,
+      rules: 'For each model this unit destroys, 4+ regain 1 wound.'
     }),
     rodOfOffice: new Wargear({
       name: 'Rod of Office',
@@ -504,6 +632,16 @@ export class Constants {
       damage: 1,
       imageUrl: "https://3dprint.com/wp-content/uploads/2016/03/3dp_Chainsword_imperial.jpg"
     }),
+    berserkerGlaive: new Weapon({
+      name: "Berserker Glaive",
+      type: "Melee",
+      isRelic: true,
+      strength: 1,
+      armorPen: -2,
+      damage: 2,
+      imageUrl: "https://i.imgur.com/xOWHqMl.png",
+      abilities: []
+    }),
     theArdentBladeShooting: new Weapon({
       name: "The Ardent Blade",
       range: 12,
@@ -513,9 +651,7 @@ export class Constants {
       armorPen: -2,
       damage: 1,
       imageUrl: "https://i.imgur.com/ToVWm0b.png",
-      abilities: [new Ability({
-        rules: ["Attacks automatically hit."]
-      })]
+      abilities: [Constants.abilities.autoHit]
     }),
     dustinCrusadeTheArdentBladeShooting: new Weapon({
       name: "The Ardent Blade",
@@ -527,9 +663,7 @@ export class Constants {
       damage: 1,
       damageModifier: 1,
       imageUrl: "https://i.imgur.com/ToVWm0b.png",
-      abilities: [Constants.abilities.fleshbane, new Ability({
-        rules: ["Attacks automatically hit."]
-      })]
+      abilities: [Constants.abilities.fleshbane, Constants.abilities.autoHit]
     }),
     theArdentBladeMelee: new Weapon(  {
       name: "The Ardent Blade",
@@ -541,6 +675,41 @@ export class Constants {
       abilities: [new Ability({
         rules: "Unmodified hit rolls of 6 deal 2 mortal wounds and the attack sequence ends."
       })]
+    }),
+    lascannon: new Weapon({
+      name: "Lascannon",
+      range: 48,
+      points: 15,
+      type: "Heavy",
+      attacks: 1,
+      strength: 9,
+      armorPen: -3,
+      damage: "D6",
+      imageUrl: "https://i.imgur.com/SnxW5DQ.png",
+      abilities: []
+    }),
+    missileLauncherFrag: new Weapon({
+      name: "Missile Launcher (Frag)",
+      range: 48,
+      points: 15,
+      type: "Heavy",
+      attacks: "D6",
+      strength: 4,
+      armorPen: 0,
+      damage: 1,
+      abilities: [Constants.abilities.blast],
+      imageUrl: "https://i.imgur.com/jXErdio.png"
+    }),
+    missileLauncherKrak: new Weapon({
+      name: "Missile Launcher (Krak)",
+      range: 48,
+      points: 15,
+      type: "Heavy",
+      attacks: 1,
+      strength: 8,
+      armorPen: -2,
+      damage: "D6",
+      imageUrl: "https://i.imgur.com/jXErdio.png"
     }),
     dustinCrusadeTheArdentBladeMelee: new Weapon(  {
       name: "The Ardent Blade",
@@ -568,6 +737,16 @@ export class Constants {
       armorPen: -2,
       damage: 1,
       imageUrl: "https://i.imgur.com/ThQPGqA.png"
+    }),
+    twinHeavyBolter: new Weapon({
+      name: "Twin Heavy Bolter",
+      points: 10,
+      range: 36,
+      type: "Heavy",
+      attacks: 2,
+      strength: 5,
+      armorPen: -1,
+      damage: 2
     }),
     frostClaw: new Weapon({
       name: "Lightning Claw (Frost)",
@@ -622,6 +801,17 @@ export class Constants {
         })
       ]
     }),
+    heavyFlamer: new Weapon({
+      name: 'Heavy Flamer',
+      type: "Heavy",
+      attacks: "D6",
+      range: 12,
+      strength: 5,
+      armorPen: -1,
+      damage: 1,
+      abilities: [Constants.abilities.autoHit],
+      imageUrl: "https://i.imgur.com/64C8R7K.png"
+    }),
     ministorumHeavyFlamer: new Weapon({
       name: 'Ministorum Heavy Flamer',
       type: "Heavy",
@@ -630,9 +820,7 @@ export class Constants {
       strength: 6,
       armorPen: -1,
       damage: 1,
-      abilities: [new Ability({
-        rules: "Each time an attack is made with this weapon, that attack automatically hits the target."
-      })],
+      abilities: [Constants.abilities.autoHit],
       imageUrl: "https://i.imgur.com/64C8R7K.png"
     }),
     hunterKillerMissile: new Weapon({
@@ -665,7 +853,8 @@ export class Constants {
       hitModifier: -1,
       abilities: [new Ability({
         rules: "-1 to hit rolls."
-      })]
+      })],
+      imageUrl: "https://i.imgur.com/0pZEvPL.png"
     }),
     thunderHammer: new Weapon({
       name: 'Thunder Hammer',
@@ -676,7 +865,8 @@ export class Constants {
       hitModifier: -1,
       abilities: [new Ability({
         rules: "-1 to hit rolls."
-      })]
+      })],
+      imageUrl: 'https://i.imgur.com/gTZFf2l.png'
     }),
     chainfist: new Weapon({
       name: 'Chainfist',
@@ -686,7 +876,61 @@ export class Constants {
       damage: 'D3',
       abilities: [new Ability({
         rules: "-1 to hit rolls. Damage to VEHICLE models is automatically set to 3."
-      })]
+      })],
+      imageUrl: 'https://i.imgur.com/1oC7tTm.png'
+    }),
+    chainAxe: new Weapon({
+      name: 'Chainaxe',
+      type: 'Melee',
+      strength: 1,
+      armorPen: -1,
+      damage: 1,
+      imageUrl: 'https://i.imgur.com/XUIRuPW.png'
+    }),
+    combiBolter: new Weapon({
+      name: 'Combi-bolter',
+      type: 'Rapid Fire',
+      range: 24,
+      attacks: 2,
+      strength: 4,
+      armorPen: 0,
+      damage: 1,
+      imageUrl: 'https://i.imgur.com/2EVVxhC.png',
+      abilities: [Constants.abilities.combi]
+    }),
+    combiFlamer: new Weapon({
+      name: 'Combi-flamer',
+      type: 'Assault',
+      range: 12,
+      attacks: 'D6',
+      strength: 4,
+      armorPen: 0,
+      damage: 1,
+      imageUrl: 'https://i.imgur.com/2EVVxhC.png',
+      abilities: [Constants.abilities.autoHit, Constants.abilities.combi]
+    }),
+    combiMelta:  new Weapon({
+      name: 'Combi-melta',
+      type: 'Assault',
+      range: 12,
+      attacks: 1,
+      strength: 8,
+      armorPen: -4,
+      damage: "D6",
+      imageUrl: 'https://i.imgur.com/2EVVxhC.png',
+      abilities: [new Ability({
+        rules: "Attacks within half range have D6+2 Damage."
+      }),Constants.abilities.combi]
+    }),
+    reaperAutocannon: new Weapon({
+      name: 'Reaper Autocannon',
+      type: 'Heavy',
+      range: 36,
+      attacks: 4,
+      strength: 7,
+      armorPen: -2,
+      damage: 1,
+      imageUrl: 'https://i.imgur.com/9rYkcQu.png'
     }),
     penitentBuzzBlade: new Weapon({
       name: "Penitent Buzz-blade",
@@ -737,6 +981,31 @@ export class Constants {
       imageUrl: 'https://i.imgur.com/NXPaIc0.png',
       damage: 'D3'
     }),
+    plasmaGun: new Weapon({
+      range: 24,
+      points: 10,
+      name: 'Plasma Gun',
+      type: 'Rapid Fire',
+      attacks: 1,
+      strength: 7,
+      armorPen: -3,
+      damage: 1,
+      imageUrl: 'https://i.imgur.com/XHHyirh.png'
+    }),
+    plasmaGunSupercharge: new Weapon({
+      range: 24,
+      points: 10,
+      name: 'Plasma Gun (Supercharge)',
+      type: 'Rapid Fire',
+      attacks: 1,
+      strength: 8,
+      armorPen: -3,
+      damage: 1,
+      abilities: [new Ability({
+        rules: 'Unmodified hit rolls of 1 destroy the bearer after shooting.'
+      })],
+      imageUrl: 'https://i.imgur.com/XHHyirh.png'
+    }),
     powerSword: new Weapon({
       name: 'Power Sword',
       type: 'Melee',
@@ -769,7 +1038,8 @@ export class Constants {
       damage: 2,
       abilities: [new Ability({
         rules: 'Unmodified hit rolls of 1 destroy the bearer after shooting.'
-      })]
+      })],
+      imageUrl: 'https://i.imgur.com/DyVQDMm.png'
     }),
     boltPistol: new Weapon({
       name: 'Bolt Pistol',

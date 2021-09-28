@@ -120,9 +120,9 @@ html {
 }
 
 .mobile-buttons {
-  position: relative;
-  width: 100%;
-  display: inline-block;
+  position: fixed;
+  right: 0;
+  bottom: 5px;
 
   .mobile-button {
     position: relative;
@@ -158,5 +158,9 @@ html {
 
       }
     }
+  }
+
+  .mobile-button:hover {
+    @extend .shadow-hover;
   }
 }
