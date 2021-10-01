@@ -60,6 +60,14 @@
   text-align: center;
 }
 
+.bracket {
+  font-size: 26px;
+}
+
+.non-bracket {
+  visibility: hidden;
+}
+
 .move-value {}
 
 .move-icon {
@@ -110,6 +118,16 @@
 .wounds {
   position: relative;
   display: inline-block;
+}
+
+.bracketed-wounds {
+  position: relative;
+  float: right;
+  width: 50px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  background-color: black;
 }
 
 .wounds-value {

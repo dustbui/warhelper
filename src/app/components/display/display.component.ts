@@ -99,6 +99,10 @@ export class DisplayComponent implements OnInit, AfterViewInit {
     }
   }
 
+  public isArray(value: any) {
+    return Array.isArray(value);
+  }
+
   // Set characteristics based on wounds on model
   private setWoundValues(unit: Unit, woundValue: number) {
     if (!Array.isArray(unit.wounds)) { return; }

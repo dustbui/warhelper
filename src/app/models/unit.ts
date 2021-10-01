@@ -9,11 +9,11 @@ export class Unit {
   woundsChangeStats: boolean = false;
   factionKeywords: string[] = [];
   move: any= '-';
-  weaponSkill: number = 0;
+  weaponSkill: any = 0;
   ballisticSkill: any = 0;
   strength: number = 0;
   toughness: number = 0;
-  wounds: number | number[] = 0;
+  wounds: any = 0;
   attacks: any = 0;
   leadership: number = 0;
   saves: number = 0;

@@ -175,7 +175,11 @@
 
           </div>
           <div class="weapon-skill weapon-value">
-            <div class="center" [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
+            <div class="center bracket" *ngIf="isArray(unit.ballisticSkill)">
+              [{{unit.ballisticSkill}}]
+            </div>
+            <div class="center" *ngIf="!isArray(unit.ballisticSkill)"
+              [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
               {{unit.ballisticSkill - (weapon.hitModifier || 0)}}+</div>
           </div>
           <!-- Strength -->
@@ -273,8 +277,11 @@
           <!-- Attacks -->
           <div class="weapon-attacks weapon-value">
             <div class="center">
+              <div class="text-dark-red center bracket" *ngIf="isArray(unit.attacks)">
+                [{{unit.attacks}}]
+              </div>
               <div [ngClass]="{'dice-value' : checkForDice(weapon.attacks) || checkForDice(unit.attacks)}">
-                <div class="center">
+                <div class="center" *ngIf="!isArray(unit.attacks)">
                   <span
                     [ngClass]="{'text-dark-red' : !checkForDice(weapon.attacks) && !checkForDice(unit.attacks)}">{{unit.attacks}}</span>
                   <span *ngIf="weapon.attacks != 0">
@@ -285,7 +292,11 @@
           </div>
           <!-- Weapon Skill -->
           <div class="weapon-skill weapon-value">
-            <div class="center" [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
+            <div class="center bracket" *ngIf="isArray(unit.weaponSkill)">
+              [{{unit.weaponSkill}}]
+            </div>
+            <div class="center" *ngIf="!isArray(unit.weaponSkill)"
+              [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
               {{unit.weaponSkill - (weapon.hitModifier || 0)}}+</div>
           </div>
           <!-- Strength -->
@@ -428,7 +439,7 @@
         <!-- Pre Wound Checks -->
         <div class="pre-defense-checks" style="border-left: 1px dotted #9e9e9e;">
           <!-- Wounds -->
-          <div class="wounds phase-icon tooltip">
+          <div *ngIf="!isArray(unit.wounds)" class="wounds phase-icon tooltip">
             <div class="wounds-icon">
               <img src="https://i.imgur.com/8NlZPxF.png" />
             </div>
@@ -441,6 +452,9 @@
               When a model receives damage from an attack, put that many Wounds on it. When it has as many Wounds as
               its Wound value, destroy the model.
             </div> -->
+          </div>
+          <div *ngIf="isArray(unit.wounds)" class="bracketed-wounds">
+            <div *ngFor="let wound of unit.wounds" class="">{{wound}}</div>
           </div>
           <div *ngFor="let check of unit.defensePreWoundChecks">
             <app-ability [ability]="check"></app-ability>

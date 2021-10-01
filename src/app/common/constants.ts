@@ -575,6 +575,10 @@ export class Constants {
       name: "Kill! Maim! Burn!",
       tags: ["Aura"],
       rules: "Re-roll failed hit rolls if within 1\" of Khârne the Betrayer."
+    }),
+    stormOfRetribution: new Ability({
+      name: 'Storm of Retribution',
+      rules: 'Heavy weapon attacks ignore benefits of cover.'
     })
   };
 
@@ -582,6 +586,10 @@ export class Constants {
     rosarius: new Wargear({
       name: 'Rosarius',
       rules: '4+ invulnerable save.'
+    }),
+    armoriumCherub: new Wargear({
+      name: 'Armorium Cherub',
+      rules: 'Once per battle, in your Shooting phase, after this unit has shot, one model in this unit can immediately shoot with one of its ranged weapons again.'
     }),
     bloodHunger: new Wargear({
       name: 'Bloodhunger',
@@ -652,6 +660,17 @@ export class Constants {
       damage: 1,
       imageUrl: "https://i.imgur.com/ToVWm0b.png",
       abilities: [Constants.abilities.autoHit]
+    }),
+    multiMelta: new Weapon({
+      name: 'Multi-melta',
+      range: 24,
+      type: 'Heavy',
+      attacks: 2,
+      strength: 8,
+      armorPen: -4,
+      damage: 'D6',
+      imageUrl: 'https://i.imgur.com/zudWoB6.png',
+      abilities: [new Ability({rules: 'Each time an attack made with this weapon targets a unit within half range, that attack has a Damage characteristic of D6+2.'})]
     }),
     dustinCrusadeTheArdentBladeShooting: new Weapon({
       name: "The Ardent Blade",
