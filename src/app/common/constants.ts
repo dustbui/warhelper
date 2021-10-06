@@ -238,7 +238,7 @@ export class Constants {
     giftsOfChaos: new Ability({
       name: "(1CP/3CP) Gifts of Chaos",
       tags: ['Stratagem'],
-      rules: 'This unit has been given an Artefaact of Chaos: '
+      rules: 'This unit has been given an Artefact of Chaos: '
     }),
     killMaimBurn: new Ability({
       name: "(1CP) Kill! Maim! Burn!",
@@ -365,6 +365,11 @@ export class Constants {
       name: 'Vox Comms Destroyed',
       rules: 'Unaffected by auras.',
       tags: ['Battle Scar']
+    }),
+    deadlyDescent: new Ability({
+      name: '(1CP) Deadly Descent',
+      tags: ['Stratagem'],
+      rules: '<b>Movement End: </b>If this unit was set up as Reinforcements this turn, it can shoot as if it were your Shooting phase.'
     }),
     resilient: new Ability({
       name: "Resilient",
@@ -1166,7 +1171,7 @@ export class Constants {
       armorPen: -3,
       damage: 2,
       abilities: [new Ability({
-        rules: '*Weapon skill has been modified to adjust for -1 to hit rolls.'
+        rules: '-1 to hit rolls.'
       })],
       imageUrl: "https://i.imgur.com/XA9GBz6.png"
     }),

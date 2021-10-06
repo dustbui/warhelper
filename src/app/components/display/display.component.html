@@ -178,9 +178,11 @@
             <div class="center bracket" *ngIf="isArray(unit.ballisticSkill)">
               [{{unit.ballisticSkill}}]
             </div>
-            <div class="center" *ngIf="!isArray(unit.ballisticSkill)"
+            <div class="center" *ngIf="!isArray(unit.ballisticSkill)">
+              {{unit.ballisticSkill}}</div>
+            <!-- <div class="center" *ngIf="!isArray(unit.ballisticSkill)"
               [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
-              {{unit.ballisticSkill - (weapon.hitModifier || 0)}}+</div>
+              {{unit.ballisticSkill - (weapon.hitModifier || 0)}}+</div> -->
           </div>
           <!-- Strength -->
           <div class="weapon-strength weapon-value">
@@ -295,9 +297,11 @@
             <div class="center bracket" *ngIf="isArray(unit.weaponSkill)">
               [{{unit.weaponSkill}}]
             </div>
-            <div class="center" *ngIf="!isArray(unit.weaponSkill)"
+            <div class="center" *ngIf="!isArray(unit.weaponSkill)">
+              {{unit.weaponSkill}}+</div>
+            <!-- <div class="center" *ngIf="!isArray(unit.weaponSkill)"
               [ngClass]="{'text-dark-blue':  weapon.hitModifier && weapon.hitModifier != 0}">
-              {{unit.weaponSkill - (weapon.hitModifier || 0)}}+</div>
+              {{unit.weaponSkill - (weapon.hitModifier || 0)}}+</div> -->
           </div>
           <!-- Strength -->
           <div class="weapon-strength weapon-value">
@@ -492,7 +496,7 @@
 
   <!-- Footer -->
   <div class="footer">
-    <div class="mobile-buttons">
+    <div class="mobile-buttons" [style.padding-right]="unit.unitLinks.length ? '60px' : '0px'">
       <div class="mobile-button dark-grey text-white" [routerLink]="['/unit']" title="Unit Selector"
         (click)="openUnitChooser()">
         <div class="mobile-button-icon" routerLinkActive="router-link-active">
