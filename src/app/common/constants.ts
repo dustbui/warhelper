@@ -147,7 +147,7 @@ export class Constants {
     }),
     drivenOnwards: new Ability({
       name: 'Driven Onwards',
-      rules: '<span class="text-dark-blue">Command:</span> Select one friendly SISTERS REPENTIA unit within 3"; that unit and this model can charge even if they Advanced this turn. Roll an additional D6 and discard one of the results for charge rolls this turn.'
+      rules: '<b>Command:</b> Select one friendly SISTERS REPENTIA unit within 3"; that unit and this model can charge even if they Advanced this turn. Roll an additional D6 and discard one of the results for charge rolls this turn.'
     }),
     overseerOfRedemption: new Ability({
       name: 'Overseer of Redemption',
